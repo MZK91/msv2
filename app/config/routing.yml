@@ -1,0 +1,14 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+muzik_spirit_front:
+    resource: "@MuzikSpiritFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+muzik_spirit_back:
+    resource: "@MuzikSpiritBackBundle/Resources/config/routing.yml"
+    prefix:   /ad_act
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

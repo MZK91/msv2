@@ -1,0 +1,1328 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"in",
+				"in_array"
+			],
+			[
+				"vues",
+				"vues_dif"
+			],
+			[
+				"add",
+				"addslashes"
+			],
+			[
+				"ad",
+				"addslashes"
+			],
+			[
+				"mysql",
+				"mysql_error"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"ta",
+				"tab"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"new",
+				"new_img"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"ne",
+				"new_path"
+			],
+			[
+				"wit",
+				"new_width"
+			],
+			[
+				"fil",
+				"file_path"
+			],
+			[
+				"preg_",
+				"preg_replace"
+			],
+			[
+				"file",
+				"file_path"
+			],
+			[
+				"id",
+				"idTypeImage"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"li",
+				"list-style"
+			],
+			[
+				"ca",
+				"categories"
+			],
+			[
+				"pages",
+				"pages"
+			],
+			[
+				"Offre",
+				"OffresEmplois"
+			],
+			[
+				"em",
+				"em"
+			],
+			[
+				"offres",
+				"offres"
+			],
+			[
+				"bo",
+				"border-top"
+			],
+			[
+				"stri",
+				"stripslashes"
+			],
+			[
+				"annonce",
+				"annonce"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"p",
+				"padding-top"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"getRe",
+				"getRequest"
+			],
+			[
+				"itis",
+				"itisindexBundle"
+			],
+			[
+				"tre",
+				"titre_page"
+			],
+			[
+				"if",
+				"if?	$… = ( … ) ? … : …"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"sy",
+				"system_path"
+			],
+			[
+				"a",
+				"application"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "maj_new_db.php",
+			"settings":
+			{
+				"buffer_size": 17290,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/AlbumsBundle/Resources/views/Default/album.html.twig",
+			"settings":
+			{
+				"buffer_size": 397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/SiteBundle/Resources/views/layout.html.twig",
+			"settings":
+			{
+				"buffer_size": 6791,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/AlbumsBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 489,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/MenuBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 5303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/ServicesBundle/Twig/Extension/MyfilterExtension.php",
+			"settings":
+			{
+				"buffer_size": 1406,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/ClipsBundle/Resources/views/Default/clip.html.twig",
+			"settings":
+			{
+				"buffer_size": 230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/services.yml",
+			"settings":
+			{
+				"buffer_size": 338,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "web/css/style.css",
+			"settings":
+			{
+				"buffer_size": 324976,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/IndexBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 678,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/CarouselBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 1090,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/CarouselBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 4140,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 2518,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/LyricsBundle/Entity/Lyrics.php",
+			"settings":
+			{
+				"buffer_size": 11928,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/MuzikSpirit/AlbumsBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Resources/config/routing.yml",
+			"settings":
+			{
+				"buffer_size": 646,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/IndexBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 2863,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/layout.html.twig",
+			"settings":
+			{
+				"buffer_size": 3595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/content.html.twig",
+			"settings":
+			{
+				"buffer_size": 795,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/admin.html.twig",
+			"settings":
+			{
+				"buffer_size": 3967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/admin_content.html.twig",
+			"settings":
+			{
+				"buffer_size": 8758,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/views/Default/add_edit_news.html.twig",
+			"settings":
+			{
+				"buffer_size": 1844,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ServicesBundle/Resources/config/services.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ServicesBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/app/config/services.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ServicesBundle/Twig/Extension/MyfilterExtension.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SiteBundle/Resources/views/content_full.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/web/css/style.css",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/MenuBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/MenuBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/MenuBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/MenuBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/MenuBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SiteBundle/Resources/views/content_two_col.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SiteBundle/Resources/views/layout.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SiteBundle/Resources/views/admin_content.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SiteBundle/Resources/views/admin.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ImagesBundle/Entity/TypeImage.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/AlbumsBundle/Resources/views/Default/album.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ImagesBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ImagesBundle/Entity/-TypeImage.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ImagesBundle/Entity/Images.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ImagesBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/VideosBundle/Resources/views/Default/video.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/VideosBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/VideosBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/VideosBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LifestyleBundle/Resources/views/Default/lifestyle.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LifestyleBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LifestyleBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LifestyleBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SonsBundle/Resources/views/Default/son.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SonsBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SonsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/SonsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ClipsBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ArtistesBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ClipsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/app/config/parameters.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ArtistesBundle/Resources/views/Default/artiste.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ArtistesBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ClipsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ArtistesBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/ClipsBundle/Resources/views/Default/clip.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/AlbumsBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/AlbumsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/AlbumsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/IndexBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/AlbumsBundle/Entity/Albums.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/app/AppKernel.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/VideosBundle/Entity/Videos.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/NewsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/IndexBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/NewsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/IndexBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/NewsBundle/Resources/views/Default/news.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/NewsBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/NewsBundle/Entity/News.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/app/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LyricsBundle/Resources/views/Default/lyrics.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LyricsBundle/Entity/Lyrics.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/maj_new_db.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LyricsBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LyricsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/src/MuzikSpirit/LyricsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/siteV2/maj_new_bdd_pdo.html",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/css/style.css",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/js/functions.js",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/SiteBundle/Resources/views/content.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/less/blue.less",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/less/style.css",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/navbarBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/css/style-blue.css",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/SiteBundle/Resources/views/footer.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/CarouselBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/navbarBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/css/bootstrap.min.css",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/navbarBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/web/index.html",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/IndexBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/app/config/parameters.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/app/config/config.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/CarouselBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/CarouselBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/FooterBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/FooterBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/SiteBundle/Resources/views/Default/content.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site_v2/src/muzikspirit/SiteBundle/Resources/views/Default/layout.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/web/css/ingetis.css",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/content.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/web/app_dev.php",
+		"/Users/leonelbilal/Sites/ingetis/site/web/app.php",
+		"/Users/leonelbilal/Sites/ingetis/site/app/config/config_dev.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/layout.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/app/config/config_prod.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DemandeDocBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DemandeDocBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/OffresBundle/Resources/views/Default/media_offres_panel.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/views/Default/media_news_panel.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Bbcode/BBCode.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Bbcode/bbCode.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/config/services.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/app/config/config.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/web/config.php",
+		"/Users/leonelbilal/Sites/ingetis/site_old/.htaccess",
+		"/Users/leonelbilal/Sites/ingetis/site/.htaccess",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/OffresBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/OffresBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/PagesBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Resources/views/Default/add_edit_carousel.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site/images_table.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/ImagesBundle/Entity/Images.php",
+		"/Users/leonelbilal/Sites/ingetis/site/app/config/parameters.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/IndexBundle/Resources/views/Default/index.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/views/Default/news.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/offre_stage.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Entity/Carousel.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DemandeDocBundle/Resources/views/Default/contact_entreprise.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/admin_content.html.twig",
+		"/Users/leonelbilal/Sites/muzikspirit/site/test.php",
+		"/Users/leonelbilal/Sites/ingetis/site/app/config/parameters.yml.dist",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DemandeDocBundle/Resources/config/routing.yml",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/ImagesBundle/Controller/DefaultController.php",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DemandeDocBundle/Resources/views/Default/contact_entreprises.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/DivIndexBundle/Resources/views/Default/admin_div.html.twig",
+		"/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/ImagesBundle/Resources/views/Default/multiupload_images.html.twig"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/leonelbilal/Sites/muzikspirit/site_v2/user_guide"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Lato",
+			"#content",
+			"content",
+			"navbar-dar",
+			"body",
+			"ingetis",
+			"content",
+			"MuzikSpirit",
+			"MuzikSpirit_",
+			"ingetis",
+			"Ingetis",
+			"lifestyle",
+			"sons",
+			"clip",
+			"album",
+			"note",
+			",",
+			"']",
+			"['",
+			"$donnees",
+			"@img-path",
+			"#0099da",
+			"&quot;",
+			"\\",
+			"magic",
+			"followers",
+			"th",
+			"']",
+			"tab['",
+			"ih->",
+			"annonce",
+			"annonces",
+			"entries",
+			"Search",
+			"^Search",
+			"Search",
+			"$targ_w",
+			"$new_img",
+			"$options",
+			"upload_url",
+			"options",
+			"image",
+			"getAbsolutePath",
+			"file",
+			"actu",
+			"image",
+			"news",
+			"actu",
+			"news",
+			"content",
+			"news",
+			"ingetis",
+			"Jane",
+			"test",
+			"    		",
+			"content",
+			"new",
+			"media",
+			"acme",
+			".menu_ct_cat",
+			"menu_deco",
+			"Control",
+			"echo",
+			"folder",
+			"patch"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"muzikspirit",
+			"MuzikSpirit",
+			"video",
+			"videos",
+			"lifestyle",
+			"son",
+			"artiste",
+			"\",",
+			"",
+			"$resultat->",
+			"@{img-path}",
+			"",
+			"td",
+			"",
+			"user.",
+			"slide",
+			"$this->options",
+			"image",
+			"page",
+			"pages",
+			"offre"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 20,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "maj_new_db.php",
+					"settings":
+					{
+						"buffer_size": 17290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								603,
+								603
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/MuzikSpirit/AlbumsBundle/Resources/views/Default/album.html.twig",
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								92,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/MuzikSpirit/SiteBundle/Resources/views/layout.html.twig",
+					"settings":
+					{
+						"buffer_size": 6791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2914,
+								2914
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 811.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/MuzikSpirit/AlbumsBundle/Resources/views/Default/index.html.twig",
+					"settings":
+					{
+						"buffer_size": 489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								428,
+								428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/MuzikSpirit/MenuBundle/Resources/views/Default/index.html.twig",
+					"settings":
+					{
+						"buffer_size": 5303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5149,
+								5149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/MuzikSpirit/ServicesBundle/Twig/Extension/MyfilterExtension.php",
+					"settings":
+					{
+						"buffer_size": 1406,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								490,
+								490
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/MuzikSpirit/ClipsBundle/Resources/views/Default/clip.html.twig",
+					"settings":
+					{
+						"buffer_size": 230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/config/services.yml",
+					"settings":
+					{
+						"buffer_size": 338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "web/css/style.css",
+					"settings":
+					{
+						"buffer_size": 324976,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240422,
+								240422
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 155077.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/MuzikSpirit/IndexBundle/Resources/views/Default/index.html.twig",
+					"settings":
+					{
+						"buffer_size": 678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								150
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/MuzikSpirit/CarouselBundle/Resources/views/Default/index.html.twig",
+					"settings":
+					{
+						"buffer_size": 1090,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								563,
+								563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/MuzikSpirit/CarouselBundle/Controller/DefaultController.php",
+					"settings":
+					{
+						"buffer_size": 4140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4138,
+								4138
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "composer.json",
+					"settings":
+					{
+						"buffer_size": 2518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								783,
+								783
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/MuzikSpirit/LyricsBundle/Entity/Lyrics.php",
+					"settings":
+					{
+						"buffer_size": 11928,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11918,
+								11918
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/MuzikSpirit/AlbumsBundle/Controller/DefaultController.php",
+					"settings":
+					{
+						"buffer_size": 671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/CarouselBundle/Resources/config/routing.yml",
+					"settings":
+					{
+						"buffer_size": 646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/IndexBundle/Resources/views/Default/index.html.twig",
+					"settings":
+					{
+						"buffer_size": 2863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/layout.html.twig",
+					"settings":
+					{
+						"buffer_size": 3595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 705.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/content.html.twig",
+					"settings":
+					{
+						"buffer_size": 795,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								146
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/admin.html.twig",
+					"settings":
+					{
+						"buffer_size": 3967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3947,
+								3911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/SiteBundle/Resources/views/admin_content.html.twig",
+					"settings":
+					{
+						"buffer_size": 8758,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7484,
+								7484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1815.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/Users/leonelbilal/Sites/ingetis/site/src/Ingetis/NewsBundle/Resources/views/Default/add_edit_news.html.twig",
+					"settings":
+					{
+						"buffer_size": 1844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": false
+}

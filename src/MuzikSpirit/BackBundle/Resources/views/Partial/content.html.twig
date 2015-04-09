@@ -1,0 +1,12 @@
+{% extends 'MuzikSpiritBackBundle::layout.html.twig' %}
+{% block content %}
+        <ul class="breadcrumb breadcrumb-page">
+            <div class="breadcrumb-label text-light-gray">You are here: </div>
+            <li><a href="#">{% block catbread %}{% endblock %}</a></li>
+            <li class="active"><a href="#">{% block activebread %}{% endblock %}</a></li>
+        </ul>
+        <div class="page-header">
+            {% block header %}{% endblock %}
+        </div>
+        {% block contentwrap %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    muzik_spirit_front.example:
+#        class: MuzikSpirit\FrontBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

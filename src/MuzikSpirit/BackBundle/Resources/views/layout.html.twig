@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+{# stysheet #}
+{% block stylesheets %}
+    <link href="{{ asset('backassets/stylesheets/pixel-admin.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backassets/stylesheets/widgets.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backassets/stylesheets/rtl.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('backassets/stylesheets/themes.min.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block classname %}theme-default main-menu-animated{% endblock %}
+{% block body %}
+    <script>var init = [];</script>
+    <div id="main-wrapper">
+        {% block main_menu %}{{ include('MuzikSpiritBackBundle:Partial:main_menu.html.twig') }}{% endblock %}
+        {% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:main_navigation.html.twig') }}{% endblock %}
+        <div id="content-wrapper">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="main-menu-bg"></div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('backassets/javascripts/pixel-admin.min.js') }}"></script>
+    <script type="text/javascript">
+        init.push(function () {
+            // Javascript code here
+        })
+        window.PixelAdmin.start(init);
+    </script>
+{% endblock %}

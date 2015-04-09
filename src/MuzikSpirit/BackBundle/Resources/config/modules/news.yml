@@ -1,0 +1,4 @@
+muzikspirit_back_news_list:
+    path:     /list
+    defaults: { _controller: MuzikSpiritBackBundle:News:list }
+    # NomduBundle:NomducControleur:Nom de L'action
