@@ -1,0 +1,167 @@
+<?php
+
+namespace MuzikSpirit\BackBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Artiste
+ *
+ * @ORM\Table(name="artiste", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"})})
+ * @ORM\Entity
+ */
+class Artiste
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="artiste", type="string", length=255, nullable=false)
+     */
+    private $artiste;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texte", type="text", nullable=false)
+     */
+    private $texte;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vues", type="integer", nullable=false)
+     */
+    private $vues = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="vues_dif", type="integer", nullable=false)
+     */
+    private $vuesDif = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="poster", type="string", length=255, nullable=true)
+     */
+    private $poster;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="facebook", type="integer", nullable=false)
+     */
+    private $facebook = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="twitter", type="integer", nullable=false)
+     */
+    private $twitter = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_ip", type="string", length=255, nullable=true)
+     */
+    private $lastIp;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_visit", type="datetime", nullable=true)
+     */
+    private $lastVisit;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="likes", type="integer", nullable=false)
+     */
+    private $likes = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dislikes", type="integer", nullable=false)
+     */
+    private $dislikes = '0';
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="score", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $score = '0';
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ip", type="string", length=255, nullable=true)
+     */
+    private $ip;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255, nullable=false)
+     */
+    private $slug;
+
+    /**
+     * @var \User
+     *
+     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+    /**
+     * @var \Section
+     *
+     * @ORM\ManyToOne(targetEntity="Section")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     * })
+     */
+    private $section;
+
+    /**
+     * @var \TypeArticle
+     *
+     * @ORM\ManyToOne(targetEntity="TypeArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_article_id", referencedColumnName="id")
+     * })
+     */
+    private $typeArticle;
+
+
+}

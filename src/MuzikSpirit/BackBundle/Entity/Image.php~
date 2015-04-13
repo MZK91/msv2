@@ -1,0 +1,56 @@
+<?php
+
+namespace MuzikSpirit\BackBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Image
+ *
+ * @ORM\Table(name="image", indexes={@ORM\Index(name="type_image_id", columns={"type_image_id"})})
+ * @ORM\Entity
+ */
+class Image
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=255, nullable=false)
+     */
+    private $titre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var \TypeImage
+     *
+     * @ORM\ManyToOne(targetEntity="TypeImage")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_image_id", referencedColumnName="id")
+     * })
+     */
+    private $typeImage;
+
+
+}

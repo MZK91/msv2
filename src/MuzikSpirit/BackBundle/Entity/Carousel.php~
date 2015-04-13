@@ -1,0 +1,74 @@
+<?php
+
+namespace MuzikSpirit\BackBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Carousel
+ *
+ * @ORM\Table(name="carousel")
+ * @ORM\Entity
+ */
+class Carousel
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="section_id", type="integer", nullable=false)
+     */
+    private $sectionId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type_article_id", type="integer", nullable=false)
+     */
+    private $typeArticleId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="article_id", type="integer", nullable=false)
+     */
+    private $articleId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="titre", type="string", length=255, nullable=false)
+     */
+    private $titre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lien", type="string", length=255, nullable=false)
+     */
+    private $lien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     */
+    private $description;
+
+
+}

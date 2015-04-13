@@ -1,0 +1,67 @@
+<?php
+
+namespace MuzikSpirit\BackBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * TypeImage
+ *
+ * @ORM\Table(name="type_image")
+ * @ORM\Entity
+ */
+class TypeImage
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255, nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="crop", type="boolean", nullable=false)
+     */
+    private $crop;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="width", type="integer", nullable=false)
+     */
+    private $width;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="height", type="integer", nullable=false)
+     */
+    private $height;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=false)
+     */
+    private $path;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="resize", type="boolean", nullable=false)
+     */
+    private $resize;
+
+
+}

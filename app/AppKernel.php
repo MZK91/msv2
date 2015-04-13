@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new MuzikSpirit\BackBundle\MuzikSpiritBackBundle(),
             new MuzikSpirit\FrontBundle\MuzikSpiritFrontBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
