@@ -1,0 +1,76 @@
+{% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
+{% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
+
+
+    {% block menu_navigation %}
+        {% if iframe == 0 %}
+            {{ render(controller('MuzikSpiritBackBundle:Image:topNav', { 'action': path('muzikspirit_back_image_searchforward') , 'find' : find | default('') })) }}
+        {% endif %}
+    {% endblock %}
+
+    {% block main_menu %}
+        {% if iframe == 0 %}
+            {{ include('MuzikSpiritBackBundle:Partial:main_menu.html.twig') }}
+        {% endif %}
+    {% endblock %}
+
+    {% if iframe == 1 %}
+        {% block main_menu_bg %}{% endblock %}
+    {% endif %}
+
+{% block contentwrap %}
+    <!-- Javascript -->
+    <script>
+        init.push(function () {
+            $('#jq-datatables-example').dataTable();
+            $('#jq-datatables-example_wrapper .table-caption').text('Liste des {{ titre | default('') }} : ({{ pagination.getTotalItemCount }})');
+            $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
+        });
+    </script>
+    <!-- / Javascript -->
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">{{ titre }}</span>
+            <div class="panel-heading-controls">
+                <button class="btn btn-labeled btn-primary"><a href="{{ path('muzikspirit_back_image_add') }}"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</a></button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="table-primary">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>edit</th>
+                        <th>supp</th>
+                        <th>img</th>
+                        <th>titre</th>
+                        <th>type</th>
+                        <th>date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for image in pagination.items %}
+                            <tr>
+                                <td>{{ image.id }}</td>
+                                <td>{{ image.id }}</td>
+                                <td>{{ image.id }}</td>
+                                <td>{{ image.image }}</td>
+                                <td>{{ image.titre }}</td>
+                                <td>{{ dump(image.typeImage) }}</td>
+                                <td>{{ image.date | date('d/m/y') }}</td>
+                            </tr>
+                        {% else %}
+                            <div class="alert alert-dark">Aucun Article</div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

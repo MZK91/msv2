@@ -212,4 +212,13 @@ class TypeImage
     {
         return $this->resize;
     }
+
+    /**
+     * Retourne le type
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->type;
+    }
 }

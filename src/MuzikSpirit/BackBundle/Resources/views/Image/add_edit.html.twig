@@ -1,0 +1,14 @@
+{% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
+{% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
+{% block menu_navigation %}{{ render(controller('MuzikSpiritBackBundle:News:topNav', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') })) }}{% endblock %}
+{% block contentwrap %}
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">{{ titre }}</span>
+        </div>
+
+        <div class="panel-body">
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,28 @@
 muzikspirit_back_news_list:
     path:     /list/{page}
     defaults: { _controller: MuzikSpiritBackBundle:News:list, page : 1 }
-    # NomduBundle:NomducControleur:Nom de L'action
+
+muzikspirit_back_news_searchforward:
+    path:     /searchforward/
+    defaults: { _controller: MuzikSpiritBackBundle:News:searchforward }
+
+muzikspirit_back_news_search:
+    path:     /search/{find}/{page}
+    defaults: { _controller: MuzikSpiritBackBundle:News:search, page : 1 }
+    requirements:
+        page: \d+
+
+muzikspirit_back_news_remove:
+    path:     /remove/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:News:remove }
+    requirements:
+        id: \d+
+        _method: GET
+
+muzikspirit_back_news_add:
+    path:     /add
+    defaults: { _controller: MuzikSpiritBackBundle:News:add }
+
+muzikspirit_back_news_edit:
+    path:     /edit/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:News:edit }

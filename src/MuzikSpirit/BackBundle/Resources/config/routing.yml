@@ -1,3 +1,7 @@
+muzikspirit_back_image:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/image.yml"
+    prefix:   /image
+
 muzikspirit_back_news:
     resource: "@MuzikSpiritBackBundle/Resources/config/modules/news.yml"
     prefix:   /news

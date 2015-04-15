@@ -1,116 +1,82 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
+{% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
+{% block menu_navigation %}{{ render(controller('MuzikSpiritBackBundle:News:topNav', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') })) }}{% endblock %}
 {% block contentwrap %}
+    <!-- Javascript -->
+    <script>
+        init.push(function () {
+            $('#jq-datatables-example').dataTable();
+            $('#jq-datatables-example_wrapper .table-caption').text('Liste des {{ titre }} : ({{ pagination.getTotalItemCount }})');
+            $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
+        });
+    </script>
+    <!-- / Javascript -->
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
-        </div>
-        <div class="panel-body">
-            <!-- Javascript -->
-            <script>
-                init.push(function () {
-                    $('#jq-datatables').dataTable();
-                    $('#jq-datatables-example_wrapper .table-caption').text('Liste des {{ titre }} : {{ pagination.getTotalItemCount }}');
-                    $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
-                });
-            </script>
-            <!-- / Javascript -->
-            <div class="table-primary">
-                <div role="grid" id="jq-datatables-example_wrapper" class="dataTables_wrapper form-inline no-footer">
-                    <div class="table-header clearfix"><div class="table-caption"></div>
-                        <div class="DT-lf-right">
-                            <div class="DT-per-page">
-                                <div class="dataTables_length" id="jq-datatables-example_length">
-                                    <label>Per page:
-                                        <select name="jq-datatables-example_length" aria-controls="jq-datatables-example" class="form-control input-sm">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="100">100</option>
-                                        </select>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="DT-search">
-                                <div id="jq-datatables-example_filter" class="dataTables_filter">
-                                    <label>
-                                        <input type="search" class="form-control input-sm" aria-controls="jq-datatables-example" placeholder="Search..."></label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable no-footer" id="jq-datatables" aria-describedby="jq-datatables-example_info">
-                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables">
-                            <thead>
-                            <tr>
-                                <th>id</th>
-                                <th>edit</th>
-                                <th>supp</th>
-                                <th>img</th>
-                                <th>sect</th>
-                                <th>titre</th>
-                                <th>vues</th>
-                                <th>date</th>
-                                <th>last visit</th>
-                                <th>social</th>
-                            </tr>
-                            </thead>
-
-                            {% for news1 in news %}
-                                <tr>
-                                    <td>{{ news1.id }}</td>
-                                    <td align="center"><i class="fa fa-edit"></i></td>
-                                    <td align="center"><i class="fa fa-cut"></i></td>
-                                    <td align="center"><img src="{{ news1.image }}" width="50" height="30" /></td>
-                                    <td>{{ news1.section.titre }}</td>
-                                    <td><a href="http://muzikspirit.com/news/test/{{ news1.id }}">{{ news1.titre }}</a></td>
-                                    <td align="center">{{ news1.vues }}</td>
-                                    <td align="center">{{ news1.date | date('d/m/y') }}</td>
-                                    <td align="center">{{ news1.lastVisit | date('d/m/y') }}</td>
-
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i>&nbsp;Social&nbsp;<i class="fa fa-caret-down"></i></button>
-                                            <ul class="dropdown-menu">
-                                                {% set url  = "http://" ~ global_website_url ~ "/news/" ~ news1.slug ~ "/" ~ news1.id %}
-                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url | url_encode }}&t={{ news1.titre | url_encode }}" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
-                                                <li><a href="https://twitter.com/intent/tweet?original_referer={{ url | url_encode }}&text={{ news1.titre | url_encode }} {{ news1.typeArticle.titre | url_encode }} &url={{ news1.titre | url_encode }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
-                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url | url_encode }}&t={{ news1.titre | url_encode }}" target="_blank"><i class="fa fa-google-plus"></i>&nbsp;Google+</a></li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% else %}
-                                <div class="alert alert-dark">Aucun Article</div>
-                            {% endfor %}
-
-                            </tbody>
-                    </table>
-                        <div class="table-footer clearfix">
-                            <div class="DT-label">
-                                <div class="dataTables_info" id="jq-datatables-example_info" role="alert" aria-live="polite" aria-relevant="all">Showing 1 to 10 of 57 entries</div>
-                            </div>
-                            <div class="DT-pagination">
-                                <div class="dataTables_paginate paging_simple_numbers" id="jq-datatables-example_paginate">
-                                    <ul class="pagination">
-                                        <li class="paginate_button previous disabled" aria-controls="jq-datatables-example" tabindex="0" id="jq-datatables-example_previous">
-                                            <a href="#">Previous</a>
-                                        </li>
-                                        <li class="paginate_button active" aria-controls="jq-datatables-example" tabindex="0">
-                                            <a href="#">1</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="jq-datatables-example" tabindex="0">
-                                            <a href="#">2</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="jq-datatables-example" tabindex="0">
-                                            <a href="#">3</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="jq-datatables-example" tabindex="0">
-                                            <a href="#">4</a>
-                                        </li>
-                                        <li class="paginate_button " aria-controls="jq-datatables-example" tabindex="0">
-                                            <a href="#">5</a></li><li class="paginate_button " aria-controls="jq-datatables-example" tabindex="0"><a href="#">6</a></li><li class="paginate_button next" aria-controls="jq-datatables-example" tabindex="0" id="jq-datatables-example_next"><a href="#">Next</a></li></ul></div></div></div></div>
+            <div class="panel-heading-controls">
+                <button class="btn btn-labeled btn-primary"><a href="{{ path('muzikspirit_back_news_add') }}"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</a></button>
             </div>
         </div>
-        {{ knp_pagination_render(pagination) }}
+
+        <div class="panel-body">
+            <div class="table-primary">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>edit</th>
+                        <th>supp</th>
+                        <th>img</th>
+                        <th>sect</th>
+                        <th>titre</th>
+                        <th>social</th>
+                        <th>vues</th>
+                        <th>date</th>
+                        <th>last visit</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for news1 in pagination.items %}
+                            <tr>
+                                <td>{{ news1.id }}</td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_news_edit',{'id':news1.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_news_remove',{'id':news1.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-cut"></i></a></td>
+                                <td align="center"><img src="{{ news1.image }}" width="50" height="30" /></td>
+                                <td><img src="{{ asset('backassets/images/sections/' ~ news1.section.id ~ '.png') }}"/></td>
+                                <td><a href="http://muzikspirit.com/news/{{ news1.slug }}/{{ news1.id }}">{{ news1.titre }}</a></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i>&nbsp;Social&nbsp;<i class="fa fa-caret-down"></i></button>
+                                        <ul class="dropdown-menu">
+                                            {% set url  = "http://" ~ global_website_url ~ "/news/" ~ news1.slug ~ "/" ~ news1.id %}
+                                            {% set artiste = news1.artiste %}
+                                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url | url_encode }}&t={{ news1.titre | url_encode }}" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
+                                            <li><a href="https://twitter.com/intent/tweet?original_referer={{ url | url_encode }}&text={{ news1.titre | url_encode }} {{ '[' ~ news1.typeArticle.titre ~ ']' | url_encode }} &url={{ url | url_encode }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
+                                            <li><a href="https://twitter.com/search/users?q={{ artiste | replace({' ': "+", "'": "+"}) }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter Art.</a></li>
+                                            <li><a href="https://plus.google.com/share?url={{ url | url_encode }}" target="_blank"><i class="fa fa-google-plus"></i>&nbsp;Google+</a></li>
+                                            <li><a href="http://www.pinterest.com/pin/create/button/?url={{ url | url_encode }}&media={{ news1.image }}&description={{ news1.titre | url_encode }}" data-pin-do="buttonPin" data-pin-config="above" target="_blank"><i class="fa fa-pinterest-square"></i>&nbsp;Pinterest</a></li>
+
+
+
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td align="center">{{ news1.vues }}</td>
+                                <td align="center">{{ news1.date | date('d/m/y') }}</td>
+                                <td align="center">{{ news1.lastVisit | date('d/m/y') }}</td>
+                            </tr>
+                        {% else %}
+                            <div class="alert alert-dark">Aucun Article</div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

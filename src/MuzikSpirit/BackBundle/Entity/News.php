@@ -89,7 +89,7 @@ class News
      *
      * @ORM\Column(name="adult", type="boolean", nullable=false)
      */
-    private $adult = '0';
+    private $adult = false;
 
     /**
      * @var integer
@@ -194,7 +194,10 @@ class News
      */
     private $artiste2;
 
-
+    public function __construct(){
+        $this->date = new \DateTime();
+        $this->lastVisit = new \DateTime();
+    }
 
     /**
      * Get id
@@ -733,5 +736,14 @@ class News
     public function getArtiste2()
     {
         return $this->artiste2;
+    }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->titre;
     }
 }

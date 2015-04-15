@@ -611,4 +611,13 @@ class Artiste
     {
         return $this->typeArticle;
     }
+
+    /**
+     * Retourne le nom de l'artiste
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->artiste;
+    }
 }

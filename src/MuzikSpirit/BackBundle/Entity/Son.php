@@ -794,4 +794,13 @@ class Son
     {
         return $this->artiste2;
     }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->titre;
+    }
 }

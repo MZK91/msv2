@@ -1,0 +1,28 @@
+muzikspirit_back_image_list:
+    path:     /list/{page}/{iframe}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:list, page : 1 , iframe : 0 }
+
+muzikspirit_back_image_searchforward:
+    path:     /searchforward/
+    defaults: { _controller: MuzikSpiritBackBundle:Image:searchforward }
+
+muzikspirit_back_image_search:
+    path:     /search/{find}/{page}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:search, page : 1 }
+    requirements:
+        page: \d+
+
+muzikspirit_back_image_remove:
+    path:     /remove/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:remove }
+    requirements:
+        id: \d+
+        _method: GET
+
+muzikspirit_back_image_add:
+    path:     /add
+    defaults: { _controller: MuzikSpiritBackBundle:Image:add }
+
+muzikspirit_back_image_edit:
+    path:     /edit/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:edit }

@@ -31,7 +31,7 @@ twig:
     strict_variables: "%kernel.debug%"
     globals:
         global_website: MuzikSpirit
-        global_website_url: muzikspirit.com
+        global_website_url: www.muzikspirit.com
 
 # Assetic Configuration
 assetic:
@@ -79,6 +79,8 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: MuzikSpirit\BackBundle\Entity\User
+
+
 knp_paginator:
     page_range: 5                      # default page range used in pagination control
     default_options:
@@ -87,7 +89,7 @@ knp_paginator:
         sort_direction_name: direction # sort direction query parameter name
         distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
     template:
-        pagination: KnpPaginatorBundle:Pagination:sliding.html.twig     # sliding pagination controls template
-        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+        pagination: MuzikSpiritBackBundle:Pagination:sliding.html.twig     # sliding pagination controls template
+        sortable: MuzikSpiritBackBundle:Pagination:sortable_link.html.twig # sort link template
 parameters:
-    max_articles: 70
+    max_articles: 10

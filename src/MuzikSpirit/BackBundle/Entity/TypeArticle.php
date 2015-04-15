@@ -62,4 +62,13 @@ class TypeArticle
     {
         return $this->titre;
     }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->titre;
+    }
 }

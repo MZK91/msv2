@@ -92,4 +92,13 @@ class TypeArticleLifestyle
     {
         return $this->url;
     }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->titre;
+    }
 }
