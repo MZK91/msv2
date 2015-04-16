@@ -42,13 +42,21 @@
                             <tr>
                                 <td>{{ news1.id }}</td>
                                 <td align="center"><a href="{{ path('muzikspirit_back_news_edit',{'id':news1.id}) }}"><i class="fa fa-edit"></i></a></td>
-                                <td align="center"><a href="{{ path('muzikspirit_back_news_remove',{'id':news1.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-cut"></i></a></td>
+                                <td align="center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>
+                                        <ul class="dropdown-menu">
+                                            <li></li>
+                                            <li><a href="{{ path('muzikspirit_back_news_remove',{'id':news1.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
                                 <td align="center"><img src="{{ news1.image }}" width="50" height="30" /></td>
                                 <td><img src="{{ asset('backassets/images/sections/' ~ news1.section.id ~ '.png') }}"/></td>
                                 <td><a href="http://muzikspirit.com/news/{{ news1.slug }}/{{ news1.id }}">{{ news1.titre }}</a></td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs"></i>&nbsp;Social&nbsp;<i class="fa fa-caret-down"></i></button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Share&nbsp;<i class="fa fa-caret-down"></i></button>
                                         <ul class="dropdown-menu">
                                             {% set url  = "http://" ~ global_website_url ~ "/news/" ~ news1.slug ~ "/" ~ news1.id %}
                                             {% set artiste = news1.artiste %}

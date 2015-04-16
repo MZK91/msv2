@@ -168,6 +168,7 @@ class NewsController extends Controller
     public function editAction(Request $request, News $news)
     {
 
+        $em = $this->getDoctrine()->getManager();
         // Création du formulaire
         $form = $this->createForm(new NewsType(), $news);
         $form->handleRequest($request);
@@ -184,7 +185,7 @@ class NewsController extends Controller
             $em->persist($data);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('muzikspirit_back_news_add'));
+            return $this->redirect($this->generateUrl('muzikspirit_back_news_edit', array('id'=> $news->getId())));
         }
 
         return $this->render('MuzikSpiritBackBundle:News:add_edit.html.twig',array(

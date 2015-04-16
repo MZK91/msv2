@@ -4,11 +4,16 @@ namespace MuzikSpirit\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+
 /**
  * News
  *
  * @ORM\Table(name="news", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="news_ibfk_4", columns={"artiste_id"})})
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\NewsRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class News
 {
@@ -23,7 +28,9 @@ class News
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank (
+     *  message = "Ce champ ne doit pas être vide"
+     * )
      * @ORM\Column(name="titre", type="string", length=255, nullable=false)
      */
     private $titre;
@@ -31,20 +38,25 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="artiste", type="string", length=255, nullable=false)
+     * @ORM\Column(name="artiste", type="string", length=255, nullable=true)
      */
     private $artiste;
 
     /**
      * @var string
      *
+     * @Assert\NotBlank (
+     *  message = "Ce champ ne doit pas être vide"
+     * )
      * @ORM\Column(name="thumb_news", type="string", length=255, nullable=true)
      */
     private $thumbNews;
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank (
+     *  message = "Ce champ ne doit pas être vide"
+     * )
      * @ORM\Column(name="texte", type="text", nullable=false)
      */
     private $texte;
@@ -73,6 +85,9 @@ class News
     /**
      * @var string
      *
+     * @Assert\NotBlank (
+     *  message = "Ce champ ne doit pas être vide"
+     * )
      * @ORM\Column(name="image", type="string", length=255, nullable=false)
      */
     private $image;
@@ -115,7 +130,7 @@ class News
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_visit", type="datetime", nullable=false)
+     * @ORM\Column(name="last_visit", type="datetime", nullable=true)
      */
     private $lastVisit;
 
@@ -196,7 +211,6 @@ class News
 
     public function __construct(){
         $this->date = new \DateTime();
-        $this->lastVisit = new \DateTime();
     }
 
     /**

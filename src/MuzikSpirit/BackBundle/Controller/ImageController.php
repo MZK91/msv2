@@ -45,17 +45,25 @@ class ImageController extends Controller
             $limit
         );
 
-
-        return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
-            array(
-                'pagination' => $paginator,
-                'page'  => $page,
-                'type'  => $type,
-                'titre' => 'Images',
-                'iframe'=> $iframe,
-            )
-        );
-
+        if($iframe === 0) {
+            return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
+                array(
+                    'pagination' => $paginator,
+                    'page' => $page,
+                    'type' => $type,
+                    'titre' => 'Images',
+                )
+            );
+        }else{
+            return $this->render('MuzikSpiritBackBundle:Image:iframe_list.html.twig',
+                array(
+                    'pagination' => $paginator,
+                    'page' => $page,
+                    'type' => $type,
+                    'titre' => 'Images',
+                )
+            );
+        }
     }
     public function addImageAction( $iframe = NULL )
     {
@@ -201,7 +209,7 @@ class ImageController extends Controller
             'orig_h'    =>  $orig_h,
         ));
     }
-    public function editImageAction(Images $image, $iframe = NULL )
+    public function editAction(Images $image, $iframe = NULL )
     {
         $em = $this->getDoctrine()->getManager();
         /*
@@ -272,7 +280,7 @@ class ImageController extends Controller
                 ));
         }
     }
-    public function delImageAction(Images $image)
+    public function removeAction(Images $image)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($image);

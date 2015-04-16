@@ -22,13 +22,18 @@ class NewsType extends AbstractType
                 'attr' => array(
                     'class' => 'form-control',
                     'placeholder' => 'Titre',
+                    'name' => 'titre_article',
+                    'id' => 'titre_article'
                 )
             ))
             ->add('artiste', null, array(
                 'label' => 'Artiste',
+                'required' => false,
                 'attr' => array(
                     'class' => 'form-control',
                     'placeholder' => "Artiste",
+                    'name' => 'titre_article',
+                    'id' => 'titre_article'
                 )
             ))
             ->add('thumbNews', null, array(

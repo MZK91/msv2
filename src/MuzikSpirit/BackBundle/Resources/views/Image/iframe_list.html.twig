@@ -1,16 +1,7 @@
-{% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
-{% block menu_navigation %}{{ render(controller('MuzikSpiritBackBundle:Image:topNav', { 'action': path('muzikspirit_back_image_searchforward') , 'find' : find | default('') })) }}{% endblock %}
+{% extends'MuzikSpiritBackBundle:Partial:iframe.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block contentwrap %}
-    <!-- Javascript -->
-    <script>
-        init.push(function () {
-            $('#jq-datatables-example').dataTable();
-            $('#jq-datatables-example_wrapper .table-caption').text('Liste des {{ titre | default('') }} : ({{ pagination.getTotalItemCount }})');
-            $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
-        });
-    </script>
-    <!-- / Javascript -->
+{% block body %}
+    {{ render(controller('MuzikSpiritBackBundle:Image:topNav', { 'action': path('muzikspirit_back_image_searchforward') , 'find' : find | default('') })) }}
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
@@ -27,6 +18,7 @@
                         <th>id</th>
                         <th>edit</th>
                         <th>supp</th>
+                        <th>copy</th>
                         <th>img</th>
                         <th>titre</th>
                         <th>type</th>
@@ -37,7 +29,11 @@
                         {% for image in pagination.items %}
                             <tr>
                                 <td>{{ image.id }}</td>
-                                <td align="center"><a href="{{ path('muzikspirit_back_image_edit',{'id':image.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td>
+                                    <a href="{{ path('muzikspirit_back_image_edit',{'id':image.id}) }}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
                                 <td align="center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>
@@ -47,6 +43,7 @@
                                         </ul>
                                     </div>
                                 </td>
+                                <td align="center">cp</td>
                                 <td><a href="http://{{ global_website_url }}/{{ image.image }}" target="_blank"><img src="http://{{ global_website_url }}/{{ image.image }}" height="30" width="50" /></a></td>
                                 <td>{{ image.titre }}</td>
                                 <td>{{ image.typeImage.id }}</td>
