@@ -46,7 +46,7 @@ class NewsType extends AbstractType
             ))
             ->add('texte', 'textarea' , array(
                 'label' => 'Texte',
-                'required'  => true,
+                'required'  => false,
                 'attr' => array(
                     'class' => 'form-control',
                 )

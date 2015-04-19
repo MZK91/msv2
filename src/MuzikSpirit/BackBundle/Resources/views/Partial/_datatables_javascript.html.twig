@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#{{ table_id | default('tableau') }}').dataTable( {
+            aaSorting : [[0, 'desc']],
+            aLengthMenu: [{{ global_max_articles / 2 |round }}, {{ global_max_articles }}]
+        } );
+    } );
+
+    init.push(function () {
+        $('#{{ table_id | default('tableau') }}').dataTable();
+        $('#{{ table_id | default('tableau') }}_wrapper .table-caption').text('Liste des {{ titre }} : ({{ pagination.getTotalItemCount }})');
+        $('#{{ table_id | default('tableau') }}_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
+    });
+</script>

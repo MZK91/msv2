@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+        /*$("#myModal").draggable({
+            handle: ".modal-header",
+            backdrop: "static"
+        });*/
+        $('.images_button').click(function(){
+            $('#myModal').modal('show');
+            var url = $(this).attr('link');
+            $('#myModal iframe').attr("src",url);
+        })
+    });
+</script>

@@ -2,30 +2,22 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+
+use MuzikSpirit\BackBundle\Utilities\Ara;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MuzikSpirit\BackBundle\Form\ImagesType;
-use MuzikSpirit\BackBundle\Entity\Images;
+use MuzikSpirit\BackBundle\Form\ImageType;
+use MuzikSpirit\BackBundle\Entity\Image;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use MuzikSpirit\BackBundle\Utilities\Slug;
+use MuzikSpirit\BackBundle\Utilities\ImagesHandler;
 
 class ImageController extends Controller
 {
 
-    /**
-     * Affichage de la Top Barre de navigation avec action pour le formulaire de recherche
-     * @param $action
-     * @param null $find
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function topNavAction($action,$find = NULL){
-        return $this->render('MuzikSpiritBackBundle:Partial:top_navigation.html.twig',
-            array(
-                'action'=> $action,
-                'find'  => $find
-            )
-        );
-    }
-
     public function listAction($page, $type = 0, $iframe = 0)
     {
+
         $limit = $this->container->getParameter('max_articles');
 
         $em = $this->getDoctrine()->getManager();
@@ -34,9 +26,9 @@ class ImageController extends Controller
             $dql = "SELECT img FROM MuzikSpiritBackBundle:Image img ORDER BY img.id DESC";
             $query = $em->createQuery($dql);
         }else{
-            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image img WHERE img.type = :type ORDER BY img.id DESC";
-            $em->setParameter('type', $type);
+            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image img WHERE img.typeImage = :type ORDER BY img.id DESC";
             $query = $em->createQuery($dql);
+            $query->setParameter('type', $type);
         }
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -60,108 +52,160 @@ class ImageController extends Controller
                     'pagination' => $paginator,
                     'page' => $page,
                     'type' => $type,
+                    'iframe' => 1,
                     'titre' => 'Images',
                 )
             );
         }
     }
-    public function addImageAction( $iframe = NULL )
+
+    /**
+     * Forward des requetes de recherche pour les lister dans la vue de liste
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function searchForwardAction(Request $request){
+
+
+        if($request->isMethod('POST') === TRUE){
+
+            $find = $request->request->get('find', "booba");
+            $iframe = $request->request->get('iframe');
+            $type = $request->request->get('type');
+        }
+
+        return new RedirectResponse($this->generateUrl('muzikspirit_back_image_search',
+            array(
+                'find' => $find,
+                'iframe'=> $iframe,
+                'type' => $type,
+                'page' => 1,
+            )
+        )
+        );
+
+    }
+
+    public function searchAction($find, $page, $type = 0, $iframe = 0)
     {
-        $Image = new Images();
-        $form   = $this->createForm(new ImagesType(),$Image);
-        $request = $this->getRequest(); // On récupére les donn type de methode POST ou GET
-        if($request->isMethod('POST')){
-            $em = $this->getDoctrine()->getManager(); // On récupère l'entity manager
-            $form->bind($request); // On attribut toutes les données à l'objet form
+        $limit = $this->container->getParameter('max_articles');
 
-            if($form->isValid()){
+        $em = $this->getDoctrine()->getManager();
 
-                $titre = $form->get('titre')->getData(); // On récupère le titre envoyer par le formulaire
-                $slug = $this->container->get('slugify'); // Récupération du service Slugify
+        if ($type == 0){
+            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image AS img WHERE img.titre LIKE :find ORDER BY img.id DESC";
+            $query = $em->createQuery($dql);
+            $query->setParameter('find', '%'.$find.'%');
+        }else{
+            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image AS img WHERE img.titre LIKE :find AND img.typeImage = :type ORDER BY img.id DESC";
+            $query = $em->createQuery($dql);
+            $query->setParameter('find', '%'.$find.'%');
+            $query->setParameter('type', '%'.$type.'%');
+        }
 
 
-                $Image->fileSlug = $slug->slugify($titre); // On génére un nom de fichier propre en fonction du titre
-                $em->persist($Image);
-                $em->flush();
-                // On récupére les informations sur le type de l'image pour déterminer les actions à suivre.
-                $TypeImage = $em->getRepository('IngetisImagesBundle:TypeImage')->find($form->get('idTypeImage')->getData());
-                $crop = $TypeImage->getCrop();
-                $resize = $TypeImage->getResize();
-                $path = $TypeImage->getPath();
+        $paginator  = $this->get('knp_paginator');
+        $paginator = $paginator->paginate(
+            $query,
+            $page,
+            $limit
+        );
 
-                // On test voir si l'image doit être redimensionné
-                if($resize == 1){
-                    $ih = $this->container->get('ingetis_images.ImagesHandler');
-                    if($ih->create_scaled_image($path,$Image->fileName)){
-                        $Image->setPath($path.$Image->fileName);
-                        $em->persist($Image);
-                        $em->flush();
-                        if($iframe == NULL){
-                            return $this->redirect($this->generateUrl('ingetis_admin_images'));
-                        }else{
-                            return $this->redirect($this->generateUrl('ingetis_iframe_admin_images'));
-                        }
+
+        if($iframe === 0) {
+            return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
+                array(
+                    'titre' => "Résultat de la recherche " . $find . " dans les News.",
+                    'page' => $page,
+                    'type' => $type,
+                    'iframe' => $iframe,
+                    'pagination' => $paginator,
+                    'find' => $find
+
+                )
+            );
+        }else{
+            return $this->render('MuzikSpiritBackBundle:Image:iframe_list.html.twig',
+                array(
+                    'titre' => "Résultat de la recherche " . $find . " dans les News.",
+                    'page' => $page,
+                    'type' => $type,
+                    'iframe' => $iframe,
+                    'pagination' => $paginator,
+                    'find' => $find
+
+                )
+            );
+        }
+    }
+
+
+    public function addAction(Request $request,$iframe = 0)
+    {
+        $image = new Image();
+        $form   = $this->createForm(new ImageType(),$image);
+        $em = $this->getDoctrine()->getManager();
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $TypeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($image->getTypeImage());
+            $crop = $TypeImage->getCrop();
+            $resize = $TypeImage->getResize();
+            $path = $TypeImage->getPath();
+            $width = $TypeImage->getWidth();
+            $height = $TypeImage->getHeight();
+
+            $image->setFileSlug(Slug::slug($image->getTitre('titre'))); // On génére un nom de fichier propre en fonction du titre
+            $em->persist($image);
+            $em->flush();
+            $image->setImage($image->getFileName());
+
+            if($resize == 1){
+                // On crée un objet IH avec les nouvelles propriétés
+                $imageHandler = new ImagesHandler(array('max_width' => $width, 'max_height' => $height));
+                if($imageHandler->create_scaled_image($path,$image->getFileName())){
+                    $em->persist($image);
+                    $em->flush();
+                    if($iframe == 0){
+                        return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
+                    }else{
+                        return $this->redirect($this->generateUrl('muzikspirit_back_image_list', array( 'iframe'=> 1)));
                     }
                 }
-                if($crop == 1){
-                    return  $this->redirect($this->generateUrl('ingetis_crop_images',
-                        array('id' => $Image->getId(), 'filename' => $Image->fileName))
-                    );
-                }
-                // DEFAULT ---->
+            }
+            if($crop == 1){
+                $em->persist($image);
+                $em->flush();
+                return  $this->redirect($this->generateUrl('muzikspirit_back_image_crop',
+                        array(
+                            'id' => $image->getId(),
+                            'iframe' => $iframe,
+                        )
+                    )
+                );
+            }else{
+                // On bouge l'image uploadée vers son dossier de destination
+                rename($image->getRootDir().$image->getFileName(), $image->getRootDir().$path.$image->getFileName());
+                $em->persist($image);
+                $em->flush();
             }
         }
 
-
-        if($iframe == NULL){
-            return $this->render('IngetisImagesBundle:Default:add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }else{
-            return $this->render('IngetisImagesBundle:Default:iframe_add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }
+        return $this->render('MuzikSpiritBackBundle:Image:add_edit.html.twig', array(
+            'form'  => $form->createView(),
+            'id'    => 0,
+            'titre' => "Ajout d'image(s)"
+        ));
     }
 
-    public function multiAddImageAction( $iframe = NULL )
-    {
-        $Image = new Images();
-        $form   = $this->createForm(new ImagesType(),$Image);
-        $request = $this->getRequest(); // On récupére les donn type de methode POST ou GET
-        if($request->isMethod('POST')){
-            $em = $this->getDoctrine()->getManager(); // On récupère l'entity manager
-            $form->bind($request); // On attribut toutes les données à l'objet form
-
-            if($form->isValid()){
 
 
-            }
-        }
+    public function cropAction(Image $image, Request $request, $iframe = 0){
 
+        $em = $this->getDoctrine()->getManager();
+        $typeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($image->getTypeImage());
 
-        if($iframe == NULL){
-            return $this->render('IngetisImagesBundle:Default:add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }else{
-            return $this->render('IngetisImagesBundle:Default:iframe_add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }
-    }
-
-    public function cropImageAction($id,$filename){
-        $em             =   $this->getDoctrine()->getManager();
-        $image          =   $em->getRepository('IngetisImagesBundle:Images')->find($id);
-        $idTypeImage    =   $image->getIdTypeImage();
-        $TypeImage    =   $em->getRepository('IngetisImagesBundle:TypeImage')->find($idTypeImage);
-
-        $imagePath = __DIR__.'/../../../../web/images/tmp/'.$filename;
+        $imagePath = $image->getRootDir().$image->getUploadDir().'/'.$image->getImage();
 
         list($width, $height) = getimagesize($imagePath);
         $orig_w = $width;
@@ -172,39 +216,39 @@ class ImageController extends Controller
             ->add('y',          'hidden')
             ->add('w',          'hidden')
             ->add('h',          'hidden')
-            ->add('width',      'hidden', array( 'data' => $TypeImage->getWidth()    ) )
-            ->add('height',     'hidden', array( 'data' => $TypeImage->getHeight()   ) )
-            ->add('id',         'hidden', array( 'data' => $id                       ) )
-            ->add('path',       'hidden', array( 'data' => $TypeImage->getPath()     ) )
-            ->add('filename',   'hidden', array( 'data' => $filename                 ) )
+            ->add('width',      'hidden', array( 'data' => $typeImage->getWidth()    ) )
+            ->add('height',     'hidden', array( 'data' => $typeImage->getHeight()   ) )
+            ->add('id',         'hidden', array( 'data' => $image->getId()           ) )
+            ->add('path',       'hidden', array( 'data' => $typeImage->getPath()     ) )
+            ->add('filename',   'hidden', array( 'data' => $image->getImage()        ) )
             ->add('envoyer',    'submit')
             ->getForm();
-        $request = $this->getRequest(); // On récupére les donn type de methode POST ou GET
-        if($request->isMethod('POST')){
 
-            $form->bind($request);
-            if($form->isValid()){
-                $data = $form->getData();
-                $fileName = $data['filename'];
+        $form->handleRequest($request);
 
-                $ih = $this->container->get('ingetis_images.ImagesHandler');
-                $ih->imageCrop($data['filename'],$data['x'],$data['y'],$data['w'],$data['h'],$data['width'],$data['height']);
-                //$fileName = $ih->imageConverter($data['path'],$data['filename'],'jpeg');
-                $ih->moveToDir('images/tmp/'.$fileName,$data['path'].$fileName);
-                if($image->getPath() == NULL){
-                    $image->setPath($data['path'].$fileName);
-                    $em->persist($image);
-                    $em->flush();
-                }
-                return $this->redirect($this->generateUrl('ingetis_admin_images'));
+        if($form->isValid()){
+            //$request->request->get('iframe');
+            $data = $form->getData();
 
+            $imageHandler = new ImagesHandler();
+
+            $imageHandler->imageCrop($image->getImage(),$data['x'],$data['y'],$data['w'],$data['h'],$data['width'],$data['height']);
+            //$fileName = $ih->imageConverter($data['path'],$data['filename'],'jpeg');
+            $imageHandler->moveToDir('images/tmp/'.$image->getImage(),$typeImage->getPath().$image->getImage());
+            if($image->getPath() == NULL){
+                $image->setPath($data['path'].$fileName);
+                $em->persist($image);
+                $em->flush();
             }
+            return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
+
         }
-        return $this->render('IngetisImagesBundle:Default:crop_image.html.twig', array(
+
+        return $this->render('MuzikSpiritBackBundle:Image:crop.html.twig', array(
             'form'      =>  $form->createView(),
-            'image'     =>  $filename,
-            'width'     =>  $TypeImage->getWidth(),
-            'height'    =>  $TypeImage->getHeight(),
+            'image'     =>  $image->getImage(),
+            'width'     =>  $typeImage->getWidth(),
+            'height'    =>  $typeImage->getHeight(),
             'orig_w'    =>  $orig_w,
             'orig_h'    =>  $orig_h,
         ));
@@ -242,6 +286,8 @@ class ImageController extends Controller
                     if($imageInfo['extension'] != $extension){
                         $ih->imageConverter('images/tmp/',$FileName,$imageInfo['extension']);
                     }
+                    //Poser la question Lundi à Julien
+
                     // On récupére les informations sur le type de l'image pour déterminer les actions à suivre.
                     $TypeImage = $em->getRepository('IngetisImagesBundle:TypeImage')->find($image->getIdTypeImage());
                     $crop = $TypeImage->getCrop();
@@ -280,11 +326,35 @@ class ImageController extends Controller
                 ));
         }
     }
-    public function removeAction(Images $image)
+
+    public function multiImageAction( )
+    {
+
+        if($iframe == NULL){
+            return $this->render('IngetisImagesBundle:Default:add_edit_image.html.twig', array(
+                'form'  => $form->createView(),
+                'id'    => 0
+            ));
+        }else{
+            return $this->render('IngetisImagesBundle:Default:iframe_add_edit_image.html.twig', array(
+                'form'  => $form->createView(),
+                'id'    => 0
+            ));
+        }
+    }
+    public function removeAction(Image $Image)
     {
         $em = $this->getDoctrine()->getManager();
-        $em->remove($image);
+        $TypeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($Image->getTypeImage());
+        $path = $TypeImage->getPath();
+        $em->remove($Image);
         $em->flush();
-        return $this->redirect($this->generateUrl('ingetis_admin_images')); // Redirection vers une nouvelle page
+
+        $imageToRemove = $Image->getRootDir().$path.$Image->getImage();
+
+        if ($imageToRemove && file_exists ($imageToRemove) ) {
+            unlink($imageToRemove);
+        }
+        return $this->redirect($this->generateUrl('muzikspirit_back_image_list')); // Redirection vers une nouvelle page
     }
 }

@@ -50,11 +50,15 @@
             <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_news_list' %}active{% endif %}">
                 <a href="{{ path('muzikspirit_back_news_list') }}"><i class="menu-icon fa fa-star"></i><span class="mm-text">Lifestyle</span></a>
             </li>
-
+            <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_image_list' %}active{% endif %}">
+                <a href="{{ path('muzikspirit_back_image_list') }}"><i class="menu-icon fa fa-picture-o"></i><span class="mm-text">Images</span></a>
+            </li>
 
             <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_news_list' %}active{% endif %}">
                 <a href="http://localhost/mzk_v2/themes/back/index.html" target="_blank"><i class="menu-icon fa fa-bars"></i><span class="mm-text">Theme</span></a>
             </li>
+
+
 
 
             <li class="mm-dropdown">

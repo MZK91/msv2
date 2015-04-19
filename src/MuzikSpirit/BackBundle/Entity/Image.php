@@ -7,11 +7,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+
 /**
  * Image
  *
  * @ORM\Table(name="image", indexes={@ORM\Index(name="type_image_id", columns={"type_image_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class Image
 {
@@ -55,12 +57,92 @@ class Image
      */
     private $typeImage;
 
+    /**
+     * @Assert\File(
+     *     maxSizeMessage = "L'image ne doit pas dépasser 5Mb.",
+     *     maxSize = "5000k",
+     *     mimeTypes = {"image/jpg", "image/jpeg", "image/gif", "image/png"},
+     *     mimeTypesMessage = "Les images doivent être au format JPG, GIF ou PNG."
+     * )
+     */
+    public $file;
 
+    private $fileName;
+
+    private $fileExtension;
+
+    private $fileSlug;
+
+    // propriété utilisé temporairement pour la suppression
+    private $filenameForRemove;
+
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
+
+    public function getRootDir(){
+        return __DIR__.'/../../../../web/';
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->image ? null : __DIR__.'/../../../../web/'.$this->image;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->image ? null : $this->getUploadDir().'/'.$this->image;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // le chemin absolu du répertoire où les documents uploadés doivent être sauvegardés
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    public function getUploadDir()
+    {
+        return 'images/tmp';
+    }
+
+    /**
+     * @ORM\PostPersist()
+     */
+    public function upload()
+    {
+        if(isset($this->file)){
+            if (null === $this->file) {
+                return;
+            }
+            $this->fileName = $this->fileSlug.'-'.$this->id.'.'.$this->file->guessExtension();
+            $this->file->move($this->getUploadRootDir(), $this->fileSlug.'-'.$this->id.'.'.$this->file->guessExtension());
+
+        }
+    }
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function storeFilenameForRemove()
+    {
+        $this->filenameForRemove = $this->getAbsolutePath();
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+
+        if ($this->filenameForRemove && file_exists ($this->filenameForRemove) ) {
+            unlink($this->filenameForRemove);
+        }
+    }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -83,7 +165,7 @@ class Image
     /**
      * Get titre
      *
-     * @return string 
+     * @return string
      */
     public function getTitre()
     {
@@ -106,7 +188,7 @@ class Image
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -129,7 +211,7 @@ class Image
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -152,10 +234,77 @@ class Image
     /**
      * Get typeImage
      *
-     * @return \MuzikSpirit\BackBundle\Entity\TypeImage 
+     * @return \MuzikSpirit\BackBundle\Entity\TypeImage
      */
     public function getTypeImage()
     {
         return $this->typeImage;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFileSlug()
+    {
+        return $this->fileSlug;
+    }
+
+    /**
+     * @param mixed $fileSlug
+     */
+    public function setFileSlug($fileSlug)
+    {
+        $this->fileSlug = $fileSlug;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * @param mixed $fileName
+     */
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileExtension()
+    {
+        return $this->fileExtension;
+    }
+
+    /**
+     * @param mixed $fileExtension
+     */
+    public function setFileExtension($fileExtension)
+    {
+        $this->fileExtension = $fileExtension;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getFilenameForRemove()
+    {
+        return $this->filenameForRemove;
+    }
+
+    /**
+     * @param mixed $filenameForRemove
+     */
+    public function setFilenameForRemove($filenameForRemove)
+    {
+        $this->filenameForRemove = $filenameForRemove;
+    }
+
 }

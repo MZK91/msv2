@@ -11,20 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class NewsController extends Controller
 {
-    /**
-     * Affichage de la Top Barre de navigation avec action pour le formulaire de recherche
-     * @param $action
-     * @param null $find
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function topNavAction($action,$find = NULL){
-        return $this->render('MuzikSpiritBackBundle:Partial:top_navigation.html.twig',
-            array(
-                'action'=> $action,
-                'find'  => $find
-            )
-        );
-    }
 
     /**
      * Affichage de la liste des news
@@ -66,17 +52,15 @@ class NewsController extends Controller
     public function searchForwardAction(Request $request){
 
         if($request->isMethod('POST') === TRUE)
-            $find = $request->request->get('find', "booba");
-
+            $find = $request->request->get('find');
 
         return new RedirectResponse($this->generateUrl('muzikspirit_back_news_search',
-                array(
-                    'find' => $find,
-                    'page' => 1,
-                )
+            array(
+                'find' => $find,
+                'page' => 1,
             )
+        )
         );
-
     }
 
     /**
@@ -131,10 +115,20 @@ class NewsController extends Controller
 
 
         // Création du formulaire
-        $form = $this->createForm(new NewsType(), $news);
+        $form = $this->createForm(new NewsType(), $news,
+            array(
+                'attr' => array(
+                    'method' => 'post',
+                    'action' => $this->generateUrl('muzikspirit_back_news_add')
+                    // Action du formulaire pointe vers cette même action de controlleur
+                )
+            )
+        );
+
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+
 
             $data = $form->getData();
 
@@ -147,6 +141,14 @@ class NewsController extends Controller
 
             $em->persist($data);
             $em->flush();
+
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                array(
+                    'facebook' => 'facebook',
+                    'twitter'  => 'twitter',
+                )
+            );
 
             return $this->redirect($this->generateUrl('muzikspirit_back_news_add'));
         }

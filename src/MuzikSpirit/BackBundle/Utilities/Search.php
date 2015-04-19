@@ -4,12 +4,9 @@ namespace MuzikSpirit\BackBundle\Utilities;
 
 class Search
 {
-    protected $find = NULL;
-    protected $strict = 0;
-
-    public static function find_to_regexp($find)
+    public static function find_to_regexp($find, $strict = 0)
     {
-        if ($this->strict == 0) {
+        if (strict == 0) {
             $find = strip_tags($find);
             $find = trim($find);
             $find = strtolower($find);
@@ -48,38 +45,4 @@ class Search
         }
         return $find;
     }
-
-    /**
-     * @return null
-     */
-    public function getFind()
-    {
-        return $this->find;
-    }
-
-    /**
-     * @param null $find
-     */
-    public function setFind($find)
-    {
-        $this->find = $find;
-    }
-
-    /**
-     * @return int
-     */
-    public function getStrict()
-    {
-        return $this->strict;
-    }
-
-    /**
-     * @param int $strict
-     */
-    public function setStrict($strict)
-    {
-        $this->strict = $strict;
-    }
-
-
 }

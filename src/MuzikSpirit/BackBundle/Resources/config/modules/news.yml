@@ -1,3 +1,14 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
 muzikspirit_back_news_list:
     path:     /list/{page}
     defaults: { _controller: MuzikSpiritBackBundle:News:list, page : 1 }

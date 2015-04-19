@@ -1,14 +1,25 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
 muzikspirit_back_image_list:
-    path:     /list/{page}/{iframe}
-    defaults: { _controller: MuzikSpiritBackBundle:Image:list, page : 1 , iframe : 0 }
+    path:     /list/{page}/{iframe}/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:list, page : 1 , iframe : 0 , type : 0 }
 
 muzikspirit_back_image_searchforward:
     path:     /searchforward/
     defaults: { _controller: MuzikSpiritBackBundle:Image:searchforward }
 
 muzikspirit_back_image_search:
-    path:     /search/{find}/{page}
-    defaults: { _controller: MuzikSpiritBackBundle:Image:search, page : 1 }
+    path:     /search/{find}/{iframe}/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:search, page : 1 , iframe : 0 , type : 0 }
     requirements:
         page: \d+
 
@@ -26,3 +37,9 @@ muzikspirit_back_image_add:
 muzikspirit_back_image_edit:
     path:     /edit/{id}
     defaults: { _controller: MuzikSpiritBackBundle:Image:edit }
+
+muzikspirit_back_image_crop:
+    pattern:  /crop/{id}/{iframe}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:crop, iframe : 0 }
+    requirements:
+        id: \d+

@@ -1,0 +1,16 @@
+<script type="text/javascript" src="{{ asset('assets/javascripts/tinymce/tinymce.min.js') }}"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea#texte",
+        theme: "modern",
+        skin: 'light',
+        language : 'fr_FR',
+        browser_spellcheck : true,
+        paste_as_text: true,
+        height : 300,
+        convert_urls: false,
+        plugins: ["textcolor fullscreen wordcount spellchecker image link searchreplace code paste"],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "fullscreen forecolor backcolor"
+    });
+</script>

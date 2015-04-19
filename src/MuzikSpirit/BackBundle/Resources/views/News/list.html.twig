@@ -1,16 +1,7 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ render(controller('MuzikSpiritBackBundle:News:topNav', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') })) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
-    <!-- Javascript -->
-    <script>
-        init.push(function () {
-            $('#jq-datatables-example').dataTable();
-            $('#jq-datatables-example_wrapper .table-caption').text('Liste des {{ titre }} : ({{ pagination.getTotalItemCount }})');
-            $('#jq-datatables-example_wrapper .dataTables_filter input').attr('placeholder', 'Rechercher...');
-        });
-    </script>
-    <!-- / Javascript -->
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
@@ -87,4 +78,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ include('MuzikSpiritBackBundle:Partial:_datatables_javascript.html.twig',{'table_id':'jq-datatables-example'}) }}
 {% endblock %}

@@ -1,14 +1,43 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ render(controller('MuzikSpiritBackBundle:News:topNav', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') })) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
+
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
         </div>
 
         <div class="panel-body">
-            {{ form(form) }}
+            {{ include('MuzikSpiritBackBundle:Partial:_flash.html.twig') }}
+            {{ form_start(form) }}
+            {{ form_row(form.titre, {'id': 'titre'}) }}
+            {{ form_row(form.artiste, {'id': 'artiste'}) }}
+            {{ form_row(form.thumbNews, {'id': 'thumbNews'}) }}
+            {{ form_row(form.texte, {'id': 'texte'}) }}
+            <div class="form-group">
+                <div class="col-sm-2 control-label required" for="thumbNews"></div>
+                <div class="col-sm-10">
+                    <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
+                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1}) }}">Images Articles</a>
+                </div>
+            </div>
+
+
+
+            {{ form_row(form.adult, {'id': 'adult'}) }}
+            {{ form_row(form.section, {'id': 'section'}) }}
+            {{ form_row(form.image, {'id': 'image'}) }}
+            {{ form_widget(form.envoyer,{'attr' : {'class' : 'pull-right btn btn-lg btn btn-primary'}}) }}
+            {{ form_widget(form._token) }}
+            {{ form_end(form,{'render_rest' : false}) }}
         </div>
     </div>
+    {% include('MuzikSpiritBackBundle:Partial:_modal.html.twig') %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ include('MuzikSpiritBackBundle:Partial:_admin_javascript.html.twig') }}
+    {{ include('MuzikSpiritBackBundle:Partial:_tinymce_javascript.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}
+    {{ include('MuzikSpiritBackBundle:Partial:_modal_javascript.html.twig') }}
 {% endblock %}

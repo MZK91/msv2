@@ -34,6 +34,7 @@ twig:
     globals:
         global_website: MuzikSpirit
         global_website_url: www.muzikspirit.com
+        global_max_articles: %max_articles%
 
 # Assetic Configuration
 assetic:
@@ -94,4 +95,4 @@ knp_paginator:
         pagination: MuzikSpiritBackBundle:Pagination:sliding.html.twig     # sliding pagination controls template
         sortable: MuzikSpiritBackBundle:Pagination:sortable_link.html.twig # sort link template
 parameters:
-    max_articles: 10
+    max_articles: 50

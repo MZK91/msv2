@@ -1,14 +1,18 @@
 {% extends'MuzikSpiritBackBundle:Partial:iframe.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
 {% block body %}
-    {{ render(controller('MuzikSpiritBackBundle:Image:topNav', { 'action': path('muzikspirit_back_image_searchforward') , 'find' : find | default('') })) }}
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
             <div class="panel-heading-controls">
-                <button class="btn btn-labeled btn-primary"><a href="{{ path('muzikspirit_back_image_add') }}"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</a></button>
+                <form class="navbar-form pull-left" method="POST" action="{{ path('muzikspirit_back_image_searchforward') }}">
+                    <input type="text" name="find" class="form-control" placeholder="Search" value="{{ find | default('') }}">
+                    <input type="hidden" name="iframe" value="{{ iframe | default('0') }}">
+                    <input type="hidden" name="type" value="{{ type | default('0') }}">
+                </form>
             </div>
         </div>
+
 
         <div class="panel-body">
             <div class="table-primary">
