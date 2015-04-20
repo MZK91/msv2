@@ -1,0 +1,39 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
+muzikspirit_back_lyrics_list:
+    path:     /list/{page}/
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:list, page : 1 }
+
+muzikspirit_back_lyrics_searchforward:
+    path:     /searchforward/
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:searchforward }
+
+muzikspirit_back_lyrics_search:
+    path:     /search/{find}
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:search, page : 1 }
+    requirements:
+        page: \d+
+
+muzikspirit_back_lyrics_remove:
+    path:     /remove/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:remove }
+    requirements:
+        id: \d+
+        _method: GET
+
+muzikspirit_back_lyrics_add:
+    path:     /add
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:add }
+
+muzikspirit_back_lyrics_edit:
+    path:     /edit/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Lyrics:edit }

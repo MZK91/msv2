@@ -1,0 +1,13 @@
+<!-- share -->
+{% macro share(url,titre,image,artiste,typeArticle) %}
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Share&nbsp;<i class="fa fa-caret-down"></i></button>
+        <ul class="dropdown-menu">
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url }}&t={{ titre }}" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
+            <li><a href="https://twitter.com/intent/tweet?original_referer={{ url  }}&text={{ titre }} {{ typeArticle }} &url={{ url }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
+            <li><a href="https://twitter.com/search/users?q={{ artiste  }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter Art.</a></li>
+            <li><a href="https://plus.google.com/share?url={{ url }}" target="_blank"><i class="fa fa-google-plus"></i>&nbsp;Google+</a></li>
+            <li><a href="http://www.pinterest.com/pin/create/button/?url={{ url }}&media={{ image }}&description={{ titre }}" data-pin-do="buttonPin" data-pin-config="above" target="_blank"><i class="fa fa-pinterest-square"></i>&nbsp;Pinterest</a></li>
+        </ul>
+    </div>
+{% endmacro %}

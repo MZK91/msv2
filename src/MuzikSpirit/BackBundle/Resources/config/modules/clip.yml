@@ -1,0 +1,39 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
+muzikspirit_back_clip_list:
+    path:     /list/{page}/
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:list, page : 1 }
+
+muzikspirit_back_clip_searchforward:
+    path:     /searchforward/
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:searchforward }
+
+muzikspirit_back_clip_search:
+    path:     /search/{find}
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:search, page : 1 }
+    requirements:
+        page: \d+
+
+muzikspirit_back_clip_remove:
+    path:     /remove/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:remove }
+    requirements:
+        id: \d+
+        _method: GET
+
+muzikspirit_back_clip_add:
+    path:     /add
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:add }
+
+muzikspirit_back_clip_edit:
+    path:     /edit/{id}
+    defaults: { _controller: MuzikSpiritBackBundle:Clip:edit }

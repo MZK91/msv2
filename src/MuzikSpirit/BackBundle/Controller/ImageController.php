@@ -148,7 +148,7 @@ class ImageController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $TypeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($image->getTypeImage());
+            $TypeImage = $image->getTypeImage();
             $crop = $TypeImage->getCrop();
             $resize = $TypeImage->getResize();
             $path = $TypeImage->getPath();
@@ -203,7 +203,7 @@ class ImageController extends Controller
     public function cropAction(Image $image, Request $request, $iframe = 0){
 
         $em = $this->getDoctrine()->getManager();
-        $typeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($image->getTypeImage());
+        $typeImage = $image->getTypeImage();
 
         $imagePath = $image->getRootDir().$image->getUploadDir().'/'.$image->getImage();
 
@@ -233,13 +233,8 @@ class ImageController extends Controller
             $imageHandler = new ImagesHandler();
 
             $imageHandler->imageCrop($image->getImage(),$data['x'],$data['y'],$data['w'],$data['h'],$data['width'],$data['height']);
-            //$fileName = $ih->imageConverter($data['path'],$data['filename'],'jpeg');
             $imageHandler->moveToDir('images/tmp/'.$image->getImage(),$typeImage->getPath().$image->getImage());
-            if($image->getPath() == NULL){
-                $image->setPath($data['path'].$fileName);
-                $em->persist($image);
-                $em->flush();
-            }
+
             return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
 
         }
@@ -345,7 +340,7 @@ class ImageController extends Controller
     public function removeAction(Image $Image)
     {
         $em = $this->getDoctrine()->getManager();
-        $TypeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->find($Image->getTypeImage());
+        $TypeImage = $Image->getTypeImage();
         $path = $TypeImage->getPath();
         $em->remove($Image);
         $em->flush();

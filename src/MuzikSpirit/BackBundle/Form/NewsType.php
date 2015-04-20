@@ -79,7 +79,7 @@ class NewsType extends AbstractType
             ))
             ->add('envoyer', 'submit', array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-sm'
+                    'class' => 'btn btn-lg btn btn-danger'
                 )
             ))
         ;

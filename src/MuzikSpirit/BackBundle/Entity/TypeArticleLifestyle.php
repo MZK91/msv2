@@ -27,7 +27,7 @@ class TypeArticleLifestyle
     /**
      * @var integer
      *
-     * @ORM\Column(name="titre", type="integer", nullable=false)
+     * @ORM\Column(name="titre",type="string", length=125, nullable=false)
      */
     private $titre;
 

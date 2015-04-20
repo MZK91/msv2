@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Clip
  *
  * @ORM\Table(name="clip", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="clip_ibfk_4", columns={"artiste_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\ClipRepository")
  */
 class Clip
 {

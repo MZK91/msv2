@@ -83,9 +83,9 @@ class Album
     /**
      * @var string
      *
-     * @ORM\Column(name="cover", type="string", length=255, nullable=true)
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
-    private $cover;
+    private $image;
 
     /**
      * @var boolean
@@ -406,9 +406,9 @@ class Album
      * @param string $cover
      * @return Album
      */
-    public function setCover($cover)
+    public function setImage($image)
     {
-        $this->cover = $cover;
+        $this->image = $image;
 
         return $this;
     }
@@ -418,9 +418,9 @@ class Album
      *
      * @return string 
      */
-    public function getCover()
+    public function getImage()
     {
-        return $this->cover;
+        return $this->image;
     }
 
     /**

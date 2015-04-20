@@ -20,9 +20,9 @@ $tab = array(
 	'news',
 	'sons',
 	'videos',
-	'images',
-	'carousel',
-	'article'
+	//'images',
+	//'carousel',
+	//'article'
 	);
 
 $hostname = '127.0.0.1';
@@ -43,7 +43,7 @@ $new->query("DELETE FROM video") or die("Error " . mysqli_error());
 $new->query("DELETE FROM lifestyle") or die("Error " . mysqli_error());
 
 $new->query("DELETE FROM section") or die("Error " . mysqli_error());
-
+/*
 $result = $old->query('select * from type_section ORDER BY id_section ASC');
 while($donnees = mysqli_fetch_array($result)) {
         $req = "
@@ -104,7 +104,7 @@ while($donnees = mysqli_fetch_array($result)) {
     }
 }
 
-
+*/
 
 
 if(in_array('albums', $tab)){
@@ -138,7 +138,7 @@ if(in_array('albums', $tab)){
 			tracklist = \''.mysqli_real_escape_string($new,stripslashes($donnees['tracklist_album'])).'\',
 			vues = \''.$donnees['vues'].'\',
 			vues_dif = \''.$donnees['vues_dif'].'\',
-			cover = \''.$donnees['photo'].'\',
+			image = \''.$donnees['photo'].'\',
 			date = \''.date("Y-m-d H:i:s",$donnees['date']).'\',
 			facebook = \''.$donnees['facebook'].'\',
 			twitter = \''.$donnees['twitter'].'\',
@@ -341,7 +341,7 @@ if(in_array('lyrics', $tab)){
 			INSERT INTO lyrics
 			SET
 			id = \''.$donnees['id'].'\',
-			section_id = 5,
+			section_id = \''.$donnees['id_section'].'\',
 			user_id = '.$id_user.',
 			album_id = \''.$donnees['id_album'].'\',
 			titre = \''.mysqli_real_escape_string($new,stripslashes($donnees['titre'])).'\',

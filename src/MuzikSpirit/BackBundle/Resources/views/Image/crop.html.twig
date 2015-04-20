@@ -1,20 +1,24 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 
 {% block title %}{% endblock %}
-
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('assets/stylesheets/jquery.Jcrop.min.css') }}" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    #preview
+    {
+        width: {{ width }}px;
+        height: {{ height }}px;
+        overflow:hidden;
+    }
+</style>
+{% endblock %}
 {% block menu_navigation %}
     {{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}
 {% endblock %}
 
 {% block contentwrap %}
-    <style type="text/css">
-        #preview
-        {
-            width: {{ width }}px;
-            height: {{ height }}px;
-            overflow:hidden;
-        }
-    </style>
+
     <div class="form-group">
         <div class="row">
             <div class="col-sm-6">
@@ -37,6 +41,7 @@
     {{ form_end(form) }}
     {% endblock %}
     {% block javascripts %}
+        {{ parent() }}
         <script src="{{ asset('assets/javascripts/jquery.Jcrop.min.js') }}" type="text/javascript"></script>
         <script language="Javascript">
             jQuery(function(){

@@ -14,8 +14,4 @@ class NewsRepository extends EntityRepository
         return $query->getResult();
     }
 
-    public function searchNews(){
-
-        Search::find_to_regexp('50 Cent Curren$y');
-    }
 }

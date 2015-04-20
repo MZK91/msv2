@@ -155,7 +155,6 @@ class NewsController extends Controller
 
         return $this->render('MuzikSpiritBackBundle:News:add_edit.html.twig',array(
                 'form'      =>  $form->createView(),
-                'id'        =>  0,
                 'action'    =>  "Add",
                 'titre'     =>  "Ajout de News",
             )
@@ -172,7 +171,18 @@ class NewsController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         // Création du formulaire
-        $form = $this->createForm(new NewsType(), $news);
+        $form = $this->createForm(new NewsType(), $news,
+            array(
+                'attr' => array(
+                    'method' => 'post',
+                    'action' => $this->generateUrl('muzikspirit_back_news_edit',
+                        array(
+                            'id' => $news->getId()
+                        )
+                    )
+                )
+            )
+        );
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -192,7 +202,6 @@ class NewsController extends Controller
 
         return $this->render('MuzikSpiritBackBundle:News:add_edit.html.twig',array(
                 'form'      =>  $form->createView(),
-                'id'        =>  0,
                 'action'    =>  "Edit",
                 'titre'     =>  "Edition de News",
             )

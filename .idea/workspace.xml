@@ -25,112 +25,174 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ImageController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92449665" vertical-offset="2989" max-vertical-offset="5490">
-              <caret line="236" column="110" selection-start-line="236" selection-start-column="110" selection-end-line="236" selection-end-column="110" />
-              <folding>
-                <element signature="e#54#95#0#PHP" expanded="true" />
-                <marker date="1429451684000" expanded="true" signature="710:778" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-                <marker date="1429451684000" expanded="true" signature="861:957" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-                <marker date="1429451684000" expanded="true" signature="2894:2992" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-                <marker date="1429451684000" expanded="true" signature="3132:3256" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParameterBag.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/ParameterBag.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="88.125" vertical-offset="3570" max-vertical-offset="4770">
-              <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="1200" max-vertical-offset="4740">
-              <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="32" />
-              <folding>
-                <element signature="e#49#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="crop.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/crop.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.083334" vertical-offset="127" max-vertical-offset="1320">
-              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImagesHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/ImagesHandler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="20.625" vertical-offset="1980" max-vertical-offset="3465">
-              <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/list.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.333334" vertical-offset="517" max-vertical-offset="1140">
-              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/image.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="750">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/news.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php">
+      <file leaf-file-name="lifestyle.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lifestyle.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="91.541664" vertical-offset="2257" max-vertical-offset="3270">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
+            <state vertical-scroll-proportion="-8.946428" vertical-offset="69" max-vertical-offset="660">
+              <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maj_new_db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maj_new_db.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="9135">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <marker date="1429569774000" expanded="true" signature="1016:1033" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1084:1103" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1154:1170" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1221:1239" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1290:1306" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1357:1372" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1423:1440" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1491:1512" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1564:1583" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="1647:1697" placeholder="select * fro..type_section..." />
+                <marker date="1429569774000" expanded="true" signature="1769:2020" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="2165:2189" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="2250:2297" placeholder="select * fro..type_article..." />
+                <marker date="1429569774000" expanded="true" signature="2369:2528" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="2673:2707" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="2768:2817" placeholder="select * fro..type_cat_swagg..." />
+                <marker date="1429569774000" expanded="true" signature="2885:3142" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="3337:3353" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="3414:3460" placeholder="select * fro..z_members..." />
+                <marker date="1429569774000" expanded="true" signature="3565:4016" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="4279:4315" placeholder="select * fro..albums..." />
+                <marker date="1429569774000" expanded="true" signature="4576:4605" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="4854:5929" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="6079:6123" placeholder="select * fro..sorties_albums..." />
+                <marker date="1429569774000" expanded="true" signature="6225:6580" placeholder="UPDATE album..." />
+                <marker date="1429569774000" expanded="true" signature="6764:6783" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="6845:6883" placeholder="select * fro..artistes..." />
+                <marker date="1429569774000" expanded="true" signature="7144:7173" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="7421:8312" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="8484:8500" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="8562:8597" placeholder="select * fro..clips..." />
+                <marker date="1429569774000" expanded="true" signature="8858:8887" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="9135:10413" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="10589:10610" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="10672:10707" placeholder="select * fro..swagg..." />
+                <marker date="1429569774000" expanded="true" signature="10968:10997" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="11416:12493" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="12666:12684" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="12746:12782" placeholder="select * fro..lyrics..." />
+                <marker date="1429569774000" expanded="true" signature="13043:13072" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="13320:14598" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="14768:14784" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="14846:14880" placeholder="select * fro..news..." />
+                <marker date="1429569774000" expanded="true" signature="15141:15170" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="15418:16488" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="16659:16674" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="16736:16770" placeholder="select * fro..sons..." />
+                <marker date="1429569774000" expanded="true" signature="17031:17060" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="17308:18585" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="18758:18775" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="18837:18873" placeholder="select * fro..videos..." />
+                <marker date="1429569774000" expanded="true" signature="19134:19163" placeholder="select id fr..user..." />
+                <marker date="1429569774000" expanded="true" signature="19411:20512" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="20684:20701" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="20763:20815" placeholder="select * fro..imghost..." />
+                <marker date="1429569774000" expanded="true" signature="20884:21105" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="21231:21283" placeholder="select * fro..imghost..." />
+                <marker date="1429569774000" expanded="true" signature="21352:21573" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="21699:21738" placeholder="select * fro..img_album..." />
+                <marker date="1429569774000" expanded="true" signature="21807:22028" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="22154:22195" placeholder="select * fro..img_article..." />
+                <marker date="1429569774000" expanded="true" signature="22264:22485" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="22611:22650" placeholder="select * fro..img_swagg..." />
+                <marker date="1429569774000" expanded="true" signature="22719:22940" placeholder="INSERT INTO ..." />
+                <marker date="1429569774000" expanded="true" signature="23090:23110" placeholder="DELETE FROM ..." />
+                <marker date="1429569774000" expanded="true" signature="23172:23215" placeholder="select * fro..panell..." />
+                <marker date="1429569774000" expanded="true" signature="23284:23884" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LifestyleController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LifestyleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="585">
+              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+              <folding>
+                <marker date="1429569431000" expanded="true" signature="339:429" placeholder="SELECT lifes..MuzikSpiritBackBundle..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_menu.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/main_menu.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.875" vertical-offset="330" max-vertical-offset="1665">
+              <caret line="49" column="96" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Lifestyle/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.60192615" vertical-offset="390" max-vertical-offset="1290">
+              <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TypeArticleLifestyle.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticleLifestyle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0" vertical-offset="30" max-vertical-offset="1650">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lifestyle.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lifestyle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-30.0" vertical-offset="1980" max-vertical-offset="10380">
+              <caret line="183" column="13" selection-start-line="183" selection-start-column="13" selection-end-line="183" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lyrics.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lyrics.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0" vertical-offset="69" max-vertical-offset="660">
+              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LyricsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LyricsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="585">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <marker date="1429569461000" expanded="true" signature="336:414" placeholder="SELECT lyric..MuzikSpiritBackBundle..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,41 +202,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/themes/back/assets/javascripts/pixel-admin.min.js" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Slug.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Album.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Artiste.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Carousel.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lifestyle.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lyrics.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Section.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Son.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticleLifestyle.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeImage.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Video.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/tinymce.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/News.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/content.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/top_navigation.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/bootstrap_form.twig" />
-        <option value="$PROJECT_DIR$/web/backassets/javascripts/admin-functions.js" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/test.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_tinymce_javascript.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_admin_javascript.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/main_menu.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/NewsType.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_flash.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal_javascript.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/list.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_datatables_javascript.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/add_edit.html.twig" />
@@ -184,13 +212,47 @@
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/ImageHandler.php" />
         <option value="$PROJECT_DIR$/maj_images_path.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/ImagesHandler.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/list.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/image.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/news.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeImage.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/crop.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/NewsType.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/clip.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_remove.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_share.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/video.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ClipRepository.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ClipController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/VideoController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/SonController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/son.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/album.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AlbumController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Album.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ArtisteController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/artiste.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/top_navigation.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Artiste/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lyrics.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lifestyle.yml" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LifestyleController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LyricsController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/maj_new_db.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/main_menu.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticleLifestyle.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Lifestyle/list.html.twig" />
       </list>
     </option>
   </component>
@@ -439,7 +501,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
+              <option name="myItemId" value="Video" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -473,7 +535,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Image" />
+              <option name="myItemId" value="Lifestyle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mzk_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="siteV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MuzikSpirit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Artiste" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -563,6 +659,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mzk_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="siteV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MuzikSpirit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -619,38 +741,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mzk_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siteV2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mzk_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="siteV2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -663,11 +753,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository" />
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial" />
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules" />
       <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial" />
     </key>
   </component>
   <component name="RunManager">
@@ -685,9 +775,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -695,6 +782,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -724,42 +814,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24888226" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24888226" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -784,269 +852,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Carousel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="3810">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="12225">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lifestyle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="10425">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lyrics.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="12630">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Section.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1650">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Son.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="12225">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1245">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticleLifestyle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="1695">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7740" max-vertical-offset="7950">
-          <caret line="516" column="27" selection-start-line="516" selection-start-column="27" selection-end-line="516" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="10875">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/back/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="24525" max-vertical-offset="25080">
-          <caret line="1666" column="7" selection-start-line="1666" selection-start-column="7" selection-end-line="1666" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/back/forms-pickers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="13440">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33707866" vertical-offset="0" max-vertical-offset="623">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/iframe.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24077046" vertical-offset="0" max-vertical-offset="623">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/bootstrap_3_horizontal_layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="15" max-vertical-offset="1170">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/backassets/javascripts/admin-functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/test.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_tinymce_javascript.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="0" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/main_menu.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="495" max-vertical-offset="1665">
-          <caret line="53" column="67" selection-start-line="53" selection-start-column="67" selection-end-line="53" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/top_navigation.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.708333" vertical-offset="502" max-vertical-offset="1170">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="66" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625" vertical-offset="165" max-vertical-offset="1095">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_admin_javascript.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="623">
-          <caret line="0" column="84" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.083334" vertical-offset="97" max-vertical-offset="720">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_flash.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="300">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal_javascript.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="270">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="285">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_datatables_javascript.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="285">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/add_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="300">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/NewsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="585" max-vertical-offset="1665">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-          <folding>
-            <element signature="e#47#87#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3165" max-vertical-offset="11535">
-          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="213" selection-end-column="5" />
-          <folding>
-            <element signature="e#49#81#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Slug.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="795">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="727" max-vertical-offset="1350">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="84" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1560">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/ImageType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="750">
@@ -1055,132 +860,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="101.541664" vertical-offset="2497" max-vertical-offset="3450">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maj_new_db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.25" vertical-offset="390" max-vertical-offset="9135">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..type_section..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..type_article..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..type_cat_swagg..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..z_members..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..albums..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..sorties_albums..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="UPDATE album..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..artistes..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..clips..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..swagg..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..lyrics..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..news..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..sons..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..videos..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select id fr..user..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..imghost..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..imghost..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..img_album..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..img_article..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..img_swagg..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="select * fro..panell..." />
-            <marker date="1428749217000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maj_images_path.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6982344" vertical-offset="0" max-vertical-offset="623">
           <caret line="29" column="111" selection-start-line="29" selection-start-column="111" selection-end-line="29" selection-end-column="111" />
-          <folding>
-            <marker date="1429443550000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429443550000" expanded="true" signature="-1:-1" placeholder="select * fro..img_article..." />
-            <marker date="1429443550000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1429443550000" expanded="true" signature="-1:-1" placeholder="select * fro..image..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/ParameterBag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="88.125" vertical-offset="3570" max-vertical-offset="4770">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/ImagesHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-125.0" vertical-offset="210" max-vertical-offset="3465">
+          <caret line="214" column="12" selection-start-line="214" selection-start-column="12" selection-end-line="214" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/crop.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.833334" vertical-offset="97" max-vertical-offset="1395">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="540">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="68" />
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="8" column="98" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2970" max-vertical-offset="11490">
+          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="213" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="91.541664" vertical-offset="2257" max-vertical-offset="3270">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="5205">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/news.yml">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="975">
+          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/NewsType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="-23.125" vertical-offset="630" max-vertical-offset="1635">
+          <caret line="81" column="32" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="83.125" vertical-offset="2940" max-vertical-offset="4695">
+          <caret line="66" column="7" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38523275" vertical-offset="0" max-vertical-offset="623">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#53#87#0#PHP" expanded="true" />
+            <marker date="1429520743000" expanded="true" signature="-1:-1" placeholder="SELECT n FRO..MuzikSpiritBackBundle..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,61 +955,402 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/ImagesHandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="20.625" vertical-offset="1980" max-vertical-offset="3465">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/list.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.333334" vertical-offset="517" max-vertical-offset="1140">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="23" />
+        <state vertical-scroll-proportion="-6.980392" vertical-offset="349" max-vertical-offset="1230">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/crop.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_remove.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.083334" vertical-offset="127" max-vertical-offset="1320">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="225">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/news.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="1200" max-vertical-offset="4740">
-          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="32" />
-          <folding>
-            <element signature="e#49#81#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="660">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/ParameterBag.php">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_share.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="88.125" vertical-offset="3570" max-vertical-offset="4770">
-          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="623">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125" vertical-offset="510" max-vertical-offset="1350">
+          <caret line="55" column="105" selection-start-line="55" selection-start-column="105" selection-end-line="55" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92449665" vertical-offset="2989" max-vertical-offset="5490">
-          <caret line="236" column="110" selection-start-line="236" selection-start-column="110" selection-end-line="236" selection-end-column="110" />
+        <state vertical-scroll-proportion="46.875" vertical-offset="1470" max-vertical-offset="5415">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="e#54#95#0#PHP" expanded="true" />
-            <marker date="1429451684000" expanded="true" signature="710:778" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1429451684000" expanded="true" signature="861:957" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1429451684000" expanded="true" signature="2894:2992" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1429451684000" expanded="true" signature="3132:3256" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
+            <marker date="1429520206000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
+            <marker date="1429520206000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
+            <marker date="1429520206000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
+            <marker date="1429520206000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeImage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.958333" vertical-offset="2047" max-vertical-offset="3765">
+          <caret line="157" column="23" selection-start-line="157" selection-start-column="23" selection-end-line="157" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.583334" vertical-offset="892" max-vertical-offset="1545">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.625" vertical-offset="0" max-vertical-offset="1260">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/video.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <caret line="38" column="56" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="12225">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding>
+            <element signature="e#49#81#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ClipRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="36" />
+          <folding>
+            <marker date="1429566916000" expanded="true" signature="-1:-1" placeholder="SELECT clip ..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ClipController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <marker date="1429567132000" expanded="true" signature="-1:-1" placeholder="SELECT clip ..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/album.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.25" vertical-offset="69" max-vertical-offset="660">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AlbumController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="585">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+          <folding>
+            <marker date="1429567784000" expanded="true" signature="-1:-1" placeholder="SELECT album..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="61.25" vertical-offset="1470" max-vertical-offset="10830">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Album.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5" vertical-offset="5865" max-vertical-offset="11730">
+          <caret line="422" column="27" selection-start-line="422" selection-start-column="27" selection-end-line="422" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/VideoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <marker date="1429567238000" expanded="true" signature="-1:-1" placeholder="SELECT video..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ArtisteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="585">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
+          <folding>
+            <marker date="1429568538000" expanded="true" signature="-1:-1" placeholder="SELECT artis..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/clip.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/top_navigation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.625" vertical-offset="240" max-vertical-offset="1170">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Artiste/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.125" vertical-offset="405" max-vertical-offset="1260">
+          <caret line="56" column="67" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/artiste.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.428571" vertical-offset="0" max-vertical-offset="660">
+          <caret line="24" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/SonController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="600">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <marker date="1429567563000" expanded="true" signature="-1:-1" placeholder="SELECT son F..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/son.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
+          <caret line="16" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="38" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="3405">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <marker date="1429483385000" expanded="true" signature="-1:-1" placeholder="SELECT n FRO..MuzikSpiritBackBundle..." />
+            <marker date="1429483385000" expanded="true" signature="-1:-1" placeholder="SELECT news ..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LyricsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="585">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <marker date="1429569461000" expanded="true" signature="336:414" placeholder="SELECT lyric..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lyrics.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="69" max-vertical-offset="660">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LifestyleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="585">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding>
+            <marker date="1429569431000" expanded="true" signature="339:429" placeholder="SELECT lifes..MuzikSpiritBackBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lifestyle.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.946428" vertical-offset="69" max-vertical-offset="660">
+          <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maj_new_db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="9135">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <marker date="1429569774000" expanded="true" signature="1016:1033" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1084:1103" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1154:1170" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1221:1239" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1290:1306" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1357:1372" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1423:1440" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1491:1512" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1564:1583" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="1647:1697" placeholder="select * fro..type_section..." />
+            <marker date="1429569774000" expanded="true" signature="1769:2020" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="2165:2189" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="2250:2297" placeholder="select * fro..type_article..." />
+            <marker date="1429569774000" expanded="true" signature="2369:2528" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="2673:2707" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="2768:2817" placeholder="select * fro..type_cat_swagg..." />
+            <marker date="1429569774000" expanded="true" signature="2885:3142" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="3337:3353" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="3414:3460" placeholder="select * fro..z_members..." />
+            <marker date="1429569774000" expanded="true" signature="3565:4016" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="4279:4315" placeholder="select * fro..albums..." />
+            <marker date="1429569774000" expanded="true" signature="4576:4605" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="4854:5929" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="6079:6123" placeholder="select * fro..sorties_albums..." />
+            <marker date="1429569774000" expanded="true" signature="6225:6580" placeholder="UPDATE album..." />
+            <marker date="1429569774000" expanded="true" signature="6764:6783" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="6845:6883" placeholder="select * fro..artistes..." />
+            <marker date="1429569774000" expanded="true" signature="7144:7173" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="7421:8312" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="8484:8500" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="8562:8597" placeholder="select * fro..clips..." />
+            <marker date="1429569774000" expanded="true" signature="8858:8887" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="9135:10413" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="10589:10610" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="10672:10707" placeholder="select * fro..swagg..." />
+            <marker date="1429569774000" expanded="true" signature="10968:10997" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="11416:12493" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="12666:12684" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="12746:12782" placeholder="select * fro..lyrics..." />
+            <marker date="1429569774000" expanded="true" signature="13043:13072" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="13320:14598" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="14768:14784" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="14846:14880" placeholder="select * fro..news..." />
+            <marker date="1429569774000" expanded="true" signature="15141:15170" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="15418:16488" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="16659:16674" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="16736:16770" placeholder="select * fro..sons..." />
+            <marker date="1429569774000" expanded="true" signature="17031:17060" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="17308:18585" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="18758:18775" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="18837:18873" placeholder="select * fro..videos..." />
+            <marker date="1429569774000" expanded="true" signature="19134:19163" placeholder="select id fr..user..." />
+            <marker date="1429569774000" expanded="true" signature="19411:20512" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="20684:20701" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="20763:20815" placeholder="select * fro..imghost..." />
+            <marker date="1429569774000" expanded="true" signature="20884:21105" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="21231:21283" placeholder="select * fro..imghost..." />
+            <marker date="1429569774000" expanded="true" signature="21352:21573" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="21699:21738" placeholder="select * fro..img_album..." />
+            <marker date="1429569774000" expanded="true" signature="21807:22028" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="22154:22195" placeholder="select * fro..img_article..." />
+            <marker date="1429569774000" expanded="true" signature="22264:22485" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="22611:22650" placeholder="select * fro..img_swagg..." />
+            <marker date="1429569774000" expanded="true" signature="22719:22940" placeholder="INSERT INTO ..." />
+            <marker date="1429569774000" expanded="true" signature="23090:23110" placeholder="DELETE FROM ..." />
+            <marker date="1429569774000" expanded="true" signature="23172:23215" placeholder="select * fro..panell..." />
+            <marker date="1429569774000" expanded="true" signature="23284:23884" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/main_menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875" vertical-offset="330" max-vertical-offset="1665">
+          <caret line="49" column="96" selection-start-line="49" selection-start-column="96" selection-end-line="49" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lifestyle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-30.0" vertical-offset="1980" max-vertical-offset="10380">
+          <caret line="183" column="13" selection-start-line="183" selection-start-column="13" selection-end-line="183" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticleLifestyle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="30" max-vertical-offset="1650">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Lifestyle/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60192615" vertical-offset="390" max-vertical-offset="1290">
+          <caret line="51" column="67" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>

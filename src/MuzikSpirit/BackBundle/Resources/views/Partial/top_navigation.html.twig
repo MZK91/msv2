@@ -31,20 +31,20 @@
                     <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_news_list' %}active{% endif %}">
                         <a href="{{ path('muzikspirit_back_news_add') }}"><i class="fa fa-file-text-o"></i>&nbsp;News</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-video-camera"></i>&nbsp;Vidéos</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_video_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_video_add') }}"><i class="fa fa-video-camera"></i>&nbsp;Vidéos</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-youtube-play"></i>&nbsp;Clips</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_clip_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_clip_add') }}"><i class="fa fa-youtube-play"></i>&nbsp;Clips</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-volume-up"></i>&nbsp;Sons</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_son_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_son_add') }}"><i class="fa fa-volume-up"></i>&nbsp;Sons</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-music"></i>&nbsp;Albums</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_album_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_album_add') }}"><i class="fa fa-music"></i>&nbsp;Albums</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-user"></i>&nbsp;Artistes</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_artiste_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_artiste_add') }}"><i class="fa fa-user"></i>&nbsp;Artistes</a>
                     </li>
                     <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
                         <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-file-o"></i>&nbsp;Lyrics</a>

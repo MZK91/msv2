@@ -4,39 +4,31 @@ namespace MuzikSpirit\BackBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class NewsController extends Controller
+class LyricsController extends Controller
 {
-    public function listAction()
+    public function listAction($page)
     {
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('MuzikSpiritBackBundle:News');
-        $news = $em->findBy(
-            array(),
-            array('id' => 'DESC'),
-            100,
-            0
-        );
-        return $this->render('MuzikSpiritBackBundle:News:list.html.twig',array('news' => $news,'titre'=>'News'));
-    }
-/*
-        public function NewsSectionAction()
-    {
-        $em = $this->getDoctrine()
-            ->getManager()
-            ->getRepository('NewsBundle:News');
-        $news = $em->findBy(
-            array(),
-            array('id' => 'DESC'),
-            100,
-            0
-        );
-        return $this->render('NewsBundle:Default:index.html.twig',array('news' => $news));
-    }
 
-        public function NewsAction(News $news)
-    {
-        return $this->render('NewsBundle:Default:news.html.twig',array('news' => $news));
+        $limit = $this->container->getParameter('max_articles');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $dql   = "SELECT lyrics FROM MuzikSpiritBackBundle:Lyrics lyrics ORDER BY lyrics.id DESC";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $paginator = $paginator->paginate(
+            $query,
+            $page,
+            $limit
+        );
+
+        return $this->render('MuzikSpiritBackBundle:Lyrics:list.html.twig',
+            array(
+                'titre' => 'Lyrics',
+                'page' => $page,
+                'pagination' => $paginator
+            )
+        );
     }
-*/
 }

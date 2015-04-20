@@ -1,13 +1,40 @@
+##
 # Régles config routage
 #
 # Nom de la route :
-# nom_de_l_app_bundle_classe_action
-#
-# Appel Controleur
-# NomduBundle:NomducControleur:Nom de L'action
+# nom_de_l_app_bundle_classe
 #
 # Ordre de configuration :
 # Route -> Controleur -> Vue
+##
+
+muzikspirit_back_lifestyle:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/lifestyle.yml"
+    prefix:   /lifestyle
+
+muzikspirit_back_lyrics:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/lyrics.yml"
+    prefix:   /lyrics
+
+muzikspirit_back_artiste:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/artiste.yml"
+    prefix:   /artiste
+
+muzikspirit_back_album:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/album.yml"
+    prefix:   /album
+
+muzikspirit_back_son:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/son.yml"
+    prefix:   /son
+
+muzikspirit_back_video:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/video.yml"
+    prefix:   /video
+
+muzikspirit_back_clip:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/clip.yml"
+    prefix:   /clip
 
 muzikspirit_back_image:
     resource: "@MuzikSpiritBackBundle/Resources/config/modules/image.yml"

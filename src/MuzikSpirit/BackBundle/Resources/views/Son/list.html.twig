@@ -1,0 +1,79 @@
+{% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
+{% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block contentwrap %}
+    {% import "MuzikSpiritBackBundle:Partial:_remove.html.twig" as remove %}
+    {% import "MuzikSpiritBackBundle:Partial:_share.html.twig" as share %}
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">{{ titre }}</span>
+            <div class="panel-heading-controls">
+                <button href="{{ path('muzikspirit_back_clip_add') }}" class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</button>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="table-light">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jq-datatables-example">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>edit</th>
+                        <th>supp</th>
+                        <th>img</th>
+                        <th>sect</th>
+                        <th>titre</th>
+                        <th>social</th>
+                        <th>vues</th>
+                        <th>date</th>
+                        <th>last visit</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in pagination.items %}
+                            <tr>
+                                <td>{{ item.id }}</td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_news_edit',{'id':item.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td align="center">
+                                    {{ remove.remove(path('muzikspirit_back_news_remove',{'id':item.id}) ) }}
+                                </td>
+                                {% if item.image matches '/http/' %}
+                                    {% set image = item.image %}
+                                {% else %}
+                                    {% set image = asset(item.image) %}
+                                {% endif %}
+                                {% set url  = "http://" ~ global_website_url ~ "/"~ item.typeArticle.url ~"/" ~ item.slug ~ "/" ~ item.id %}
+
+                                <td align="center"><img src="{{ image }}" width="50" height="30" /></td>
+                                <td><img src="{{ asset('backassets/images/sections/' ~ item.section.id ~ '.png') }}"/></td>
+                                <td><a href="{{ url }}">{{ item.titre }}</a></td>
+                                <td>
+                                    {% set shareUrl  = url | url_encode %}
+                                    {% set artiste = item.artiste | replace({' ': "+", "'": "+"}) %}
+                                    {% set image = item.image | url_encode %}
+                                    {% set titre = item.titre | url_encode %}
+                                    {% set typeArticle = item.typeArticle.titre | url_encode %}
+                                    {{ share.share(shareUrl,titre,image,artiste,typeArticle) }}
+                                </td>
+                                <td align="center">{{ item.vues }}</td>
+                                <td align="center">{{ item.date | date('d/m/y') }}</td>
+                                <td align="center">{{ item.lastVisit | date('d/m/y') }}</td>
+                            </tr>
+                        {% else %}
+                            <div class="alert alert-dark">Aucun Article</div>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {# display navigation #}
+                <div class="navigation">
+                    {{ knp_pagination_render(pagination) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ include('MuzikSpiritBackBundle:Partial:_datatables_javascript.html.twig',{'table_id':'jq-datatables-example'}) }}
+{% endblock %}

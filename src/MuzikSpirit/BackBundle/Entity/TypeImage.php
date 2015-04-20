@@ -39,6 +39,20 @@ class TypeImage
     private $crop;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="resize", type="boolean", nullable=false)
+     */
+    private $resize;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="thumb", type="boolean", nullable=false)
+     */
+    private $thumb;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="width", type="integer", nullable=false)
@@ -58,15 +72,6 @@ class TypeImage
      * @ORM\Column(name="path", type="string", length=255, nullable=false)
      */
     private $path;
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(name="resize", type="boolean", nullable=false)
-     */
-    private $resize;
-
-
 
     /**
      * Get id
@@ -122,6 +127,45 @@ class TypeImage
     public function getCrop()
     {
         return $this->crop;
+    }
+
+    /**
+     * Set resize
+     *
+     * @param boolean $resize
+     * @return TypeImage
+     */
+    public function setResize($resize)
+    {
+        $this->resize = $resize;
+
+        return $this;
+    }
+
+    /**
+     * Get resize
+     *
+     * @return boolean
+     */
+    public function getResize()
+    {
+        return $this->resize;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getThumb()
+    {
+        return $this->thumb;
+    }
+
+    /**
+     * @param boolean $thumb
+     */
+    public function setThumb($thumb)
+    {
+        $this->thumb = $thumb;
     }
 
     /**
@@ -191,29 +235,6 @@ class TypeImage
     public function getPath()
     {
         return $this->path;
-    }
-
-    /**
-     * Set resize
-     *
-     * @param boolean $resize
-     * @return TypeImage
-     */
-    public function setResize($resize)
-    {
-        $this->resize = $resize;
-
-        return $this;
-    }
-
-    /**
-     * Get resize
-     *
-     * @return boolean 
-     */
-    public function getResize()
-    {
-        return $this->resize;
     }
 
     /**
