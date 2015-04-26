@@ -1,0 +1,28 @@
+{% extends 'MuzikSpiritBackBundle::layout.html.twig' %}
+{% block main_menu %}{% endblock %}
+{% block menu_navigation %}{% endblock %}
+{% block classtitle %}user{% endblock %}
+{% block titlepage %}
+    S'enregister
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-3 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-users"></i>&nbsp;Inscription</h3>
+                </div>
+                <div class="panel-body">
+                    {{ form_start(form) }}
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.password.mdp) }}
+                    {{ form_row(form.password.mdp_conf) }}
+                    {{ form_row(form.envoyer) }}
+                    {{ form_widget(form._token) }}
+                    {{ form_end(form,{'render_rest' : false}) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

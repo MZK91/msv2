@@ -34,9 +34,9 @@
                         {% for item in pagination.items %}
                             <tr>
                                 <td>{{ item.id }}</td>
-                                <td align="center"><a href="{{ path('muzikspirit_back_news_edit',{'id':item.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_clip_edit',{'id':item.id}) }}"><i class="fa fa-edit"></i></a></td>
                                 <td align="center">
-                                    {{ remove.remove(path('muzikspirit_back_news_remove',{'id':item.id}) ) }}
+                                    {{ remove.remove(path('muzikspirit_back_clip_remove',{'id':item.id}) ) }}
                                 </td>
                                 {% if item.image matches '/http/' %}
                                     {% set image = item.image %}

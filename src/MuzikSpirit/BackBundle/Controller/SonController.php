@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Son;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class SonController extends Controller
@@ -31,5 +32,17 @@ class SonController extends Controller
                 'pagination' => $paginator
             )
         );
+    }
+
+    /**
+     * SUPPRESSION
+     * @param Son $son
+     * @return RedirectResponse
+     */
+    public function removeAction(Son $son){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($son);
+        $em->flush();
+        return $this->redirectToRoute('muzikspirit_back_son_list');
     }
 }

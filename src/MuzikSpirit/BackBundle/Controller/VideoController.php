@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class VideoController extends Controller
@@ -30,5 +31,17 @@ class VideoController extends Controller
                 'pagination' => $paginator
             )
         );
+    }
+
+    /**
+     * SUPPRESSION
+     * @param Video $video
+     * @return RedirectResponse
+     */
+    public function removeAction(Video $video){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($video);
+        $em->flush();
+        return $this->redirectToRoute('muzikspirit_back_video_list');
     }
 }

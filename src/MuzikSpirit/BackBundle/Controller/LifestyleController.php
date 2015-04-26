@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Lifestyle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LifestyleController extends Controller
@@ -30,5 +31,17 @@ class LifestyleController extends Controller
                 'pagination' => $paginator
             )
         );
+    }
+
+    /**
+     * SUPPRESSION
+     * @param Lifestyle $lifestyle
+     * @return RedirectResponse
+     */
+    public function removeAction(Lifestyle $lifestyle){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($lifestyle);
+        $em->flush();
+        return $this->redirectToRoute('muzikspirit_back_lifestyle_list');
     }
 }

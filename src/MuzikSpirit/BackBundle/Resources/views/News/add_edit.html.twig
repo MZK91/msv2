@@ -10,8 +10,42 @@
         <div class="panel-body">
             {{ include('MuzikSpiritBackBundle:Partial:_flash.html.twig') }}
             {{ form_start(form) }}
-            {{ form_row(form.titre, {'id': 'titre'}) }}
-            {{ form_row(form.artiste, {'id': 'artiste'}) }}
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <a role="button" id="genius" class="btn btn-large btn-primary">RG</a>
+                    <a role="button" id="lyrics" class="btn btn-large btn-primary">Lyrics</a>
+                    <a role="button" id="inverse" class="btn btn-large btn-primary">Inverse</a>
+                    <a role="button" id="vire" class="btn btn-large btn-primary">Vire Gui</a>
+                    <a role="button" id="clean" class="btn btn-large btn-primary">Clean</a>
+                    <a role="button" id="clean_fin" class="btn btn-large btn-primary">Clean Fin</a>
+                    <a role="button" id="feat" class="btn btn-large btn-primary">Featuring</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">{{ form_label(form.titre) }}</div>
+                <div class="col-sm-7">
+                    {{ form_widget(form.titre, {'id': 'titre'}) }}
+                    {{ form_errors(form.titre) }}
+                </div>
+                <div class="col-sm-3">
+                    <a role="button" id="feat_start" class="btn btn-large btn-primary">Feat.</a>
+                    <a role="button" id="feat_end" class="btn btn-large btn-primary">Feat. End</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">{{ form_label(form.artiste) }}</div>
+                <div class="col-sm-7">
+                    {{ form_widget(form.artiste, {'id': 'artiste'}) }}
+                    {{ form_errors(form.artiste) }}
+                    <input id="son" name="son" value="" placeholder="son" />
+                    <input id="featuring" name="featuring" value="" placeholder="featuring" />
+                </div>
+                <div class="col-sm-3">
+                    <a role="button" id="miniature" class="btn btn-large btn-primary">Miniature</a>
+                    <a role="button" id="feat_end" class="btn btn-large btn-primary">Feat. End</a>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-sm-2">{{ form_label(form.thumbNews) }}</div>
                 <div class="col-sm-7">
@@ -53,8 +87,7 @@
     {% include('MuzikSpiritBackBundle:Partial:_modal.html.twig') %}
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }}
     {{ include('MuzikSpiritBackBundle:Partial:_admin_javascript.html.twig') }}
-    {{ include('MuzikSpiritBackBundle:Partial:_tinymce_javascript.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}
+    {{ include('MuzikSpiritBackBundle:Partial:_tinymce_javascript.html.twig') }}
     {{ include('MuzikSpiritBackBundle:Partial:_modal_javascript.html.twig') }}
 {% endblock %}

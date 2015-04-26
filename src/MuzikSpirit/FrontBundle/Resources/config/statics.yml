@@ -1,0 +1,3 @@
+muzikspirit_front_statics_mailmdp:
+    path:     /mail-renew-pass/{username}
+    defaults: { _controller:MuzikSpiritFrontBundle:Statics:mailmdp }

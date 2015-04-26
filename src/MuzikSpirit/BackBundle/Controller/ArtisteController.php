@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Artiste;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ArtisteController extends Controller
@@ -30,5 +31,17 @@ class ArtisteController extends Controller
                 'pagination' => $paginator
             )
         );
+    }
+
+    /**
+     * SUPPRESSION
+     * @param Artiste $artiste
+     * @return RedirectResponse
+     */
+    public function removeAction(Artiste $artiste){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($artiste);
+        $em->flush();
+        return $this->redirectToRoute('muzikspirit_back_artiste_list');
     }
 }

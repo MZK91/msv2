@@ -10,7 +10,7 @@
 # Route -> Controleur -> Vue
 
 muzikspirit_back_lyrics_list:
-    path:     /list/{page}/
+    path:     /list/{page}
     defaults: { _controller: MuzikSpiritBackBundle:Lyrics:list, page : 1 }
 
 muzikspirit_back_lyrics_searchforward:

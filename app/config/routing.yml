@@ -1,5 +1,13 @@
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+facebook_login:
+    pattern: /hwio-login/check-facebook
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /hwio-connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /hwio-login
 
 muzik_spirit_front:
     resource: "@MuzikSpiritFrontBundle/Resources/config/routing.yml"
@@ -12,3 +20,34 @@ muzik_spirit_back:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+
+muzikspirit_back_security_login:
+    path: /login-yns
+    defaults : { _controller: MuzikSpiritBackBundle:Security:login }
+
+muzikspirit_back_security_login_check:
+    path: /ad_act/login_check
+    defaults : { _controller: MuzikSpiritBackBundle:Security:login }
+
+muzikspirit_back_security_logout:
+    path: /ad_act/logout
+    defaults : { _controller: MuzikSpiritBackBundle:Security:logout }
+
+# Login Front
+
+muzikspirit_front_security_register:
+    path: /register
+    defaults : { _controller: MuzikSpiritFrontBundle:Security:register }
+
+muzikspirit_front_security_login:
+    path: /login
+    defaults : { _controller: MuzikSpiritFrontBundle:Security:login }
+
+muzikspirit_front_security_logincheck:
+    path: /members/login_check
+    defaults : { _controller: MuzikSpiritFrontBundle:Security:login }
+
+muzikspirit_front_security_changepass:
+    path: /change-password/{tokenkey}
+    defaults : { _controller: MuzikSpiritFrontBundle:Security:changepass, tokenkey: 0 }

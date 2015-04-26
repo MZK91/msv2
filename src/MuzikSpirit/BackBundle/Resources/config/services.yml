@@ -2,3 +2,14 @@ services:
 #    muzik_spirit_back.example:
 #        class: MuzikSpirit\BackBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+  muzikspirit_back.notification:
+    class: MuzikSpirit\BackBundle\Notification\Notification
+    arguments: ["@session"]
+
+  muzikspirit_back.flash:
+    class: MuzikSpirit\BackBundle\Notification\Notification
+    arguments: ["@session"]
+
+  muzikspirit_back.oauth_aware.user_provider:
+    class: MuzikSpirit\BackBundle\Provider\OAuthUserProvider

@@ -46,4 +46,4 @@ muzikspirit_back_news:
 
 muzikspirit_back_dashboard:
     path:     /
-    defaults: { _controller: MuzikSpiritBackBundle:Default:index }
+    defaults: { _controller: MuzikSpiritBackBundle:Main:index }

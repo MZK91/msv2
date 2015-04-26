@@ -1,39 +1,66 @@
 security:
-    providers:
-        in_memory:
-            memory: ~
-
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
-            security: false
-
-        default:
-            anonymous: ~
-
-security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: sha512
+      MuzikSpirit\BackBundle\Entity\User:
+        algorithm: sha512
+        iterations: 5
+        encode_as_base64: true
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_USER:   ROLE_USER
+        ROLE_MOD:     [ ROLE_USER, ROLE_MOD ]
+        ROLE_ADMIN:    [ ROLE_ADMIN, ROLE_MOD ]
+    ##
+    # Creation d'un utilisateur login: admin avec le mot de passe ROLE_JEWELER
+    ##
 
     providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username
+      muzikspirit_back:
+        entity: { class: MuzikSpiritBackBundle:User }
+      muzikspirit_hwi_provider:
+        id: muzikspirit_back.oauth_aware.user_provider
 
     firewalls:
-        main:
-            pattern: ^/
-            form_login:
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
-            logout:       true
-            anonymous:    true
+
+        muzikspirit_back:
+          pattern: ^/ad_act
+          remember_me:
+            key: "%secret%"
+            lifetime: 3150000
+            path: /
+            domain: ~ # valeur par défaut du domaine
+          form_login:
+            check_path: muzikspirit_back_security_login_check
+            login_path: muzikspirit_back_security_login
+            target_path_parameter : muzikspirit_back_security_index
+            default_target_path: /ad_act
+
+          logout:
+            path: muzikspirit_back_security_logout
+            target: /login-yns
+
+        muzikspirit_front:
+          pattern: ^/
+          anonymous: ~
+          form_login:
+            check_path: muzikspirit_front_security_login_check
+            login_path: muzikspirit_front_security_login
+            target_path_parameter : muzikspirit_front_index
+            default_target_path: /
+
+          logout:
+            path: muzikspirit_front__security_logout
+            target: /login
+
+          oauth:
+            resource_owners:
+              facebook: /hwio-login/check-facebook"
+            login_path: /hwio-login
+            use_forward: false
+            failure_path: /hwio-login
+
+            oauth_user_provider:
+                service: muzikspirit_back.oauth_aware.user_provider
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
+      - { path: ^/ad_act, roles: ROLE_ADMIN }
+      - { path: ^/members, roles: ROLE_USER }

@@ -46,11 +46,11 @@
                     <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_artiste_list' %}active{% endif %}">
                         <a href="{{ path('muzikspirit_back_artiste_add') }}"><i class="fa fa-user"></i>&nbsp;Artistes</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-file-o"></i>&nbsp;Lyrics</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_lyrics_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_lyrics_list') }}"><i class="fa fa-file-o"></i>&nbsp;Lyrics</a>
                     </li>
-                    <li class="{% if app.request.attributes.get('_route') == 'store_backend_index' %}active{% endif %}">
-                        <a href="{{ path('muzikspirit_back_news_list') }}"><i class="fa fa-star"></i>&nbsp;Lifestyle</a>
+                    <li class="{% if app.request.attributes.get('_route') == 'muzikspirit_back_lifestyle_list' %}active{% endif %}">
+                        <a href="{{ path('muzikspirit_back_lifestyle_list') }}"><i class="fa fa-star"></i>&nbsp;Lifestyle</a>
                     </li>
 
                 </ul> <!-- / .navbar-nav -->
@@ -60,7 +60,7 @@
                         <li>
 
                             <form class="navbar-form pull-left" method="POST" action="{{ action | default('search/') }}">
-                                <input type="text" name="find" class="form-control" placeholder="Search" value="{{ find }}">
+                                <input type="text" name="find" class="form-control" placeholder="Search" value="{{ find | default('') }}">
                             </form>
                         </li>
                     </ul> <!-- / .navbar-nav -->

@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Lyrics;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LyricsController extends Controller
@@ -30,5 +31,17 @@ class LyricsController extends Controller
                 'pagination' => $paginator
             )
         );
+    }
+
+    /**
+     * SUPPRESSION
+     * @param Lyrics $lyrics
+     * @return RedirectResponse
+     */
+    public function removeAction(Lyrics $lyrics){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($lyrics);
+        $em->flush();
+        return $this->redirectToRoute('muzikspirit_back_lyrics_list');
     }
 }

@@ -1,3 +1,7 @@
-muzik_spirit_front_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: MuzikSpiritFrontBundle:Default:index }
+muzikspirit_front_index:
+    path:     /
+    defaults: { _controller: MuzikSpiritFrontBundle:Index:index }
+
+muzikspirit_front_statics:
+    resource: "@MuzikSpiritFrontBundle/Resources/config/statics.yml"
+    prefix:   /
