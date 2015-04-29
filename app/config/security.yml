@@ -53,7 +53,7 @@ security:
 
           oauth:
             resource_owners:
-              facebook: /hwio-login/check-facebook"
+              facebook: "/hwio-login/check-facebook"
             login_path: /hwio-login
             use_forward: false
             failure_path: /hwio-login

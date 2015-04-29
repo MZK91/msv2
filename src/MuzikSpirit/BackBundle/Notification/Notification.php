@@ -19,7 +19,8 @@ class Notification{
      * criticity : success - danger - warning - info
      */
 
-    public function notify($message, $criticity = "success"){
+    public function notify($message, $criticity = "success") {
+        // La fonction set va me mettre en session le message avec la clef alert
         $this->session->set('alert', array(
             'message' => $message,
             'criticity' => $criticity,

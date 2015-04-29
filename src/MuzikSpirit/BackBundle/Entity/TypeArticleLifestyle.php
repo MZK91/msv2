@@ -4,9 +4,6 @@ namespace MuzikSpirit\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
 /**
  * TypeArticleLifestyle
  *
@@ -25,9 +22,9 @@ class TypeArticleLifestyle
     private $id;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="titre",type="string", length=125, nullable=false)
+     * @ORM\Column(name="titre", type="string", length=125, nullable=false)
      */
     private $titre;
 
@@ -53,7 +50,7 @@ class TypeArticleLifestyle
     /**
      * Set titre
      *
-     * @param integer $titre
+     * @param string $titre
      * @return TypeArticleLifestyle
      */
     public function setTitre($titre)
@@ -66,7 +63,7 @@ class TypeArticleLifestyle
     /**
      * Get titre
      *
-     * @return integer 
+     * @return string 
      */
     public function getTitre()
     {
@@ -94,14 +91,5 @@ class TypeArticleLifestyle
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Retourne le titre
-     * @return string
-     */
-
-    public function __toString(){
-        return $this->titre;
     }
 }

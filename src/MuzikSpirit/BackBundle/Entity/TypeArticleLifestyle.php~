@@ -22,9 +22,9 @@ class TypeArticleLifestyle
     private $id;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="titre", type="integer", nullable=false)
+     * @ORM\Column(name="titre", type="string", length=125, nullable=false)
      */
     private $titre;
 

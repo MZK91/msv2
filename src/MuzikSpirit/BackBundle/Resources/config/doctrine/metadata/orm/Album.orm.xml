@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="Album" table="album">
+  <entity name="MuzikSpirit\BackBundle\Entity\Album" table="album">
     <indexes>
       <index name="user_id" columns="user_id"/>
       <index name="section_id" columns="section_id"/>
@@ -18,7 +18,7 @@
     <field name="dateSortie" type="datetime" column="date_sortie" nullable="false"/>
     <field name="vues" type="integer" column="vues" nullable="false"/>
     <field name="vuesDif" type="integer" column="vues_dif" nullable="false"/>
-    <field name="cover" type="string" column="cover" length="255" nullable="true"/>
+    <field name="image" type="string" column="image" length="255" nullable="true"/>
     <field name="mixtape" type="boolean" column="mixtape" nullable="false"/>
     <field name="date" type="datetime" column="date" nullable="false"/>
     <field name="facebook" type="integer" column="facebook" nullable="false"/>
@@ -30,11 +30,6 @@
     <field name="score" type="float" column="score" precision="10" scale="0" nullable="false"/>
     <field name="ip" type="string" column="ip" length="255" nullable="true"/>
     <field name="slug" type="string" column="slug" length="255" nullable="true"/>
-    <many-to-one field="artiste2" target-entity="Artiste">
-      <join-columns>
-        <join-column name="artiste_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="typeArticle" target-entity="TypeArticle">
       <join-columns>
         <join-column name="type_article_id" referenced-column-name="id"/>
@@ -48,6 +43,11 @@
     <many-to-one field="user" target-entity="User">
       <join-columns>
         <join-column name="user_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="artiste2" target-entity="Artiste">
+      <join-columns>
+        <join-column name="artiste_id" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>

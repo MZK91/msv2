@@ -4,9 +4,6 @@ namespace MuzikSpirit\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
 /**
  * TypeArticle
  *
@@ -37,6 +34,8 @@ class TypeArticle
      * @ORM\Column(name="url", type="string", length=120, nullable=false)
      */
     private $url;
+
+
 
     /**
      * Get id
@@ -72,29 +71,25 @@ class TypeArticle
     }
 
     /**
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
+     * Set url
+     *
      * @param string $url
+     * @return TypeArticle
      */
     public function setUrl($url)
     {
         $this->url = $url;
+
+        return $this;
     }
 
-
-
     /**
-     * Retourne le titre
-     * @return string
+     * Get url
+     *
+     * @return string 
      */
-
-    public function __toString(){
-        return $this->titre;
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

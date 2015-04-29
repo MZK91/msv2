@@ -7,15 +7,13 @@ use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Exception\UnsupportedException;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
- *
  * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D64992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_8D93D649A0D96FBF", columns={"email_canonical"})})
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\UserRepository")
  */
-// implements AdvancedUserInterface, \Serializable
+
 class User implements AdvancedUserInterface, \Serializable
 {
     /**
@@ -182,6 +180,13 @@ class User implements AdvancedUserInterface, \Serializable
     private $dateCreated;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_auth", type="datetime", nullable=true)
+     */
+    private $dateAuth;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Groups", inversedBy="user")
      * @ORM\JoinColumn(name="groups_id", referencedColumnName="id")
      **/
@@ -194,6 +199,12 @@ class User implements AdvancedUserInterface, \Serializable
      * @ORM\Column(name="token_key", type="string", length=255, nullable=true)
      */
     private $tokenKey;
+
+    /**
+     * @var integer
+     * @ORM\Column(name="facebook_id", type="integer", nullable=true)
+     */
+    private $facebookId;
 
 
     public function __construct()
@@ -250,22 +261,7 @@ class User implements AdvancedUserInterface, \Serializable
         // ArrayCollection => Array
         return array($this->groups->getName());
     }
-    public function refreshUser(UserInterface $user){
-        $class = get_class($user);
-        if(!$this->supportClass($class)){
-            throw new UnsupportedException(
-                sprintf(
-                    'Instances of "%s" are not supported.',
-                    $class
-                )
-            );
-        }
-        return $this->find($user->getId());
-    }
 
-    public function supportsClass($class){
-        return $this->getEntityName() === $class || is_subclass_of($class, $this->getEntityName());
-    }
     /**
      * Get id
      *
@@ -285,12 +281,12 @@ class User implements AdvancedUserInterface, \Serializable
     }
 
     public function isAccountNonExpired(){
-      /*  $dateCreated = $this->dateCreated;
-        $dateoldyear = new \DateTime('-5 year');
-        if($dateCreated < $dateoldyear){
-            return false;
-        }
-      */
+        /*  $dateCreated = $this->dateCreated;
+          $dateoldyear = new \DateTime('-5 year');
+          if($dateCreated < $dateoldyear){
+              return false;
+          }
+        */
         return true;
     }
 
@@ -849,17 +845,6 @@ class User implements AdvancedUserInterface, \Serializable
         $this->tokenKey = $tokenKey;
     }
 
-    
-
-    /**
-     * Retourne le montant
-     * @return float
-     */
-
-    public function __toString(){
-        return $this->username;
-    }
-
     /**
      * Set groupsId
      *
@@ -876,7 +861,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get groupsId
      *
-     * @return integer 
+     * @return integer
      */
     public function getGroupsId()
     {
@@ -899,10 +884,57 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get groups
      *
-     * @return \MuzikSpirit\BackBundle\Entity\Groups 
+     * @return \MuzikSpirit\BackBundle\Entity\Groups
      */
     public function getGroups()
     {
         return $this->groups;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateAuth()
+    {
+        return $this->dateAuth;
+    }
+
+    /**
+     * @param \DateTime $dateAuth
+     */
+    public function setDateAuth($dateAuth)
+    {
+        $this->dateAuth = $dateAuth;
+    }
+
+    /**
+     * Set facebookId
+     *
+     * @param integer $facebookId
+     * @return User
+     */
+    public function setFacebookId($facebookId)
+    {
+        $this->facebookId = $facebookId;
+
+        return $this;
+    }
+
+    /**
+     * Get facebookId
+     *
+     * @return integer
+     */
+    public function getFacebookId()
+    {
+        return $this->facebookId;
+    }
+
+    /**
+     * Retourne le montant
+     * @return float
+     */
+    public function __toString(){
+        return $this->username;
     }
 }

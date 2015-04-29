@@ -30,11 +30,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                        {% for image in pagination.items %}
+                        {% for item in pagination.items %}
                             <tr>
-                                <td>{{ image.id }}</td>
+                                <td>{{ item.id }}</td>
                                 <td>
-                                    <a href="{{ path('muzikspirit_back_image_edit',{'id':image.id}) }}">
+                                    <a href="{{ path('muzikspirit_back_image_edit',{'id':item.id}) }}">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </td>
@@ -43,15 +43,16 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>
                                         <ul class="dropdown-menu">
                                             <li></li>
-                                            <li><a href="{{ path('muzikspirit_back_image_remove',{'id':image.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
+                                            <li><a href="{{ path('muzikspirit_back_image_remove',{'id':item.id}) }}"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="center">cp</td>
-                                <td><a href="http://{{ global_website_url }}/{{ image.image }}" target="_blank"><img src="http://{{ global_website_url }}/{{ image.image }}" height="30" width="50" /></a></td>
-                                <td>{{ image.titre }}</td>
-                                <td>{{ image.typeImage.type }}</td>
-                                <td>{{ image.date | date('d/m/y') }}</td>
+                                {% set image = 'http://' ~ global_website_url ~ '/' ~ item.typeImage.path ~ item.image %}
+                                <td align="center"><a role="button" class="cp_{{ action | default('') }}  btn btn-large btn-primary" data-value="{{ image }}" data-title="{{ item.titre | url_encode }}"><i class="fa fa-copy"></i></a></td>
+                                <td><a href="{{ image }}" target="_blank"><img src="{{ image }}" height="30" width="50" /></a></td>
+                                <td>{{ item.titre }}</td>
+                                <td>{{ item.typeImage.type }}</td>
+                                <td>{{ item.date | date('d/m/y') }}</td>
                             </tr>
                         {% else %}
                             <div class="alert alert-dark">Aucun Article</div>
@@ -65,4 +66,8 @@
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('backassets/javascripts/images-functions.js') }}"></script>
 {% endblock %}

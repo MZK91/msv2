@@ -15,7 +15,7 @@ use MuzikSpirit\BackBundle\Utilities\ImagesHandler;
 class ImageController extends Controller
 {
 
-    public function listAction($page, $type = 0, $iframe = 0)
+    public function listAction(Request $request,$page, $type = 0, $iframe = 0)
     {
 
         $limit = $this->container->getParameter('max_articles');
@@ -37,6 +37,12 @@ class ImageController extends Controller
             $limit
         );
 
+        if($request->query->get('action')){
+            $action = $request->query->get('action');
+        }else{
+            $action = '';
+        }
+
         if($iframe === 0) {
             return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
                 array(
@@ -53,6 +59,7 @@ class ImageController extends Controller
                     'page' => $page,
                     'type' => $type,
                     'iframe' => 1,
+                    'action' => $action,
                     'titre' => 'Images',
                 )
             );

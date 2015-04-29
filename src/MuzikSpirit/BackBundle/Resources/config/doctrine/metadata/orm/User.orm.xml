@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="User" table="user">
+  <entity name="MuzikSpirit\BackBundle\Entity\User" table="user">
+    <indexes>
+      <index name="groups_id" columns="groups_id"/>
+      <index name="facebook_id" columns="facebook_id"/>
+    </indexes>
     <unique-constraints>
       <unique-constraint name="UNIQ_8D93D64992FC23A8" columns="username_canonical"/>
       <unique-constraint name="UNIQ_8D93D649A0D96FBF" columns="email_canonical"/>
+      <unique-constraint name="token_key" columns="token_key"/>
+      <unique-constraint name="username" columns="username"/>
     </unique-constraints>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="username" type="string" column="username" length="255" nullable="false"/>
-    <field name="usernameCanonical" type="string" column="username_canonical" length="255" nullable="false"/>
-    <field name="email" type="string" column="email" length="255" nullable="false"/>
-    <field name="emailCanonical" type="string" column="email_canonical" length="255" nullable="false"/>
-    <field name="enabled" type="boolean" column="enabled" nullable="false"/>
-    <field name="salt" type="string" column="salt" length="255" nullable="false"/>
-    <field name="password" type="string" column="password" length="255" nullable="false"/>
-    <field name="lastLogin" type="datetime" column="last_login" nullable="true"/>
-    <field name="locked" type="boolean" column="locked" nullable="false"/>
-    <field name="expired" type="boolean" column="expired" nullable="false"/>
-    <field name="expiresAt" type="datetime" column="expires_at" nullable="true"/>
+    <field name="username" type="string" column="username" length="255" nullable="true"/>
+    <field name="usernameCanonical" type="string" column="username_canonical" length="255" nullable="true"/>
+    <field name="email" type="string" column="email" length="150" nullable="true"/>
+    <field name="emailCanonical" type="string" column="email_canonical" length="255" nullable="true"/>
+    <field name="enabled" type="boolean" column="enabled" nullable="true"/>
+    <field name="salt" type="string" column="salt" length="255" nullable="true"/>
+    <field name="password" type="string" column="password" length="255" nullable="true"/>
+    <field name="locked" type="boolean" column="locked" nullable="true"/>
+    <field name="expired" type="boolean" column="expired" nullable="true"/>
     <field name="confirmationToken" type="string" column="confirmation_token" length="255" nullable="true"/>
-    <field name="passwordRequestedAt" type="datetime" column="password_requested_at" nullable="true"/>
-    <field name="roles" type="array" column="roles" nullable="false"/>
-    <field name="credentialsExpired" type="boolean" column="credentials_expired" nullable="false"/>
+    <field name="passwordRequestedAt" type="string" column="password_requested_at" length="255" nullable="true"/>
+    <field name="credentialsExpired" type="boolean" column="credentials_expired" nullable="true"/>
     <field name="credentialsExpireAt" type="datetime" column="credentials_expire_at" nullable="true"/>
+    <field name="image" type="string" column="image" length="255" nullable="true"/>
+    <field name="type" type="integer" column="type" nullable="true"/>
+    <field name="token" type="string" column="token" length="255" nullable="true"/>
+    <field name="fid" type="integer" column="fid" nullable="true"/>
+    <field name="slug" type="string" column="slug" length="30" nullable="true"/>
+    <field name="accountnonlocked" type="boolean" column="accountNonLocked" nullable="true"/>
+    <field name="accountnonexpired" type="boolean" column="accountNonExpired" nullable="true"/>
+    <field name="dateCreated" type="datetime" column="date_created" nullable="true"/>
+    <field name="dateAuth" type="datetime" column="date_auth" nullable="true"/>
+    <field name="tokenKey" type="string" column="token_key" length="255" nullable="true"/>
+    <field name="facebookId" type="integer" column="facebook_id" nullable="true"/>
+    <many-to-one field="groups" target-entity="Groups">
+      <join-columns>
+        <join-column name="groups_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
   </entity>
 </doctrine-mapping>

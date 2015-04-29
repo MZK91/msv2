@@ -73,6 +73,7 @@ class NewsType extends AbstractType
                 'expanded'  => true,
                 'attr' => array(
                     'placeholder' => 'Affecter la news à une section',
+                    'class' => 'radio-inline',
                 ),
 
 

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="MuzikSpirit\BackBundle\Entity\Section" table="section">
+  <entity name="MuzikSpirit\BackBundle\Entity\Groups" table="groups">
+    <unique-constraints>
+      <unique-constraint name="UNIQ_F06D397057698A6A" columns="role"/>
+    </unique-constraints>
     <id name="id" type="integer" column="id">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="titre" type="string" column="titre" length="250" nullable="false"/>
-    <field name="url" type="string" column="url" length="125" nullable="false"/>
+    <field name="name" type="string" column="name" length="300" nullable="false"/>
+    <field name="role" type="string" column="role" length="300" nullable="false"/>
   </entity>
 </doctrine-mapping>

@@ -1,0 +1,115 @@
+<?php
+
+namespace MuzikSpirit\BackBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Article
+ *
+ * @ORM\Table(name="article", indexes={@ORM\Index(name="type_article_id", columns={"type_article_id"})})
+ * @ORM\Entity
+ */
+class Article
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="article_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $articleId;
+
+    /**
+     * @var \TypeArticle
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="TypeArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_article_id", referencedColumnName="id")
+     * })
+     */
+    private $typeArticle;
+
+
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Article
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set articleId
+     *
+     * @param integer $articleId
+     * @return Article
+     */
+    public function setArticleId($articleId)
+    {
+        $this->articleId = $articleId;
+
+        return $this;
+    }
+
+    /**
+     * Get articleId
+     *
+     * @return integer 
+     */
+    public function getArticleId()
+    {
+        return $this->articleId;
+    }
+
+    /**
+     * Set typeArticle
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle
+     * @return Article
+     */
+    public function setTypeArticle(\MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle)
+    {
+        $this->typeArticle = $typeArticle;
+
+        return $this;
+    }
+
+    /**
+     * Get typeArticle
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\TypeArticle 
+     */
+    public function getTypeArticle()
+    {
+        return $this->typeArticle;
+    }
+}

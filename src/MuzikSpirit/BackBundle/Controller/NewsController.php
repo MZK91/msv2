@@ -8,6 +8,7 @@ use MuzikSpirit\BackBundle\Entity\News;
 use MuzikSpirit\BackBundle\Form\NewsType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class NewsController extends Controller
 {
@@ -132,11 +133,6 @@ class NewsController extends Controller
 
             $data = $form->getData();
 
-            // On récupére le titre soumis pour le sluggifié
-            $titre = $form['titre']->getData();
-            $titre = Slug::slug($titre);
-            $data->setSlug($titre);
-
             $data->setTypeArticle($typeArticle);
 
             $em->persist($data);
@@ -165,6 +161,8 @@ class NewsController extends Controller
      * EDITION des articles
      * @param News $news
      * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Security("is_granted('', news)")
      */
     public function editAction(Request $request, News $news)
     {
@@ -186,14 +184,8 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
             $data = $form->getData();
-
-            // On récupére le titre soumis pour le sluggifié
-            $titre = $form['titre']->getData();
-            $titre = Slug::slug($titre);
-            $data->setSlug($titre);
-
+            $news->setSlug(Slug::slug($news->getTitre()));
             $em->persist($data);
             $em->flush();
 

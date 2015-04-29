@@ -7,6 +7,9 @@
 # Ordre de configuration :
 # Route -> Controleur -> Vue
 ##
+muzikspirit_back_admin:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/admin.yml"
+    prefix:   /admin
 
 muzikspirit_back_lifestyle:
     resource: "@MuzikSpiritBackBundle/Resources/config/modules/lifestyle.yml"

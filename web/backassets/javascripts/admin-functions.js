@@ -117,14 +117,12 @@ function cleanFin(){
 }
 
 function rebuild() {
-    var_artiste = trim(document.getElementById("artiste").value);
-    var_titre_son = trim(document.getElementById("titre").value);
-    var_featuring = trim(document.getElementById("featuring").value);
-    if (var_featuring != '') {
-        document.getElementById("titre").value = var_artiste + ' - ' + var_titre_son + ' (ft. ' + var_featuring + ')';
-    } else {
-        document.getElementById("titre").value = var_artiste + ' - ' + var_titre_son;
-    }
+    alert(document.getElementById("artiste").value);
+    artiste = trim(document.getElementById("artiste").value);
+    titre = trim(document.getElementById("titre").value);
+    featuring = trim(document.getElementById("featuring").value);
+    document.getElementById("titre").value = '';
+    document.getElementById("titre").value = artiste + ' - ' + titre + ' (ft. ' + featuring + ')';
 }
 
 function featuring(){
@@ -153,9 +151,6 @@ function featEnd(){
     content =  document.getElementById("titre").value;
     content = trim(content.replace(/(feat\. |ft\. |featuring |ft |feat |f\. |featuring: )(.+)/gmi,"(ft. $2)"));
     document.getElementById("titre").value = content;
-    autoAdjustTitre();
-    featuring();
-    rebuild();
    /* if(document.getElementById("image").value == ''){
         var url = 'admin_img_article.php?search='+document.getElementById('artiste_article').value;
         //alert(url);
@@ -169,9 +164,6 @@ function featStart(){
     content =  document.getElementById("titre").value;
     content = trim(content.replace(/(.+)(feat\. |ft\. |featuring |ft |feat |f\. |featuring: )(.+)-(.+)/gmi,"$1-$4 (ft. $3)"));
     document.getElementById("titre").value = content;
-    autoAdjustTitre();
-    featuring();
-    rebuild();
     if(document.getElementById("image").value == ''){
         var url = 'admin_img_article.php?search='+document.getElementById('artiste').value;
         //alert(url);
@@ -181,6 +173,219 @@ function featStart(){
 }
 
 
+
+function youtubeimg(){
+    lien_img = document.getElementById("img_url").value;
+    lien_img = lien_img.replace(/(.+?v=)/, '');
+    lien_img =  lien.replace(/(&.+|#.+)/,'');
+    lien_img = 'http://i3.ytimg.com/vi/'+lien_img+'/default.jpg';
+    document.getElementById("img_url").value = lien_img;
+}
+function vimeoAuto(popup){
+    lien =  document.getElementById("media_article").value;
+    lien_old = lien;
+    lien = lien.replace(/http(s)?:\/\/vimeo.com\/|http(s)?:\/\/www\.vimeo.com\//, '');
+    lien = lien.replace(/[\S\s].*?video\/([a-z0-9_-]*)[^a-z0-9_-].+[\S\s]*?/i,'$1');
+    idvid = lien;
+    $.ajax({
+        method: "get", url: "ajax/vimeo.php",data: { id : idvid },
+        success: function(html){
+            document.getElementById("img_url").value = html;
+        }
+    }); //close $.ajax(
+
+    lien_media = '[vimeo]'+idvid+'[/vimeo]';
+    document.getElementById("media_article").value = lien_media;
+    if(popup ==1){
+        window.open(lien_old,'mywindow','width=900,height=600');
+    }
+    copie();
+}
+
+function hulkshareAuto(popup){
+    lien =  document.getElementById("media_article").value;
+    lien = lien.replace(/http:\/\/hulkshare.com\/|http:\/\/www\.hulkshare.com\//, '');
+    idvid = lien;
+    lien_media = '<embed width=\"500\" height=\"30\" flashvars=\"skin=http://static.hulkshare.com/mediaplayer/stylish_slim.swf&amp;backcolor=292929&amp;lightcolor=D60041&amp;file=http://new.hulkshare.com/stream/'+idvid+'.mp3\" wmode=\"opaque\" allowscriptaccess=\"always\" allowfullscreen=\"true\" quality=\"high\" name=\"mpl\" id=\"mpl\" src=\"http://static.hulkshare.com/mediaplayer/player.swf\" type=\"application/x-shockwave-flash\">';
+    document.getElementById("media").value = lien_media;
+
+}
+function sharebeastAuto(popup){
+    lien =  document.getElementById("media_article").value;
+    lien = lien.replace(/[\s\S]*.+file=([a-zA-Z0-9_-]*)&.+[\s\S]*/i,'$1');
+    idvid = lien;
+    lien_media = '<iframe src="http://emd.sharebeast.com/embed.php?type=sharebeast&file='+idvid+'&width=100%" scrolling="no" frameborder="0" allowTransparency="true" style="width:100%;height:50px;"></iframe>';
+    document.getElementById("media").value = lien_media;
+}
+function soundcloudAuto(popup){
+    lien =  document.getElementById("media_article").value;
+    lien = lien.replace(/[\s\S]*.+tracks(%|\/)([a-zA-Z0-9]*)(&|"|%3F).+[\s\S]*/i,'$2');
+    idvid = lien;
+    lien_media = '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+idvid+'&amp;auto_play=true&amp;visual=true"></iframe>';
+    document.getElementById("media").value = lien_media;
+}
+function audiomackAuto(popup){
+    iframe();
+    lien =  document.getElementById("media_article").value;
+    lien = lien.replace(/\?[a-zA-Z0-9\=&;]+"/i,'"');
+    document.getElementById("media").value = lien;
+    mediaAuto();
+}
+
+
+function youtubeAuto(popup){
+
+    lien =  document.getElementById("media").value;
+
+    lien = lien.replace(/[\s\S]*.+video_id=([a-zA-Z0-9_-]*)&.+[\s\S]*/i,'$1');
+    lien = lien.replace(/[\S\s].*?embed\/([a-z0-9_-]*)[^a-z0-9_-].+[\S\s]*?/i,'$1');
+    lien = lien.replace(/(.+?v=|.+\/v\/)/,'');
+    lien =  lien.replace(/(&.+|#.+)/,'');
+    lien =  lien.replace(/.+youtu\.be\//,'');
+    idvid = lien;
+
+    var base_url = $("#media_auto").attr("data-youtube");
+    ajax_url = base_url+"/"+idvid;
+
+    $.ajax({
+        type: "GET",
+        url: ajax_url,
+        dataType: "xml",
+        success: function(xml) {
+            $(xml).find('videos').each(function () {
+                document.getElementById("titre").value = $(this).find('Title').text();
+                document.getElementById("image").value = $(this).find('Image').text();
+            });
+        },
+        error: function() {
+            alert("The XML File could not be processed correctly.");
+        }
+    });
+
+    //document.getElementById("img_url").value = lien_img;
+    lien_media = '[youtube]'+idvid+'[/youtube]';
+    document.getElementById("media").value = lien_media;
+    lien = 'http://www.youtube.com/watch?v='+idvid;
+    if(popup == 1){
+        window.open(lien,'mywindow','width=900,height=600');
+    }
+
+}
+
+function dailyAuto(popup) {
+    lien =  document.getElementById("media").value;
+    if(!lien.match('/embed/')){
+        lien = lien.replace(/.+video\//,'');
+        lien =  lien.replace(/_.+/,'');
+        idvid = lien;
+
+        var base_url = $("#media_auto").attr("data-dailymotion");
+        ajax_url = base_url+"/"+idvid;
+
+        $.ajax({
+            type: "GET",
+            url: ajax_url,
+            dataType: "xml",
+            success: function(xml) {
+                $(xml).find('videos').each(function () {
+                    document.getElementById("titre").value = $(this).find('Title').text();
+                    document.getElementById("image").value = $(this).find('Image').text();
+                });
+            },
+            error: function() {
+                alert("The XML File could not be processed correctly.");
+            }
+        });
+        lien_media = '[dailymotion]'+idvid+'[/dailymotion]';
+        document.getElementById("media").value = lien_media;
+        lien = 'http://www.dailymotion.com/video/'+idvid;
+        if(popup ==1){
+            window.open(lien,'mywindow','width=900,height=500');
+        }
+    }
+
+}
+
+function vimeoAuto(popup){
+    lien =  document.getElementById("media").value;
+    lien_old = lien;
+    lien = lien.replace(/http(s)?:\/\/vimeo.com\/|http(s)?:\/\/www\.vimeo.com\//, '');
+    lien = lien.replace(/[\S\s].*?video\/([a-z0-9_-]*)[^a-z0-9_-].+[\S\s]*?/i,'$1');
+    idvid = lien;
+
+    var base_url = $("#media_auto").attr("data-vimeo");
+    ajax_url = base_url+"/"+idvid;
+
+    $.ajax({
+        type: "GET",
+        url: ajax_url,
+        dataType: "xml",
+        success: function(xml) {
+            $(xml).find('videos').each(function () {
+                document.getElementById("titre").value = $(this).find('Title').text();
+                document.getElementById("image").value = $(this).find('Image').text();
+            });
+        },
+        error: function() {
+            alert("The XML File could not be processed correctly.");
+        }
+    });
+
+    lien_media = '[vimeo]'+idvid+'[/vimeo]';
+    document.getElementById("media").value = lien_media;
+    if(popup ==1){
+        window.open(lien_old,'mywindow','width=900,height=600');
+    }
+    copie();
+}
+
+
+function exp_reg(){
+    var regex = document.getElementById("regex").value;
+    var reg = new RegExp(regex, "gm");
+    var remplac = document.getElementById("remplac").value;
+    content =  tinymce.get('texte').getContent();
+    content = content.replace(reg,remplac);
+    document.getElementById("texte").value = content;
+    tinymce.get('texte').setContent(content);
+}
+function hq(){
+    lien_img = document.getElementById("image_panell").value;
+    lien_img = lien_img.replace(/(\/default.jpg)/, '/hqdefault.jpg');
+    lien_img = lien_img.replace(/(jpeg_preview_small)/,'jpeg_preview_large');
+    lien_img = lien_img.replace(/(jpeg_preview_medium)/,'jpeg_preview_large');
+    lien_img = lien_img.replace(/vimeocdn\.com\/(.+)\/(.+)\/(.+)\/(.+)_.+.jpg/,'vimeocdn.com/$1\/$2/$3/$4_640.jpg');
+    document.getElementById("image_panell").value = lien_img;
+}
+function mediaAuto(popup){
+    lien =  document.getElementById("media").value;
+    patt=/dailymotion/g;
+    if(patt.test(lien)){
+        dailyAuto(popup);
+    }
+    patt=/youtube|youtu\.be|ytimg\.com/g;
+    if(patt.test(lien)){
+        youtubeAuto(popup);
+    }
+    patt=/vimeo/g;
+    if(patt.test(lien)){
+        vimeoAuto(popup);
+    }
+    patt=/sharebeast/g;
+    if(patt.test(lien)){
+        sharebeastAuto(popup);
+    }
+    patt=/soundcloud/g;
+    if(patt.test(lien)){
+        soundcloudAuto(popup);
+    }
+    patt=/audiomack/g;
+    if(patt.test(lien)){
+        audiomackAuto(popup);
+    }
+}
+/*
+*/
 $(document).ready(function(){
     $( "#titre" ).blur(function() {
         autoAdjustTitre();
@@ -208,5 +413,15 @@ $(document).ready(function(){
     });
     $( "#feat" ).click(function() {
         featuring();
+    });
+    $( "#media_auto" ).click(function() {
+        mediaAuto(0);
+    });
+    $( "#app_reg" ).click(function() {
+        exp_reg();
+    });
+    $( "#image" ).bind("propertychange change click keyup input paste mouseenter mouseleave", function() {
+        var image = document.getElementById("image").value;
+        $("#preview_img").empty().append( $('<img />', { src: image , height:'80' , width: '120' }));
     });
 });

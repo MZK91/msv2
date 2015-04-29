@@ -4,6 +4,9 @@ namespace MuzikSpirit\BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * Video
  *
@@ -188,4 +191,529 @@ class Video
     private $artiste2;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     * @return Video
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string 
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set artiste
+     *
+     * @param string $artiste
+     * @return Video
+     */
+    public function setArtiste($artiste)
+    {
+        $this->artiste = $artiste;
+
+        return $this;
+    }
+
+    /**
+     * Get artiste
+     *
+     * @return string 
+     */
+    public function getArtiste()
+    {
+        return $this->artiste;
+    }
+
+    /**
+     * Set media
+     *
+     * @param string $media
+     * @return Video
+     */
+    public function setMedia($media)
+    {
+        $this->media = $media;
+
+        return $this;
+    }
+
+    /**
+     * Get media
+     *
+     * @return string 
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    /**
+     * Set texte
+     *
+     * @param string $texte
+     * @return Video
+     */
+    public function setTexte($texte)
+    {
+        $this->texte = $texte;
+
+        return $this;
+    }
+
+    /**
+     * Get texte
+     *
+     * @return string 
+     */
+    public function getTexte()
+    {
+        return $this->texte;
+    }
+
+    /**
+     * Set vues
+     *
+     * @param integer $vues
+     * @return Video
+     */
+    public function setVues($vues)
+    {
+        $this->vues = $vues;
+
+        return $this;
+    }
+
+    /**
+     * Get vues
+     *
+     * @return integer 
+     */
+    public function getVues()
+    {
+        return $this->vues;
+    }
+
+    /**
+     * Set vuesDif
+     *
+     * @param integer $vuesDif
+     * @return Video
+     */
+    public function setVuesDif($vuesDif)
+    {
+        $this->vuesDif = $vuesDif;
+
+        return $this;
+    }
+
+    /**
+     * Get vuesDif
+     *
+     * @return integer 
+     */
+    public function getVuesDif()
+    {
+        return $this->vuesDif;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Video
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Video
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set duration
+     *
+     * @param integer $duration
+     * @return Video
+     */
+    public function setDuration($duration)
+    {
+        $this->duration = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Get duration
+     *
+     * @return integer 
+     */
+    public function getDuration()
+    {
+        return $this->duration;
+    }
+
+    /**
+     * Set facebook
+     *
+     * @param integer $facebook
+     * @return Video
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+
+        return $this;
+    }
+
+    /**
+     * Get facebook
+     *
+     * @return integer 
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * Set twitter
+     *
+     * @param integer $twitter
+     * @return Video
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+
+        return $this;
+    }
+
+    /**
+     * Get twitter
+     *
+     * @return integer 
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * Set lastIp
+     *
+     * @param string $lastIp
+     * @return Video
+     */
+    public function setLastIp($lastIp)
+    {
+        $this->lastIp = $lastIp;
+
+        return $this;
+    }
+
+    /**
+     * Get lastIp
+     *
+     * @return string 
+     */
+    public function getLastIp()
+    {
+        return $this->lastIp;
+    }
+
+    /**
+     * Set lastVisit
+     *
+     * @param \DateTime $lastVisit
+     * @return Video
+     */
+    public function setLastVisit($lastVisit)
+    {
+        $this->lastVisit = $lastVisit;
+
+        return $this;
+    }
+
+    /**
+     * Get lastVisit
+     *
+     * @return \DateTime 
+     */
+    public function getLastVisit()
+    {
+        return $this->lastVisit;
+    }
+
+    /**
+     * Set likes
+     *
+     * @param integer $likes
+     * @return Video
+     */
+    public function setLikes($likes)
+    {
+        $this->likes = $likes;
+
+        return $this;
+    }
+
+    /**
+     * Get likes
+     *
+     * @return integer 
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+
+    /**
+     * Set dislikes
+     *
+     * @param integer $dislikes
+     * @return Video
+     */
+    public function setDislikes($dislikes)
+    {
+        $this->dislikes = $dislikes;
+
+        return $this;
+    }
+
+    /**
+     * Get dislikes
+     *
+     * @return integer 
+     */
+    public function getDislikes()
+    {
+        return $this->dislikes;
+    }
+
+    /**
+     * Set score
+     *
+     * @param float $score
+     * @return Video
+     */
+    public function setScore($score)
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    /**
+     * Get score
+     *
+     * @return float 
+     */
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    /**
+     * Set ip
+     *
+     * @param string $ip
+     * @return Video
+     */
+    public function setIp($ip)
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Get ip
+     *
+     * @return string 
+     */
+    public function getIp()
+    {
+        return $this->ip;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Video
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\User $user
+     * @return Video
+     */
+    public function setUser(\MuzikSpirit\BackBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set section
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\Section $section
+     * @return Video
+     */
+    public function setSection(\MuzikSpirit\BackBundle\Entity\Section $section = null)
+    {
+        $this->section = $section;
+
+        return $this;
+    }
+
+    /**
+     * Get section
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\Section 
+     */
+    public function getSection()
+    {
+        return $this->section;
+    }
+
+    /**
+     * Set typeArticle
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle
+     * @return Video
+     */
+    public function setTypeArticle(\MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle = null)
+    {
+        $this->typeArticle = $typeArticle;
+
+        return $this;
+    }
+
+    /**
+     * Get typeArticle
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\TypeArticle 
+     */
+    public function getTypeArticle()
+    {
+        return $this->typeArticle;
+    }
+
+    /**
+     * Set artiste2
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\Artiste $artiste2
+     * @return Video
+     */
+    public function setArtiste2(\MuzikSpirit\BackBundle\Entity\Artiste $artiste2 = null)
+    {
+        $this->artiste2 = $artiste2;
+
+        return $this;
+    }
+
+    /**
+     * Get artiste2
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\Artiste 
+     */
+    public function getArtiste2()
+    {
+        return $this->artiste2;
+    }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+
+    public function __toString(){
+        return $this->titre;
+    }
 }

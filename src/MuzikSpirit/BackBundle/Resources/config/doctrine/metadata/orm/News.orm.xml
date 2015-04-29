@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="News" table="news">
+  <entity name="MuzikSpirit\BackBundle\Entity\News" table="news">
     <indexes>
       <index name="user_id" columns="user_id"/>
       <index name="section_id" columns="section_id"/>
@@ -11,7 +11,7 @@
       <generator strategy="IDENTITY"/>
     </id>
     <field name="titre" type="string" column="titre" length="255" nullable="false"/>
-    <field name="artiste" type="string" column="artiste" length="255" nullable="false"/>
+    <field name="artiste" type="string" column="artiste" length="255" nullable="true"/>
     <field name="thumbNews" type="string" column="thumb_news" length="255" nullable="true"/>
     <field name="texte" type="text" column="texte" nullable="false"/>
     <field name="vues" type="integer" column="vues" nullable="false"/>
@@ -23,17 +23,12 @@
     <field name="facebook" type="integer" column="facebook" nullable="false"/>
     <field name="twitter" type="integer" column="twitter" nullable="false"/>
     <field name="lastIp" type="string" column="last_ip" length="255" nullable="true"/>
-    <field name="lastVisit" type="datetime" column="last_visit" nullable="false"/>
+    <field name="lastVisit" type="datetime" column="last_visit" nullable="true"/>
     <field name="likes" type="integer" column="likes" nullable="false"/>
     <field name="dislikes" type="integer" column="dislikes" nullable="false"/>
     <field name="score" type="float" column="score" precision="10" scale="0" nullable="false"/>
     <field name="ip" type="string" column="ip" length="255" nullable="true"/>
     <field name="slug" type="string" column="slug" length="255" nullable="false"/>
-    <many-to-one field="artiste2" target-entity="Artiste">
-      <join-columns>
-        <join-column name="artiste_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
     <many-to-one field="typeArticle" target-entity="TypeArticle">
       <join-columns>
         <join-column name="type_article_id" referenced-column-name="id"/>
@@ -47,6 +42,11 @@
     <many-to-one field="user" target-entity="User">
       <join-columns>
         <join-column name="user_id" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="artiste2" target-entity="Artiste">
+      <join-columns>
+        <join-column name="artiste_id" referenced-column-name="id"/>
       </join-columns>
     </many-to-one>
   </entity>
