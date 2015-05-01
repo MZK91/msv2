@@ -26,6 +26,8 @@
                        data-dailymotion="{{ url('muzikspirit_back_admin_dailymotion') }}"
                        data-vimeo="{{ url('muzikspirit_back_admin_vimeo') }}"
                             >media</a>
+                    <a role="button" id="preview_media_button" class="btn btn-large btn-primary"
+                       data-media="{{ url('muzikspirit_back_admin_preview') }}">Preview media</a>
                 </div>
             </div>
             <div class="form-group">
@@ -64,6 +66,10 @@
                        link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:2}) }}?action=news">News Thumb</a>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="preview_media" class="col-md-9"></div>
+            </div>
             {{ form_row(form.texte, {'id': 'texte'}) }}
             <div class="form-group">
                 <div class="col-sm-2"></div>
@@ -77,6 +83,7 @@
                     <a role="button" id="app_reg" class="btn btn-large btn-primary">Appliquer RegEx</a>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-10">
@@ -84,7 +91,10 @@
                        link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:1}) }}?action=texte">Images Articles</a>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="preview_article" class="col-md-9"></div>
+            </div>
             {{ form_row(form.section, {'id': 'section','class':'radio-inline' }) }}
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="image">Miniature</label>

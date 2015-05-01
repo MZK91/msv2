@@ -31,6 +31,7 @@
                     </thead>
                     <tbody>
                         {% for item in pagination.items %}
+                            {% set image = 'http://' ~ global_website_url ~ '/' ~ item.typeImage.path ~ item.image %}
                             <tr>
                                 <td>{{ item.id }}</td>
                                 <td>
@@ -43,12 +44,11 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>
                                         <ul class="dropdown-menu">
                                             <li></li>
-                                            <li><a href="{{ path('muzikspirit_back_image_remove',{'id':item.id}) }}"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
+                                            <li><a href="{{ path('muzikspirit_back_image_remove',{'id':item.id , 'iframe' : 1}) }}"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
                                         </ul>
                                     </div>
                                 </td>
-                                {% set image = 'http://' ~ global_website_url ~ '/' ~ item.typeImage.path ~ item.image %}
-                                <td align="center"><a role="button" class="cp_{{ action | default('') }}  btn btn-large btn-primary" data-value="{{ image }}" data-title="{{ item.titre | url_encode }}"><i class="fa fa-copy"></i></a></td>
+                                <td align="center"><a role="button" id="img_{{ item.id }}" class="cp_{{ action | default('') }}  btn btn-large btn-primary" data-value="{{ image }}" data-title="{{ item.titre | url_encode }}"><i class="fa fa-copy"></i></a></td>
                                 <td><a href="{{ image }}" target="_blank"><img src="{{ image }}" height="30" width="50" /></a></td>
                                 <td>{{ item.titre }}</td>
                                 <td>{{ item.typeImage.type }}</td>
@@ -59,6 +59,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+
                 {# display navigation #}
                 <div class="navigation">
                     {{ knp_pagination_render(pagination) }}

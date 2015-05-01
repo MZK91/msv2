@@ -117,7 +117,6 @@ function cleanFin(){
 }
 
 function rebuild() {
-    alert(document.getElementById("artiste").value);
     artiste = trim(document.getElementById("artiste").value);
     titre = trim(document.getElementById("titre").value);
     featuring = trim(document.getElementById("featuring").value);
@@ -384,8 +383,89 @@ function mediaAuto(popup){
         audiomackAuto(popup);
     }
 }
-/*
-*/
+
+function display_img(){
+    var image = document.getElementById("image").value;
+    $("#preview_img").empty().append( $('<img />', { src: image , height:'80' , width: '120' }));
+}
+
+function preview_media(){
+    var url = $("#preview_media_button").attr("data-media");
+    if ($('#preview_media').is(':empty')) {
+        $.post(url, { media: $('#media').val() },
+            function(html){
+                if($('#preview_media').val() == ""){
+                    $("#preview_media").html(html);
+                }else{
+                    $("#preview_media").hide("slow");
+                    $("#preview_media").empty();
+                    $("#preview_media").html(html);
+                    $("#preview_media").show("slow");
+                }
+            });
+    }else{
+        $("#preview_media").empty();
+    }
+}
+function adjust(){
+    var val = document.getElementById("media_article").value;
+    val = val.replace(/(.+<object|.+<(\s+)object)/, '<object');
+    val = val.replace(/(<\/object>.+|<\/\s+object>.+)/, '</object>');
+    val = val.replace(/(width=\"|width=\')([0-9]+)(\"|\')/gi, 'width="640"');
+    val = val.replace(/(height=\"|height=\')([0-9]+)(\"|\')/gi, 'height="360"');
+    document.getElementById("media_article").value = val;
+    //alert('Média Ajuster');
+}
+function same_artiste(){
+    var url = $("#mm_artiste").attr("data-url");
+    var type = $("#mm_artiste").attr("data-type");
+    if ($('#same_artiste').is(':empty')) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: 'find=' + $('#artiste').val(),
+            dataType: "xml",
+            success: function (xml) {
+                $(xml).find('item').each(function () {
+                    $('#same_artiste').append('<p><a href="http://www.muzikspirit.com/' + type + '/' + $(this).find('slug').text() + '/' + $(this).find('id').text() + '">' + $(this).find('titre').text() + '</a></p>');
+                });
+            },
+            error: function () {
+                alert("The XML File could not be processed correctly.");
+            }
+        });
+    }else{
+        $("#same_artiste").empty();
+    }
+}
+
+function miniature(){
+    var artiste = $('#artiste').val();
+    var url = $("#miniature").attr("data-url");
+    var image = path = '';
+    if ($('#image').is(':empty')) {
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: 'find=' + $('#artiste').val(),
+            dataType: "xml",
+            success: function (xml) {
+                $(xml).find('item').each(function () {
+                    image = $(this).find('image').text();
+
+                        $(xml).find('typeImage').each(function () {
+                           path = $(this).find('path').text();
+                        });
+                });
+                $('#image').val('http://www.muzikspirit.com/'+path+image);
+            },
+            error: function () {
+                alert("The XML File could not be processed correctly.");
+            }
+        });
+    }
+}
+
 $(document).ready(function(){
     $( "#titre" ).blur(function() {
         autoAdjustTitre();
@@ -421,7 +501,18 @@ $(document).ready(function(){
         exp_reg();
     });
     $( "#image" ).bind("propertychange change click keyup input paste mouseenter mouseleave", function() {
-        var image = document.getElementById("image").value;
-        $("#preview_img").empty().append( $('<img />', { src: image , height:'80' , width: '120' }));
+        display_img();
+    });
+    $( "#preview_media_button" ).click(function() {
+        preview_media();
+    });
+    $( "#adjust" ).click(function() {
+        adjust();
+    });
+    $( "#mm_artiste" ).click(function() {
+        same_artiste();
+    });
+    $( "#miniature" ).click(function() {
+        miniature();
     });
 });

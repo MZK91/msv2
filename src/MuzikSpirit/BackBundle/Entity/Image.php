@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Image
  *
  * @ORM\Table(name="image", indexes={@ORM\Index(name="type_image_id", columns={"type_image_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\ImageRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Image

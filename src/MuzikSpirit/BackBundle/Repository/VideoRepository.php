@@ -41,21 +41,4 @@ class ClipRepository extends EntityRepository
         return $query;
     }
 
-    /**
-     * @param $find
-     * @return \Doctrine\ORM\QueryBuilder
-     * Création d'une requete de recherche qui retourne uniquement le titre et le lien de l'article
-     */
-
-    public function searchClipLinkQuery($find)
-    {
-        $query = $this->createQueryBuilder('clip')
-            ->select('clip.titre,clip.slug,clip.id')
-            ->where('clip.titre LIKE :find')
-            ->orderBy('clip.id', 'DESC')
-            ->setParameter('find', '%' . $find . '%');
-
-        return $query;
-    }
-
 }

@@ -12,60 +12,39 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Article
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    private $id;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="article_id", type="integer", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\Column(name="article_id", type="integer", nullable=false)
      */
     private $articleId;
 
     /**
      * @var \TypeArticle
-     *
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToOne(targetEntity="TypeArticle")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="type_article_id", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="type_article_id", type="integer", nullable=false)
      */
     private $typeArticle;
 
-
+    /**
+     * @var string
+     */
+    private $titre;
 
     /**
-     * Set id
-     *
-     * @param integer $id
-     * @return Article
+     * @var string
      */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
+    private $url;
 
     /**
-     * Get id
-     *
-     * @return integer 
+     * @var string
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $image;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
 
     /**
      * Set articleId
@@ -96,7 +75,7 @@ class Article
      * @param \MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle
      * @return Article
      */
-    public function setTypeArticle(\MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle)
+    public function setTypeArticle($typeArticle)
     {
         $this->typeArticle = $typeArticle;
 
@@ -111,5 +90,97 @@ class Article
     public function getTypeArticle()
     {
         return $this->typeArticle;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     * @return Article
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string 
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Article
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Article
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Article
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

@@ -35,3 +35,8 @@ services:
     class: MuzikSpirit\BackBundle\Security\Authorization\Voter\OwnerVoter
     tags:
       - { name: security.voter }
+
+  muzikspirit_back.twig.bbcode:
+    class: MuzikSpirit\BackBundle\Twig\Extension\BbcodeExtension
+    tags:
+      - { name: twig.extension }

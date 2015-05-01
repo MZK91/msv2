@@ -2,10 +2,12 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
-use MuzikSpirit\BackBundle\Utilities\Slug;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use MuzikSpirit\BackBundle\Entity\News;
 use MuzikSpirit\BackBundle\Form\NewsType;
+
+use MuzikSpirit\BackBundle\Utilities\Slug;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -21,13 +23,15 @@ class NewsController extends Controller
 
     public function listAction($page)
     {
-
+        /**
+         * On récupére la limite du nombre d'article maximum à afficher.
+         * Défini dans le fichier config.yml -> parameters
+         */
         $limit = $this->container->getParameter('max_articles');
-
         $em = $this->getDoctrine()->getManager();
 
-        $dql   = "SELECT n FROM MuzikSpiritBackBundle:News n ORDER BY n.id DESC";
-        $query = $em->createQuery($dql);
+
+        $query = $em->getRepository('MuzikSpiritBackBundle:News')->getListNewsQuery()->getQuery();
 
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -73,12 +77,8 @@ class NewsController extends Controller
     public function searchAction($find,$page)
     {
         $limit = $this->container->getParameter('max_articles');
-
         $em = $this->getDoctrine()->getManager();
-
-        $dql   = "SELECT news FROM MuzikSpiritBackBundle:News AS news WHERE news.titre LIKE :find ORDER BY news.id DESC";
-        $query = $em->createQuery($dql);
-        $query->setParameter('find', '%'.$find.'%');
+        $query = $em->getRepository('MuzikSpiritBackBundle:News')->searchNewsQuery($find)->getQuery();
 
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -107,12 +107,9 @@ class NewsController extends Controller
         // Création d'un nouvel objet News
         $news = new News();
 
-
         // On défini le type de l'article
         $em = $this->getDoctrine()->getManager();
-        $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(3);
-        $section = $em->getRepository('MuzikSpiritBackBundle:Section')->find(1);
-        $news->setSection($section);
+        $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(1);
 
 
         // Création du formulaire
@@ -129,12 +126,8 @@ class NewsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
-
             $data = $form->getData();
-
             $data->setTypeArticle($typeArticle);
-
             $em->persist($data);
             $em->flush();
 

@@ -27,6 +27,30 @@ class Article
     private $typeArticle;
 
     /**
+     * @var string
+     * @ORM\Column(name="titre", type="string", nullable=false)
+     */
+    private $titre;
+
+    /**
+     * @var string
+     * @ORM\Column(name="slug", type="string", nullable=false)
+     */
+    private $slug;
+
+    /**
+     * @var string
+     * @ORM\Column(name="image", type="string", nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date", type="datetime", nullable=false)
+     */
+    private $date;
+
+    /**
      * Set articleId
      *
      * @param integer $articleId
@@ -71,4 +95,97 @@ class Article
     {
         return $this->typeArticle;
     }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     * @return Article
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string 
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Article
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Article
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Article
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
 }

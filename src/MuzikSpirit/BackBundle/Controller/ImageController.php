@@ -23,12 +23,9 @@ class ImageController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if($type == 0) {
-            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image img ORDER BY img.id DESC";
-            $query = $em->createQuery($dql);
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->getListImageQuery();
         }else{
-            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image img WHERE img.typeImage = :type ORDER BY img.id DESC";
-            $query = $em->createQuery($dql);
-            $query->setParameter('type', $type);
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->getListImageByTypeQuery($type);
         }
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -73,9 +70,7 @@ class ImageController extends Controller
      */
     public function searchForwardAction(Request $request){
 
-
         if($request->isMethod('POST') === TRUE){
-
             $find = $request->request->get('find', "booba");
             $iframe = $request->request->get('iframe');
             $type = $request->request->get('type');
@@ -100,16 +95,10 @@ class ImageController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if ($type == 0){
-            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image AS img WHERE img.titre LIKE :find ORDER BY img.id DESC";
-            $query = $em->createQuery($dql);
-            $query->setParameter('find', '%'.$find.'%');
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageQuery($find);
         }else{
-            $dql = "SELECT img FROM MuzikSpiritBackBundle:Image AS img WHERE img.titre LIKE :find AND img.typeImage = :type ORDER BY img.id DESC";
-            $query = $em->createQuery($dql);
-            $query->setParameter('find', '%'.$find.'%');
-            $query->setParameter('type', '%'.$type.'%');
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageByTypeQuery($find,$type);
         }
-
 
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -255,6 +244,7 @@ class ImageController extends Controller
             'orig_h'    =>  $orig_h,
         ));
     }
+
     public function editAction(Images $image, $iframe = NULL )
     {
         $em = $this->getDoctrine()->getManager();
@@ -329,22 +319,7 @@ class ImageController extends Controller
         }
     }
 
-    public function multiImageAction( )
-    {
-
-        if($iframe == NULL){
-            return $this->render('IngetisImagesBundle:Default:add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }else{
-            return $this->render('IngetisImagesBundle:Default:iframe_add_edit_image.html.twig', array(
-                'form'  => $form->createView(),
-                'id'    => 0
-            ));
-        }
-    }
-    public function removeAction(Image $Image)
+    public function removeAction(Image $Image, $iframe = 0)
     {
         $em = $this->getDoctrine()->getManager();
         $TypeImage = $Image->getTypeImage();
@@ -357,6 +332,6 @@ class ImageController extends Controller
         if ($imageToRemove && file_exists ($imageToRemove) ) {
             unlink($imageToRemove);
         }
-        return $this->redirect($this->generateUrl('muzikspirit_back_image_list')); // Redirection vers une nouvelle page
+        return $this->redirect($this->generateUrl('muzikspirit_back_image_list',array('iframe' => $iframe ))); // Redirection vers une nouvelle page
     }
 }

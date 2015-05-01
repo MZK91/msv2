@@ -20,3 +20,15 @@ muzikspirit_back_admin_dailymotion:
 muzikspirit_back_admin_vimeo:
     path:     /vimeo/{id}
     defaults: { _controller: MuzikSpiritBackBundle:Admin:vimeo, id: null }
+
+muzikspirit_back_admin_preview:
+    path:     /preview
+    defaults: { _controller: MuzikSpiritBackBundle:Admin:preview }
+
+muzikspirit_back_admin_sameartiste:
+    path:     /same-artiste/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Admin:sameartiste, type: news }
+
+muzikspirit_back_admin_getimage:
+    path:     /get-image/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Admin:getimage, type: 1 }

@@ -25,21 +25,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add_edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig">
+      <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.833334" vertical-offset="1042" max-vertical-offset="1770">
-              <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="53" />
+            <state vertical-scroll-proportion="-15.333333" vertical-offset="1627" max-vertical-offset="2355">
+              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <folding>
+                <element signature="e#53#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8145604" vertical-offset="3562" max-vertical-offset="4290">
+              <caret line="334" column="106" selection-start-line="334" selection-start-column="106" selection-end-line="334" selection-end-column="106" />
+              <folding>
+                <element signature="e#483#1980#0#PHP" expanded="false" />
+                <element signature="e#1986#2138#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.541666" vertical-offset="170" max-vertical-offset="5205">
+              <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin-functions.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/add_edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.583334" vertical-offset="1537" max-vertical-offset="2265">
+              <caret line="129" column="90" selection-start-line="129" selection-start-column="90" selection-end-line="129" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/admin.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-functions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/backassets/javascripts/admin-functions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8005319" vertical-offset="5728" max-vertical-offset="6495">
-              <caret line="422" column="91" selection-start-line="422" selection-start-column="91" selection-end-line="422" selection-end-column="91" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6493" max-vertical-offset="7860">
+              <caret line="445" column="32" selection-start-line="445" selection-start-column="32" selection-end-line="445" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="iframe_list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.375" vertical-offset="345" max-vertical-offset="1185">
+              <caret line="46" column="120" selection-start-line="46" selection-start-column="120" selection-end-line="46" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewsRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="720">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -50,25 +115,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/Messenger/Flash.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Messenger/Flash.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Provider/OAuthUserProvider.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Controller/SecurityController.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/views/Security/login.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/config/Modules/index.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Controller/IndexController.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/views/Partial/content.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/views/Index/index.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/MainController.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php" />
         <option value="$PROJECT_DIR$/web/backassets/javascripts/images-functions.js" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/Listener/AuthListener.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Listener/AuthListener.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Notification/Notification.php" />
@@ -79,15 +128,12 @@
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Crawler.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Youtube.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/Youtube.xml.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lifestyle.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/youtube.xml.twig" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/admin.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/bootstrap_3_layout_horizontal.html.twig" />
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/bootstrap_3_horizontal_layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/NewsType.php" />
@@ -95,12 +141,31 @@
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/bootstrap_3_layout_horizontal_layout.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/doctrine/metadata/orm/Article.orm.xml" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Security/Authorization/Voter/OwnerVoter.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Article.php" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php" />
-        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Listener/ArticleListener.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/admin.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Twig/Extension/BbcodeExtension.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/preview.html.twig" />
         <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Article.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Listener/ArticleListener.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/ClipType.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Video.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/list.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ClipController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ClipRepository.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ImageRepository.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/admin.yml" />
         <option value="$PROJECT_DIR$/web/backassets/javascripts/admin-functions.js" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AdminController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/add_edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php" />
+        <option value="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig" />
       </list>
     </option>
   </component>
@@ -109,7 +174,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="6" />
+    <option name="x" value="-38" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="849" />
@@ -137,7 +202,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,8 +353,34 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="mzk_v2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="siteV2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MuzikSpirit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BackBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -320,11 +410,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,7 +440,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
+              <option name="myItemId" value="Repository" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -388,6 +478,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -399,11 +490,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository" />
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form" />
+      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin" />
       <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial" />
       <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller" />
-      <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Listener" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/doctrine/metadata/orm" />
@@ -425,9 +516,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -435,6 +523,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -454,7 +545,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="23" width="1440" height="849" extended-state="0" />
+    <frame x="-38" y="23" width="1440" height="849" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -470,13 +561,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -502,222 +593,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.125" vertical-offset="375" max-vertical-offset="1350">
-          <caret line="54" column="63" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Lifestyle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.4739011" vertical-offset="345" max-vertical-offset="10380">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.833334" vertical-offset="787" max-vertical-offset="1515">
-          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/backassets/javascripts/images-functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="5" column="152" selection-start-line="5" selection-start-column="152" selection-end-line="5" selection-end-column="152" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.958333" vertical-offset="3652" max-vertical-offset="14190">
-          <caret line="269" column="20" selection-start-line="269" selection-start-column="20" selection-end-line="269" selection-end-column="27" />
-          <folding>
-            <element signature="e#49#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Authorization/Voter/VoterInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8333333" vertical-offset="127" max-vertical-offset="855">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Slug.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="345">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Son.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12180">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Crawler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2083333" vertical-offset="2677" max-vertical-offset="3405">
-          <caret line="182" column="22" selection-start-line="182" selection-start-column="22" selection-end-line="182" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ArtisteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1429570719000" expanded="true" signature="-1:-1" placeholder="SELECT artis..MuzikSpiritBackBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.625" vertical-offset="300" max-vertical-offset="5520">
-          <caret line="61" column="40" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
-          <folding>
-            <element signature="e#54#95#0#PHP" expanded="true" />
-            <marker date="1430123117000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1430123117000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1430123117000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-            <marker date="1430123117000" expanded="true" signature="-1:-1" placeholder="SELECT img F..MuzikSpiritBackBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/LyricsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1429570590000" expanded="true" signature="-1:-1" placeholder="SELECT lyric..MuzikSpiritBackBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.833334" vertical-offset="1132" max-vertical-offset="1950">
-          <caret line="120" column="51" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="51" />
-          <folding>
-            <element signature="e#53#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="315">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="675">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/FrontBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/add_edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/SimpleXML.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13736264" vertical-offset="4775" max-vertical-offset="5850">
-          <caret line="325" column="23" selection-start-line="325" selection-start-column="23" selection-end-line="325" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AlbumController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4642857" vertical-offset="37" max-vertical-offset="765">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="32" selection-end-column="10" />
-          <folding>
-            <marker date="1429570764000" expanded="true" signature="-1:-1" placeholder="SELECT album..MuzikSpiritBackBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/lifestyle.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Youtube.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="1140">
@@ -726,45 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/youtube.xml.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.082417585" vertical-offset="0" max-vertical-offset="728">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625" vertical-offset="165" max-vertical-offset="945">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="58" />
-          <folding>
-            <element signature="e#53#110#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/bootstrap_3_horizontal_layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3502747" vertical-offset="435" max-vertical-offset="1170">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="56" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/admin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -780,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.208334" vertical-offset="262" max-vertical-offset="1155">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="45.431374" vertical-offset="3682" max-vertical-offset="5445">
           <caret line="91" column="22" selection-start-line="91" selection-start-column="17" selection-end-line="91" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,26 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5480631" vertical-offset="2978" max-vertical-offset="3675">
           <caret line="224" column="18" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="1590">
-          <caret line="32" column="97" selection-start-line="32" selection-start-column="97" selection-end-line="32" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ClipController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667" vertical-offset="2" max-vertical-offset="810">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="49" />
-          <folding>
-            <element signature="e#53#92#0#PHP" expanded="true" />
-            <marker date="1429620866000" expanded="true" signature="-1:-1" placeholder="SELECT clip ..MuzikSpiritBackBundle..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,19 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.978022" vertical-offset="1440" max-vertical-offset="4695">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43882978" vertical-offset="0" max-vertical-offset="1065">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -847,35 +656,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20604396" vertical-offset="60" max-vertical-offset="810">
           <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#70#141#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ClipRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1429608853000" expanded="true" signature="-1:-1" placeholder="SELECT clip ..MuzikSpiritBackBundle..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.666666" vertical-offset="3013" max-vertical-offset="11490">
-          <caret line="174" column="40" selection-start-line="174" selection-start-column="36" selection-end-line="174" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/doctrine/metadata/orm/Article.orm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.039893616" vertical-offset="0" max-vertical-offset="752">
-          <caret line="2" column="71" selection-start-line="2" selection-start-column="71" selection-end-line="2" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,68 +663,351 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3502747" vertical-offset="0" max-vertical-offset="11775">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#49#81#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Article.php">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Utilities/Crawler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.11263736" vertical-offset="472" max-vertical-offset="1200">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="3405">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php">
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.19505495" vertical-offset="2632" max-vertical-offset="3360">
-          <caret line="166" column="49" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="49" />
-          <folding>
-            <element signature="e#53#95#0#PHP" expanded="true" />
-            <marker date="1430344631000" expanded="true" signature="-1:-1" placeholder="SELECT n FRO..MuzikSpiritBackBundle..." />
-            <marker date="1430344631000" expanded="true" signature="-1:-1" placeholder="SELECT news ..MuzikSpiritBackBundle..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55851066" vertical-offset="0" max-vertical-offset="752">
-          <caret line="28" column="78" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Twig/Extension/BbcodeExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="480">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75" vertical-offset="1065" max-vertical-offset="1920">
+          <caret line="101" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Listener/ArticleListener.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69093406" vertical-offset="37" max-vertical-offset="810">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state vertical-scroll-proportion="-21.583334" vertical-offset="127" max-vertical-offset="1035">
+          <caret line="43" column="9" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
           <folding>
             <element signature="e#6#85#0#PHP" expanded="true" />
             <element signature="e#131#188#0#PHP" expanded="true" />
-            <marker date="1430345078000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1430345078000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1430345078000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1430345078000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1430413244000" expanded="true" signature="-1:-1" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/News/add_edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.833334" vertical-offset="1042" max-vertical-offset="1770">
-          <caret line="98" column="42" selection-start-line="98" selection-start-column="42" selection-end-line="98" selection-end-column="53" />
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="690">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Form/ClipType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2083335" vertical-offset="712" max-vertical-offset="1755">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/TypeArticle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1666667" vertical-offset="52" max-vertical-offset="1515">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="330" max-vertical-offset="2955">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3337913" vertical-offset="5990" max-vertical-offset="19110">
+          <caret line="196" column="11" selection-start-line="196" selection-start-column="11" selection-end-line="196" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Admin/preview.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="728">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0096154" vertical-offset="0" max-vertical-offset="4335">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="1590">
+          <caret line="32" column="97" selection-start-line="32" selection-start-column="97" selection-end-line="32" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/VideoRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20604396" vertical-offset="0" max-vertical-offset="10830">
+          <caret line="13" column="71" selection-start-line="13" selection-start-column="71" selection-end-line="13" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/top_navigation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.60714287" vertical-offset="442" max-vertical-offset="1170">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ClipController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.896978" vertical-offset="562" max-vertical-offset="2250">
+          <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
+          <folding>
+            <element signature="e#53#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="1290">
+          <caret line="2" column="135" selection-start-line="2" selection-start-column="135" selection-end-line="2" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/clip.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10699002" vertical-offset="0" max-vertical-offset="3255">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="12" selection-end-column="62" />
+          <folding>
+            <element signature="e#54#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Clip.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9464285" vertical-offset="2295" max-vertical-offset="12240">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="11490">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maj_images_path.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1429443550000" expanded="true" signature="-1:-1" placeholder="select * fro..image..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18543956" vertical-offset="0" max-vertical-offset="728">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Partial/_modal_javascript.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18543956" vertical-offset="0" max-vertical-offset="728">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/image.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ImageRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8557692" vertical-offset="142" max-vertical-offset="1170">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/ClipRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71153843" vertical-offset="262" max-vertical-offset="990">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="52" />
+          <folding>
+            <element signature="e#53#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Entity/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72115386" vertical-offset="285" max-vertical-offset="4695">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Repository/NewsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="720">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/config/modules/admin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/backassets/javascripts/admin-functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8005319" vertical-offset="5728" max-vertical-offset="6495">
-          <caret line="422" column="91" selection-start-line="422" selection-start-column="91" selection-end-line="422" selection-end-column="91" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6493" max-vertical-offset="7860">
+          <caret line="445" column="32" selection-start-line="445" selection-start-column="32" selection-end-line="445" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333" vertical-offset="1627" max-vertical-offset="2355">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding>
+            <element signature="e#53#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Clip/add_edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.583334" vertical-offset="1537" max-vertical-offset="2265">
+          <caret line="129" column="90" selection-start-line="129" selection-start-column="90" selection-end-line="129" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.541666" vertical-offset="170" max-vertical-offset="5205">
+          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Resources/views/Image/iframe_list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375" vertical-offset="345" max-vertical-offset="1185">
+          <caret line="46" column="120" selection-start-line="46" selection-start-column="120" selection-end-line="46" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MuzikSpirit/BackBundle/Controller/ImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8145604" vertical-offset="3562" max-vertical-offset="4290">
+          <caret line="334" column="106" selection-start-line="334" selection-start-column="106" selection-end-line="334" selection-end-column="106" />
+          <folding>
+            <element signature="e#483#1980#0#PHP" expanded="false" />
+            <element signature="e#1986#2138#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
