@@ -24,8 +24,8 @@ muzikspirit_back_image_search:
         page: \d+
 
 muzikspirit_back_image_remove:
-    path:     /remove/{id}
-    defaults: { _controller: MuzikSpiritBackBundle:Image:remove }
+    path:     /remove/{id}/{iframe}/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:remove, iframe: 0 , type: 0 }
     requirements:
         id: \d+
         _method: GET

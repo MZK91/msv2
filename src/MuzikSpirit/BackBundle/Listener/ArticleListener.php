@@ -19,11 +19,18 @@ use MuzikSpirit\BackBundle\Utilities\Slug;
  * @package Store\BackendBundle\Listener
  */
 class ArticleListener {
+
+    public function checkInstance($entity){
+        if($entity instanceof News || $entity instanceof Clip){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function prePersist(LifecycleEventArgs $args){
         $entity = $args->getEntity();
-        if($entity instanceof News){
-            $entity->setSlug(Slug::slug($entity->getTitre()));
-        }elseif($entity instanceof Clip){
+        if($this->checkInstance($entity)){
             $entity->setSlug(Slug::slug($entity->getTitre()));
         }
     }
@@ -32,7 +39,15 @@ class ArticleListener {
         $entity = $args->getEntity();
         $em = $args->getEntityManager();
         $article = new Article();
-        if($entity instanceof News || $entity instanceof Clip){
+        if($this->checkInstance($entity)){
+            $nbr = $em->getRepository('MuzikSpiritBackBundle:Article')->getCountArticle();
+            if($nbr > 100){
+                $oldArticle = $em->getRepository('MuzikSpiritBackBundle:Article')->getOldestArticle();
+                if($oldArticle != null){
+                    $em->remove($oldArticle);
+                    $em->flush();
+                }
+            }
             $article->setArticleId($entity->getId());
             $article->setTypeArticle($entity->getTypeArticle()->getId());
             $article->setTitre($entity->getTitre());
@@ -47,18 +62,12 @@ class ArticleListener {
     public function preRemove(LifecycleEventArgs $args){
         $entity = $args->getEntity();
         $em = $args->getEntityManager();
-        if($entity instanceof News){
-            $qb = $em->createQueryBuilder();
-            $qb->delete('Article', 'art');
-            $qb->andWhere($qb->expr()->eq('art.typeArticle', ':type'));
-            $qb->andWhere($qb->expr()->eq('art.articleId', ':id'));
-            $qb->setParameter(':type', $entity->getTypeArticle()->getId() );
-            $qb->setParameter(':id', $entity->getId() );
-
-
-            $q = $em->createQuery('delete from MuzikSpiritBackBundle:Article art
-            where art.articleId = '.$entity->getId().' AND art.typeArticle = '.$entity->getTypeArticle()->getId());
-            $qb->execute();
+        if($this->checkInstance($entity)){
+            $q = $em->createQuery(
+                'delete from MuzikSpiritBackBundle:Article art
+                where art.articleId = '.$entity->getId().'
+                AND art.typeArticle = '.$entity->getTypeArticle()->getId());
+            $q->execute();
         }
     }
 }

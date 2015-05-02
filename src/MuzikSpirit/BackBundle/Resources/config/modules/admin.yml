@@ -32,3 +32,7 @@ muzikspirit_back_admin_sameartiste:
 muzikspirit_back_admin_getimage:
     path:     /get-image/{type}
     defaults: { _controller: MuzikSpiritBackBundle:Admin:getimage, type: 1 }
+
+muzikspirit_back_admin_crawl:
+    path:     /crawl
+    defaults: { _controller: MuzikSpiritBackBundle:Admin:crawl }

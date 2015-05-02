@@ -2,7 +2,6 @@
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
 {% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
-
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
@@ -12,7 +11,7 @@
             {{ form_start(form) }}
             <div class="form-group">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-10">
+                <div class="col-sm-7">
                     <a role="button" id="genius" class="btn btn-large btn-primary">RG</a>
                     <a role="button" id="lyrics" class="btn btn-large btn-primary">Lyrics</a>
                     <a role="button" id="inverse" class="btn btn-large btn-primary">Inverse</a>
@@ -20,6 +19,7 @@
                     <a role="button" id="clean" class="btn btn-large btn-primary">Clean</a>
                     <a role="button" id="clean_fin" class="btn btn-large btn-primary">Clean Fin</a>
                 </div>
+                <div class="col-sm-3" id="preview_image_top"></div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label" for="titre">Titre</label>
@@ -39,7 +39,7 @@
                     {{ form_errors(form.artiste) }}
                 </div>
                 <div class="col-sm-3">
-                    <a role="button" id="miniature" data-url="{{ url('muzikspirit_back_admin_getimage',{ type: 2}) }}" class="btn btn-large btn-primary">Miniature</a>
+                    <a role="button" class="btn btn-large btn-primary miniature">Miniature</a>
                     <a role="button" id="mm_artiste" data-url="{{ url('muzikspirit_back_admin_sameartiste',{ type: 'clip' }) }}" data-type="clip" class="btn btn-large btn-primary">Mm Artiste</a>
                 </div>
             </div>
@@ -67,10 +67,13 @@
                 <div id="same_artiste" class="col-md-9"></div>
             </div>
             <div class="form-group">
-                <div class="col-sm-7"></div>
-                <div class="col-md-5">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
                     <a role="button" id="preview_media_button" class="btn btn-large btn-primary"
-                       data-media="{{ url('muzikspirit_back_admin_preview') }}">Preview media</a>
+                                         data-media="{{ url('muzikspirit_back_admin_preview') }}">Preview media</a>
+                </div>
+                <div class="col-md-5">
+                    <a role="button" id="crawl" data-url="{{ url('muzikspirit_back_admin_crawl') }}" class="btn btn-large btn-primary">Crawl</a>
                     <a role="button" id="media_auto" class="btn btn-large btn-primary"
                     data-youtube="{{ url('muzikspirit_back_admin_youtube') }}"
                     data-dailymotion="{{ url('muzikspirit_back_admin_dailymotion') }}"
@@ -128,6 +131,7 @@
                 <div class="col-sm-3">
                     <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
                        link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:2}) }}?action=image">Thumb Article</a>
+                    <a role="button" id="miniature" data-url="{{ url('muzikspirit_back_admin_getimage',{ type: 2}) }}" class="btn btn-large btn-primary miniature">Miniature</a>
                 </div>
                 <div class="col-sm-3" id="preview_img"></div>
             </div>

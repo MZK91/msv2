@@ -319,7 +319,7 @@ class ImageController extends Controller
         }
     }
 
-    public function removeAction(Image $Image, $iframe = 0)
+    public function removeAction(Image $Image, $type, $iframe = 0)
     {
         $em = $this->getDoctrine()->getManager();
         $TypeImage = $Image->getTypeImage();
@@ -332,6 +332,6 @@ class ImageController extends Controller
         if ($imageToRemove && file_exists ($imageToRemove) ) {
             unlink($imageToRemove);
         }
-        return $this->redirect($this->generateUrl('muzikspirit_back_image_list',array('iframe' => $iframe ))); // Redirection vers une nouvelle page
+        return $this->redirect($this->generateUrl('muzikspirit_back_image_list', array('iframe' => $iframe , 'type' => $type ))); // Redirection vers une nouvelle page
     }
 }

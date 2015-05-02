@@ -98,7 +98,9 @@ class ClipController extends Controller
         $clip = new Clip();
         $section = new Section();
 
-        $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(1);
+
+        // On récupére le type de l'article et on initialise la section par défaut
+        $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(3);
         $section = $em->getRepository('MuzikSpiritBackBundle:Section')->find(1);
         $clip->setSection($section);
 

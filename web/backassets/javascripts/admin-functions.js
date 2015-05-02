@@ -118,10 +118,9 @@ function cleanFin(){
 
 function rebuild() {
     artiste = trim(document.getElementById("artiste").value);
-    titre = trim(document.getElementById("titre").value);
+    son = trim(document.getElementById("son").value);
     featuring = trim(document.getElementById("featuring").value);
-    document.getElementById("titre").value = '';
-    document.getElementById("titre").value = artiste + ' - ' + titre + ' (ft. ' + featuring + ')';
+    document.getElementById("titre").value = artiste + ' - ' + son + ' (ft. ' + featuring + ')';
 }
 
 function featuring(){
@@ -180,29 +179,10 @@ function youtubeimg(){
     lien_img = 'http://i3.ytimg.com/vi/'+lien_img+'/default.jpg';
     document.getElementById("img_url").value = lien_img;
 }
-function vimeoAuto(popup){
-    lien =  document.getElementById("media_article").value;
-    lien_old = lien;
-    lien = lien.replace(/http(s)?:\/\/vimeo.com\/|http(s)?:\/\/www\.vimeo.com\//, '');
-    lien = lien.replace(/[\S\s].*?video\/([a-z0-9_-]*)[^a-z0-9_-].+[\S\s]*?/i,'$1');
-    idvid = lien;
-    $.ajax({
-        method: "get", url: "ajax/vimeo.php",data: { id : idvid },
-        success: function(html){
-            document.getElementById("img_url").value = html;
-        }
-    }); //close $.ajax(
 
-    lien_media = '[vimeo]'+idvid+'[/vimeo]';
-    document.getElementById("media_article").value = lien_media;
-    if(popup ==1){
-        window.open(lien_old,'mywindow','width=900,height=600');
-    }
-    copie();
-}
 
 function hulkshareAuto(popup){
-    lien =  document.getElementById("media_article").value;
+    lien =  document.getElementById("media").value;
     lien = lien.replace(/http:\/\/hulkshare.com\/|http:\/\/www\.hulkshare.com\//, '');
     idvid = lien;
     lien_media = '<embed width=\"500\" height=\"30\" flashvars=\"skin=http://static.hulkshare.com/mediaplayer/stylish_slim.swf&amp;backcolor=292929&amp;lightcolor=D60041&amp;file=http://new.hulkshare.com/stream/'+idvid+'.mp3\" wmode=\"opaque\" allowscriptaccess=\"always\" allowfullscreen=\"true\" quality=\"high\" name=\"mpl\" id=\"mpl\" src=\"http://static.hulkshare.com/mediaplayer/player.swf\" type=\"application/x-shockwave-flash\">';
@@ -210,14 +190,14 @@ function hulkshareAuto(popup){
 
 }
 function sharebeastAuto(popup){
-    lien =  document.getElementById("media_article").value;
+    lien =  document.getElementById("media").value;
     lien = lien.replace(/[\s\S]*.+file=([a-zA-Z0-9_-]*)&.+[\s\S]*/i,'$1');
     idvid = lien;
     lien_media = '<iframe src="http://emd.sharebeast.com/embed.php?type=sharebeast&file='+idvid+'&width=100%" scrolling="no" frameborder="0" allowTransparency="true" style="width:100%;height:50px;"></iframe>';
     document.getElementById("media").value = lien_media;
 }
 function soundcloudAuto(popup){
-    lien =  document.getElementById("media_article").value;
+    lien =  document.getElementById("media").value;
     lien = lien.replace(/[\s\S]*.+tracks(%|\/)([a-zA-Z0-9]*)(&|"|%3F).+[\s\S]*/i,'$2');
     idvid = lien;
     lien_media = '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/'+idvid+'&amp;auto_play=true&amp;visual=true"></iframe>';
@@ -225,7 +205,7 @@ function soundcloudAuto(popup){
 }
 function audiomackAuto(popup){
     iframe();
-    lien =  document.getElementById("media_article").value;
+    lien =  document.getElementById("media").value;
     lien = lien.replace(/\?[a-zA-Z0-9\=&;]+"/i,'"');
     document.getElementById("media").value = lien;
     mediaAuto();
@@ -252,7 +232,9 @@ function youtubeAuto(popup){
         dataType: "xml",
         success: function(xml) {
             $(xml).find('videos').each(function () {
-                document.getElementById("titre").value = $(this).find('Title').text();
+                if (!$('#titre').val()) {
+                    document.getElementById("titre").value = $(this).find('Title').text();
+                }
                 document.getElementById("image").value = $(this).find('Image').text();
             });
         },
@@ -287,7 +269,7 @@ function dailyAuto(popup) {
             dataType: "xml",
             success: function(xml) {
                 $(xml).find('videos').each(function () {
-                    document.getElementById("titre").value = $(this).find('Title').text();
+                    if ($('#titre').is(':empty')) document.getElementById("titre").value = $(this).find('Title').text();
                     document.getElementById("image").value = $(this).find('Image').text();
                 });
             },
@@ -321,7 +303,7 @@ function vimeoAuto(popup){
         dataType: "xml",
         success: function(xml) {
             $(xml).find('videos').each(function () {
-                document.getElementById("titre").value = $(this).find('Title').text();
+                if ($('#titre').is(':empty')) document.getElementById("titre").value = $(this).find('Title').text();
                 document.getElementById("image").value = $(this).find('Image').text();
             });
         },
@@ -387,6 +369,7 @@ function mediaAuto(popup){
 function display_img(){
     var image = document.getElementById("image").value;
     $("#preview_img").empty().append( $('<img />', { src: image , height:'80' , width: '120' }));
+    $("#preview_image_top").empty().append( $('<img />', { src: image , height:'30' , width: '50' }));
 }
 
 function preview_media(){
@@ -408,12 +391,12 @@ function preview_media(){
     }
 }
 function adjust(){
-    var val = document.getElementById("media_article").value;
+    var val = document.getElementById("media").value;
     val = val.replace(/(.+<object|.+<(\s+)object)/, '<object');
     val = val.replace(/(<\/object>.+|<\/\s+object>.+)/, '</object>');
     val = val.replace(/(width=\"|width=\')([0-9]+)(\"|\')/gi, 'width="640"');
     val = val.replace(/(height=\"|height=\')([0-9]+)(\"|\')/gi, 'height="360"');
-    document.getElementById("media_article").value = val;
+    document.getElementById("media").value = val;
     //alert('Média Ajuster');
 }
 function same_artiste(){
@@ -443,7 +426,7 @@ function miniature(){
     var artiste = $('#artiste').val();
     var url = $("#miniature").attr("data-url");
     var image = path = '';
-    if ($('#image').is(':empty')) {
+    if (!$('#image').val() && artiste != '' ) {
         $.ajax({
             type: "POST",
             url: url,
@@ -466,6 +449,29 @@ function miniature(){
     }
 }
 
+function crawl(){
+    var link = $('#media').val();
+    var url = $("#crawl").attr("data-url");
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: 'link=' + link,
+        dataType: "xml",
+        success: function (xml) {
+            $(xml).find('item').each(function () {
+                $('#titre').val($(this).find('Title').text());
+                $('#media').val($(this).find('Embed').text());
+            });
+            mediaAuto(0);
+            autoAdjustTitre();
+            display_img();
+        },
+        error: function () {
+            alert("The XML File could not be processed correctly.");
+        }
+    });
+}
+
 $(document).ready(function(){
     $( "#titre" ).blur(function() {
         autoAdjustTitre();
@@ -485,6 +491,9 @@ $(document).ready(function(){
     $( "#clean" ).click(function() {
         clean();
     });
+    $( "#clean_fin" ).click(function() {
+        cleanFin();
+    });
     $( "#feat_start" ).click(function() {
         featStart();
     });
@@ -500,7 +509,7 @@ $(document).ready(function(){
     $( "#app_reg" ).click(function() {
         exp_reg();
     });
-    $( "#image" ).bind("propertychange change click keyup input paste mouseenter mouseleave", function() {
+    $("#image").bind("propertychange change click keyup input paste mouseenter mouseleave", function() {
         display_img();
     });
     $( "#preview_media_button" ).click(function() {
@@ -509,10 +518,16 @@ $(document).ready(function(){
     $( "#adjust" ).click(function() {
         adjust();
     });
+    $( "#rebuild" ).click(function() {
+        rebuild();
+    });
     $( "#mm_artiste" ).click(function() {
         same_artiste();
     });
-    $( "#miniature" ).click(function() {
+    $( ".miniature" ).click(function() {
         miniature();
+    });
+    $( "#crawl" ).click(function() {
+        crawl();
     });
 });

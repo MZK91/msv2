@@ -4,9 +4,9 @@ namespace MuzikSpirit\BackBundle\Utilities;
 
 
 class Crawler{
-    private $url;
-    private $html_code;
-    private $title;
+    protected $url;
+    protected $html_code;
+    protected $title;
 
     /**
      * @return mixed
@@ -45,7 +45,7 @@ class Crawler{
     public function __construct($url){
         $this->url = $url;
     }
-    function ascii_to_iso($text){
+    public function ascii_to_iso($text){
 
         $patterns = array();
         $patterns[0] = '/&#8211;/';
@@ -73,7 +73,7 @@ class Crawler{
     }
 
 
-    function get_page(){
+    public function get_page(){
         $this->curl = curl_init();
         // Set options
         curl_setopt ( $this->curl, CURLOPT_URL, $this->url);
@@ -100,7 +100,7 @@ class Crawler{
         $this->html_code = utf8_encode($result);
         return $result;
     }
-    function get_title(){
+    public function get_title(){
         preg_match('/<title>([\s\S.]+)<\/title>/i',$this->html_code, $matches);
         //print_r($matches);
         $title = $matches[0];
@@ -110,7 +110,7 @@ class Crawler{
         $title = $this->ascii_to_iso($title);
         return $title;
     }
-    function get_h1(){
+    public function get_h1(){
         $h1 = '';
         preg_match_all('/<h1.+?\/h1>/is',$this->html_code,$matches,PREG_PATTERN_ORDER);
         //print_r($matches);
@@ -150,7 +150,7 @@ class Crawler{
         return $h1;
     }
 
-    function get_embed(){
+    public function get_embed(){
         preg_match_all('/<iframe.+\/iframe>/i',$this->html_code,$matches);
         $ok = 0;
         foreach($matches[0] as $match){

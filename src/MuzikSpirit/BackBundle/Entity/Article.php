@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Article
  *
  * @ORM\Table(name="article", indexes={@ORM\Index(name="type_article_id", columns={"type_article_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\ArticleRepository")
  */
 class Article
 {

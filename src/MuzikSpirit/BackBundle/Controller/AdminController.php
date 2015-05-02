@@ -3,6 +3,7 @@
 namespace MuzikSpirit\BackBundle\Controller;
 
 use MuzikSpirit\BackBundle\Entity\News;
+use MuzikSpirit\BackBundle\Utilities\Crawler;
 use MuzikSpirit\BackBundle\Utilities\Youtube;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -148,5 +149,37 @@ EOF;
             return $response;
         }
 
+    }
+
+    public function CrawlAction(Request $request){
+        if ($request->getMethod() == 'POST') {
+            $link = $request->request->get('link');
+
+            $crawler = new Crawler($link);
+            $crawler->get_page();
+            $h1 = $crawler->get_h1();
+
+            if ($h1 == '' || preg_match('/13or-du-hiphop/', $link)) {
+                $title = $crawler->get_title();
+            } else {
+                $title = $h1;
+            }
+
+            $embed = $crawler->get_embed();
+
+            $data = <<<EOF
+<crawl>
+    <item>
+        <Title>$title</Title>
+        <Embed><![CDATA[$embed]]></Embed>
+    </item>
+</crawl>
+EOF;
+            $response = new Response();
+            $response->setContent($data);
+            $response->headers->set('Content-Type', 'application/xml');
+
+            return $response;
+        }
     }
 }
