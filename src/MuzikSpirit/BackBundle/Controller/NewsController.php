@@ -29,8 +29,6 @@ class NewsController extends Controller
          */
         $limit = $this->container->getParameter('max_articles');
         $em = $this->getDoctrine()->getManager();
-
-
         $query = $em->getRepository('MuzikSpiritBackBundle:News')->getListNewsQuery()->getQuery();
 
         $paginator  = $this->get('knp_paginator');
@@ -109,7 +107,10 @@ class NewsController extends Controller
 
         // On défini le type de l'article
         $em = $this->getDoctrine()->getManager();
+        // 1 news 2 video 3 clip 4 son 5 album 6 artiste 7 lyrics 8 lifestyle
         $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(1);
+        $section = $em->getRepository('MuzikSpiritBackBundle:Section')->find(1);
+        $news->setSection($section);
 
 
         // Création du formulaire
@@ -155,11 +156,9 @@ class NewsController extends Controller
      * @param News $news
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @Security("is_granted('', news)")
      */
     public function editAction(Request $request, News $news)
     {
-
         $em = $this->getDoctrine()->getManager();
         // Création du formulaire
         $form = $this->createForm(new NewsType(), $news,
@@ -180,14 +179,20 @@ class NewsController extends Controller
             $data = $form->getData();
             $news->setSlug(Slug::slug($news->getTitre()));
             $em->persist($data);
+
+            // On met à jour la table article
+            $article = $em->getRepository('MuzikSpiritBackBundle:Article')->getArticle($news->getId(),$news->getTypeArticle());
+            $article->setTitre($news->getTitre());
+            $article->setSlug($news->getSlug());
+            $em->persist($article);
             $em->flush();
+
 
             return $this->redirect($this->generateUrl('muzikspirit_back_news_edit', array('id'=> $news->getId())));
         }
 
         return $this->render('MuzikSpiritBackBundle:News:add_edit.html.twig',array(
                 'form'      =>  $form->createView(),
-                'action'    =>  "Edit",
                 'titre'     =>  "Edition de News",
             )
         );

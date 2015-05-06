@@ -9,9 +9,15 @@
 namespace MuzikSpirit\BackBundle\Listener;
 
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
+use MuzikSpirit\BackBundle\Entity\Album;
 use MuzikSpirit\BackBundle\Entity\Article;
+use MuzikSpirit\BackBundle\Entity\Artiste;
 use MuzikSpirit\BackBundle\Entity\Clip;
+use MuzikSpirit\BackBundle\Entity\Lifestyle;
+use MuzikSpirit\BackBundle\Entity\Lyrics;
 use MuzikSpirit\BackBundle\Entity\News;
+use MuzikSpirit\BackBundle\Entity\Son;
+use MuzikSpirit\BackBundle\Entity\Video;
 use MuzikSpirit\BackBundle\Utilities\Slug;
 
 /**
@@ -21,7 +27,7 @@ use MuzikSpirit\BackBundle\Utilities\Slug;
 class ArticleListener {
 
     public function checkInstance($entity){
-        if($entity instanceof News || $entity instanceof Clip){
+        if($entity instanceof News || $entity instanceof Clip || $entity instanceof Video || $entity instanceof Son || $entity instanceof Lyrics || $entity instanceof Album || $entity instanceof Lifestyle || $entity instanceof Artiste){
             return true;
         }else{
             return false;
@@ -49,7 +55,8 @@ class ArticleListener {
                 }
             }
             $article->setArticleId($entity->getId());
-            $article->setTypeArticle($entity->getTypeArticle()->getId());
+            $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find($entity->getTypeArticle());
+            $article->setTypeArticle($typeArticle);
             $article->setTitre($entity->getTitre());
             $article->setImage($entity->getImage());
             $article->setSlug($entity->getSlug());

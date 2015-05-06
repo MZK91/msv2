@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="MuzikSpirit\BackBundle\Entity\Groups" table="groups">
+  <entity name="Groups" table="groups">
     <unique-constraints>
       <unique-constraint name="UNIQ_F06D397057698A6A" columns="role"/>
     </unique-constraints>

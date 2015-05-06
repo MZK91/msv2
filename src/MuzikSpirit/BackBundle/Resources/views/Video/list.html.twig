@@ -1,6 +1,6 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_video_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
     {% import "MuzikSpiritBackBundle:Partial:_remove.html.twig" as remove %}
     {% import "MuzikSpiritBackBundle:Partial:_share.html.twig" as share %}
@@ -8,7 +8,9 @@
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
             <div class="panel-heading-controls">
-                <button href="{{ path('muzikspirit_back_clip_add') }}" class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</button>
+                <a href="{{ path('muzikspirit_back_video_add') }}" class="btn btn-danger pull-right btn-labeled">
+                    <span class="btn-label icon fa fa-plus"></span>Ajouter
+                </a>
             </div>
         </div>
 

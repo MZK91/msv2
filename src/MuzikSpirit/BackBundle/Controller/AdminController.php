@@ -99,17 +99,29 @@ EOF;
 
     public function SameArtisteAction(Request $request, $type){
         $em = $this->getDoctrine()->getManager();
-
+        // 1 news 2 video 3 clip 4 son 5 album 6 artiste 7 lyrics 8 lifestyle
         if ($request->getMethod() == 'POST') {
             $artiste = $request->request->get('find');
 
             if ($type == 'news') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:News')->searchNewsLinkQuery($artiste);
+            }elseif($type == 'video'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Video')->searchVideoLinkQuery($artiste);
             }elseif($type == 'clip'){
                 $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->searchClipLinkQuery($artiste);
+            }elseif($type == 'son'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Son')->searchSonLinkQuery($artiste);
+            }elseif($type == 'album'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Album')->searchAlbumLinkQuery($artiste);
+            }elseif($type == 'artiste'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Artiste')->searchArtisteLinkQuery($artiste);
+            }elseif($type == 'lyrics'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Lyrics')->searchLyricsLinkQuery($artiste);
+            }elseif($type == 'lifestyle'){
+                $query = $em->getRepository('MuzikSpiritBackBundle:Lifestyle')->searchLifestyleLinkQuery($artiste);
             }
-            $data = $query->setMaxResults(10)->getQuery()->getResult();
 
+            $data = $query->setMaxResults(10)->getQuery()->getResult();
 
             $encoders = array(new XmlEncoder(), new JsonEncoder());
             $normalizers = array(new GetSetMethodNormalizer());

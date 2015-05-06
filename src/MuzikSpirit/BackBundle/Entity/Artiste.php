@@ -11,7 +11,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Artiste
  *
  * @ORM\Table(name="artiste", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\ArtisteRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class Artiste
 {
@@ -29,7 +30,7 @@ class Artiste
      *
      * @ORM\Column(name="artiste", type="string", length=255, nullable=false)
      */
-    private $artiste;
+    private $titre;
 
     /**
      * @var string
@@ -166,7 +167,9 @@ class Artiste
      */
     private $typeArticle;
 
-
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id
@@ -179,26 +182,19 @@ class Artiste
     }
 
     /**
-     * Set artiste
-     *
-     * @param string $artiste
-     * @return Artiste
+     * @return string
      */
-    public function setArtiste($artiste)
+    public function getTitre()
     {
-        $this->artiste = $artiste;
-
-        return $this;
+        return $this->titre;
     }
 
     /**
-     * Get artiste
-     *
-     * @return string 
+     * @param string $titre
      */
-    public function getArtiste()
+    public function setTitre($titre)
     {
-        return $this->artiste;
+        $this->titre = $titre;
     }
 
     /**

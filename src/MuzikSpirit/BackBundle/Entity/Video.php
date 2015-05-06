@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *
  * @ORM\Table(name="video", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="video_ibfk_4", columns={"artiste_id"})})
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\VideoRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class Video
 {
@@ -191,6 +192,9 @@ class Video
     private $artiste2;
 
 
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id

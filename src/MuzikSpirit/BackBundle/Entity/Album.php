@@ -11,7 +11,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Album
  *
  * @ORM\Table(name="album", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="artiste_id", columns={"artiste_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\AlbumRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class Album
 {
@@ -204,7 +205,9 @@ class Album
      */
     private $artiste2;
 
-
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id

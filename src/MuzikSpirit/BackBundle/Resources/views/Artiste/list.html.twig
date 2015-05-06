@@ -8,7 +8,9 @@
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
             <div class="panel-heading-controls">
-                <button href="{{ path('muzikspirit_back_clip_add') }}" class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</button>
+                <a href="{{ path('muzikspirit_back_artiste_add') }}" class="btn btn-danger pull-right btn-labeled">
+                    <span class="btn-label icon fa fa-plus"></span>Ajouter
+                </a>
             </div>
         </div>
 
@@ -47,12 +49,12 @@
 
                                 <td align="center"><img src="{{ image }}" width="50" height="30" /></td>
                                 <td><img src="{{ asset('backassets/images/sections/' ~ item.section.id ~ '.png') }}"/></td>
-                                <td><a href="{{ url }}">{{ item.artiste }}</a></td>
+                                <td><a href="{{ url }}">{{ item.titre }}</a></td>
                                 <td>
                                     {% set shareUrl  = url | url_encode %}
-                                    {% set artiste = item.artiste | replace({' ': "+", "'": "+"}) %}
+                                    {% set artiste = item.titre | replace({' ': "+", "'": "+"}) %}
                                     {% set image = item.image | url_encode %}
-                                    {% set titre = item.artiste | url_encode %}
+                                    {% set titre = item.titre | url_encode %}
                                     {% set typeArticle = item.typeArticle.titre | url_encode %}
                                     {{ share.share(shareUrl,artiste,image,artiste,typeArticle) }}
                                 </td>

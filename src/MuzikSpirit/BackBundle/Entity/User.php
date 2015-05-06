@@ -10,7 +10,15 @@ use Symfony\Component\Serializer\Exception\UnsupportedException;
 
 /**
  * User
- * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D64992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_8D93D649A0D96FBF", columns={"email_canonical"})})
+ * @ORM\Table(name="user",
+ * indexes={
+ *      @ORM\Index(name="id", columns={"id"}),
+ *      @ORM\Index(name="token_key", columns={"token_key"}),
+ *      @ORM\Index(name="username", columns={"username"}),
+ *      @ORM\Index(name="facebook_id", columns={"facebook_id"})
+ * },
+ * uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D64992FC23A8", columns={"username_canonical"}), @ORM\UniqueConstraint(name="UNIQ_8D93D649A0D96FBF", columns={"email_canonical"})}
+ * )
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\UserRepository")
  */
 

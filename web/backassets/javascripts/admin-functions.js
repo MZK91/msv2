@@ -402,6 +402,7 @@ function adjust(){
 function same_artiste(){
     var url = $("#mm_artiste").attr("data-url");
     var type = $("#mm_artiste").attr("data-type");
+    alert(url);
     if ($('#same_artiste').is(':empty')) {
         $.ajax({
             type: "POST",

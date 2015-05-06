@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="MuzikSpirit\BackBundle\Entity\Album" table="album">
+  <entity name="Album" table="album">
     <indexes>
       <index name="user_id" columns="user_id"/>
       <index name="section_id" columns="section_id"/>

@@ -5,7 +5,6 @@ namespace MuzikSpirit\BackBundle\Controller;
 use MuzikSpirit\BackBundle\Entity\Clip;
 use MuzikSpirit\BackBundle\Form\ClipType;
 
-use MuzikSpirit\BackBundle\Entity\Section;
 use MuzikSpirit\BackBundle\Utilities\Slug;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,13 +13,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class ClipController extends Controller
 {
-    public function listAction($page)
-    {
-
+    /**
+     * @param $page
+     * @return \Symfony\Component\HttpFoundation\Response
+     * Listing des clips
+     */
+    public function listAction($page){
         $limit = $this->container->getParameter('max_articles');
-
         $em = $this->getDoctrine()->getManager();
-
         $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipQuery()->getQuery();
 
         $paginator  = $this->get('knp_paginator');
@@ -45,7 +45,6 @@ class ClipController extends Controller
      * @return RedirectResponse
      */
     public function searchForwardAction(Request $request){
-
         if($request->isMethod('POST') === TRUE)
             $find = $request->request->get('find');
 
@@ -83,7 +82,6 @@ class ClipController extends Controller
                 'page' => $page,
                 'pagination' => $paginator,
                 'find' => $find
-
             )
         );
     }
@@ -92,14 +90,12 @@ class ClipController extends Controller
      * AJOUT de nouveaux articles
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function addAction(Request $request)
-    {
+    public function addAction(Request $request){
         $em = $this->getDoctrine()->getManager();
         $clip = new Clip();
-        $section = new Section();
-
 
         // On récupére le type de l'article et on initialise la section par défaut
+        // 1 news 2 video 3 clip 4 son 5 album 6 artiste 7 lyrics 8 lifestyle
         $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(3);
         $section = $em->getRepository('MuzikSpiritBackBundle:Section')->find(1);
         $clip->setSection($section);
@@ -129,6 +125,50 @@ class ClipController extends Controller
         return $this->render('MuzikSpiritBackBundle:Clip:add_edit.html.twig',array(
                 'form'      =>  $form->createView(),
                 'titre'     =>  "Ajout de Clip",
+            )
+        );
+    }
+
+    /**
+     * EDITION des articles
+     * @param News $news
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     */
+    public function editAction(Request $request, Clip $clip)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(new ClipType(), $clip,
+            array(
+                'attr' => array(
+                    'method' => 'post',
+                    'action' => $this->generateUrl('muzikspirit_back_clip_edit',
+                        array(
+                            'id' => $clip->getId()
+                        )
+                    )
+                )
+            )
+        );
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+            $clip->setSlug(Slug::slug($clip->getTitre()));
+            $em->persist($data);
+            // On met à jour la table article
+            $article = $em->getRepository('MuzikSpiritBackBundle:Article')->getArticle($clip->getId(),$clip->getTypeArticle());
+            $article->setTitre($clip->getTitre());
+            $article->setSlug($clip->getSlug());
+            $em->persist($article);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('muzikspirit_back_clip_edit', array('id'=> $clip->getId())));
+        }
+
+        return $this->render('MuzikSpiritBackBundle:Clip:add_edit.html.twig',array(
+                'form'      =>  $form->createView(),
+                'titre'     =>  "Edition de Clip",
             )
         );
     }

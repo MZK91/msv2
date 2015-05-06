@@ -6,7 +6,9 @@
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
             <div class="panel-heading-controls">
-                <button href="{{ path('muzikspirit_back_news_add') }}" class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-file-text-o"></span>Ajout</button>
+                <a href="{{ path('muzikspirit_back_news_add') }}" class="btn btn-danger pull-right btn-labeled">
+                    <span class="btn-label icon fa fa-plus"></span>Ajouter
+                </a>
             </div>
         </div>
 
@@ -32,7 +34,11 @@
                         {% for news1 in pagination.items %}
                             <tr>
                                 <td>{{ news1.id }}</td>
-                                <td align="center"><a href="{{ path('muzikspirit_back_news_edit',{'id':news1.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td align="center">
+                                    <a role="button" href="{{ path('muzikspirit_back_news_edit',{'id':news1.id}) }}" class="btn btn-large btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
                                 <td align="center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>

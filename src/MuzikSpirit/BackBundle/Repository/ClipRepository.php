@@ -3,7 +3,6 @@
 namespace MuzikSpirit\BackBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use MuzikSpirit\BackBundle\Utilities\Search;
 
 class ClipRepository extends EntityRepository
 {
@@ -21,7 +20,7 @@ class ClipRepository extends EntityRepository
      * Récupération la liste complète des articles "Clip"
      */
     public function getResultClip(){
-        $query = $this->getListNewsQuery()->getQuery();
+        $query = $this->getListClipQuery()->getQuery();
 
         return $query->getResult();
     }

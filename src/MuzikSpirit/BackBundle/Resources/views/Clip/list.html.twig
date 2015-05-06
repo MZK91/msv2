@@ -9,7 +9,7 @@
             <span class="panel-title">{{ titre }}</span>
             <div class="panel-heading-controls">
                 <a href="{{ path('muzikspirit_back_clip_add') }}" class="btn btn-danger pull-right btn-labeled">
-                    Ajouter
+                    <span class="btn-label icon fa fa-plus"></span>Ajouter
                 </a>
             </div>
         </div>
@@ -36,7 +36,11 @@
                         {% for item in pagination.items %}
                             <tr>
                                 <td>{{ item.id }}</td>
-                                <td align="center"><a href="{{ path('muzikspirit_back_clip_edit',{'id':item.id}) }}"><i class="fa fa-edit"></i></a></td>
+                                <td align="center">
+                                    <a role="button" href="{{ path('muzikspirit_back_clip_edit',{'id':item.id}) }}" class="btn btn-large btn-primary">
+                                    <i class="fa fa-edit"></i>
+                                    </a>
+                                </td>
                                 <td align="center">
                                     {{ remove.remove(path('muzikspirit_back_clip_remove',{'id':item.id}) ) }}
                                 </td>

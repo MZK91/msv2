@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/stylesheets/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     {% block stylesheets %}{% endblock %}
+    {% block headmeta %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body class="{% block classname %}{% endblock %}">

@@ -1,8 +1,20 @@
-{% extends "::base.html.twig" %}
-{# stysheet #}
-{% block stylesheets %}{% endblock %}
+{% extends "::basefront.html.twig" %}
+{% block headmeta %}{% endblock %}
+{% block stylesheets %}
+    <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,300italic,400,400italic,500,700,700italic,900" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('frontassets/plugins/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontassets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontassets/css/style.css') }}">
+{% endblock %}
 {% block classname %}{% endblock %}
 {% block body %}
 
 {% endblock %}
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('frontassets/js/modernizr.min.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="{{ asset('frontassets/js/plugins.js') }}"></script>
+    <script src="{{ asset('frontassets/js/script.js') }}"></script>
+{% endblock %}

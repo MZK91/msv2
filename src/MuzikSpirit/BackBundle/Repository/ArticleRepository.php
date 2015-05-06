@@ -48,6 +48,49 @@ class ArticleRepository extends EntityRepository
         return $query->getSingleScalarResult();
     }
 
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getArticleLimit($limit){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery(
+            'SELECT article
+            FROM MuzikSpiritBackBundle:Article AS article
+            ORDER BY article.date DESC'
+        )->setMaxResults($limit);
+        $article = $query->getResult();
+
+        return $article;
+    }
+
+    /**
+     * @param $articleId
+     * @param $TypeArticle
+     * @return mixed
+     * On récupére un article en fonctrion de son id et de son type
+     */
+    public function getArticle($articleId,$TypeArticle){
+        $em = $this->getEntityManager();
+        $query = $this->createQueryBuilder('article')
+        ->where('article.typeArticle = :TypeArticle')
+        ->andWhere("article.articleId = :articleId ")
+        ->setParameter('TypeArticle', $TypeArticle )
+        ->setParameter('articleId', $articleId )
+        ->setMaxResults(1)->getQuery();
+        $article = $query->getSingleResult();
+
+        return $article;
+    }
+
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére l'élément le plus vieux dans la table Article
+     */
     public function getOldestArticle(){
         $em = $this->getEntityManager();
         $query = $em->createQuery(
@@ -58,5 +101,20 @@ class ArticleRepository extends EntityRepository
         $article = $query->getSingleResult();
 
         return $article;
+    }
+
+    /**
+     * @param $year
+     * @param $month
+     * @param $day
+     * @return mixed
+     */
+
+    public function findArticleDay($day)
+    {
+        $post = $this->getTable()->createQuery('article')
+            ->where('DAY(p.post_date) = ?', $day)
+            ->fetchOne();
+        return $post;
     }
 }

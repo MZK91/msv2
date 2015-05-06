@@ -1,8 +1,7 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_video_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
-
     <div class="panel">
         <div class="panel-heading">
             <span class="panel-title">{{ titre }}</span>
@@ -10,41 +9,114 @@
         <div class="panel-body">
             {{ include('MuzikSpiritBackBundle:Partial:_flash.html.twig') }}
             {{ form_start(form) }}
-            {{ form_row(form.titre, {'id': 'titre'}) }}
-            {{ form_row(form.artiste, {'id': 'artiste'}) }}
             <div class="form-group">
-                <div class="col-sm-2">{{ form_label(form.thumbNews) }}</div>
+                <div class="col-sm-2"></div>
                 <div class="col-sm-7">
-                    {{ form_widget(form.thumbNews, {'id': 'thumbNews'}) }}
-                    {{ form_errors(form.thumbNews) }}
+                    <a role="button" id="genius" class="btn btn-large btn-primary">RG</a>
+                    <a role="button" id="lyrics" class="btn btn-large btn-primary">Lyrics</a>
+                    <a role="button" id="inverse" class="btn btn-large btn-primary">Inverse</a>
+                    <a role="button" id="vire" class="btn btn-large btn-primary">Vire Gui</a>
+                    <a role="button" id="clean" class="btn btn-large btn-primary">Clean</a>
+                    <a role="button" id="clean_fin" class="btn btn-large btn-primary">Clean Fin</a>
+                </div>
+                <div class="col-sm-3" id="preview_image_top"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="titre">Titre</label>
+                <div class="col-sm-7">
+                    {{ form_widget(form.titre, {'id': 'titre'}) }}
+                    {{ form_errors(form.titre) }}
                 </div>
                 <div class="col-sm-3">
-                    <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
-                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:2}) }}">News Thumb</a>
+                    <a role="button" id="feat_start" class="btn btn-large btn-primary">Feat.</a>
+                    <a role="button" id="feat_end" class="btn btn-large btn-primary">Feat. End</a>
                 </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="artiste">Artiste</label>
+                <div class="col-sm-7">
+                    {{ form_widget(form.artiste, {'id': 'artiste'}) }}
+                    {{ form_errors(form.artiste) }}
+                </div>
+                <div class="col-sm-3">
+                    <a role="button" class="btn btn-large btn-primary miniature">Miniature</a>
+                    <a role="button" id="mm_artiste" data-url="{{ url('muzikspirit_back_admin_sameartiste',{ type: 'video' }) }}" data-type="video" class="btn btn-large btn-primary">Mm Artiste</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="same_artiste" class="col-md-9"></div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                    <a role="button" id="preview_media_button" class="btn btn-large btn-primary"
+                       data-media="{{ url('muzikspirit_back_admin_preview') }}">Preview media</a>
+                </div>
+                <div class="col-md-5">
+                    <a role="button" id="crawl" data-url="{{ url('muzikspirit_back_admin_crawl') }}" class="btn btn-large btn-primary">Crawl</a>
+                    <a role="button" id="media_auto" class="btn btn-large btn-primary"
+                       data-youtube="{{ url('muzikspirit_back_admin_youtube') }}"
+                       data-dailymotion="{{ url('muzikspirit_back_admin_dailymotion') }}"
+                       data-vimeo="{{ url('muzikspirit_back_admin_vimeo') }}"
+                            >media</a>
+                    <a role="button" id="adjust" class="btn btn-large btn-primary">Adjust</a>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="son">Media</label>
+                <div class="col-sm-10">
+                    {{ form_widget(form.media, {'id': 'media'}) }}
+                    {{ form_errors(form.media) }}
+                </div>
+                <div class="col-sm-3">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="preview_media" class="col-md-9"></div>
             </div>
             {{ form_row(form.texte, {'id': 'texte'}) }}
             <div class="form-group">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-10">
-                    <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
-                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:1}) }}">Images Articles</a>
+                <div class="col-md-3">
+                    <input id="regex" name="regex" type="text" placeholder="Regex" class="form-control form-control" />
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="remplac" placeholder="Chaine de remplacement" class="form-control form-control" />
+                </div>
+                <div class="col-md-3">
+                    <a role="button" id="app_reg" class="btn btn-large btn-primary">Appliquer RegEx</a>
                 </div>
             </div>
 
-            {{ form_row(form.section, {'id': 'section'}) }}
             <div class="form-group">
-                <div class="col-sm-2">{{ form_label(form.image) }}</div>
-                <div class="col-sm-7">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
+                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:1}) }}?action=texte">Images Articles</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div id="preview_article" class="col-md-9"></div>
+            </div>
+            {{ form_row(form.section, {'id': 'section','class':'radio-inline' }) }}
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="image">Miniature</label>
+                <div class="col-sm-4">
                     {{ form_widget(form.image, {'id': 'image'}) }}
                     {{ form_errors(form.image) }}
                 </div>
                 <div class="col-sm-3">
                     <a role="button" class="btn btn-large btn-primary images_button" data-toggle="modal" class="images_button"
-                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:5}) }}">Thumb Article</a>
+                       link="{{ path('muzikspirit_back_image_list',{page:1,iframe:1,type:2}) }}?action=image">Thumb Article</a>
+                    <a role="button" id="miniature" data-url="{{ url('muzikspirit_back_admin_getimage',{ type: 2}) }}" class="btn btn-large btn-primary miniature">Miniature</a>
                 </div>
+                <div class="col-sm-3" id="preview_img"></div>
             </div>
-            {{ form_row(form.adult, {'id': 'adult'}) }}
+            {{ form_widget(form.duration, {'id': 'duration'}) }}
             {{ form_widget(form.envoyer) }}
             {{ form_widget(form._token) }}
             {{ form_end(form,{'render_rest' : false}) }}
@@ -53,8 +125,7 @@
     {% include('MuzikSpiritBackBundle:Partial:_modal.html.twig') %}
 {% endblock %}
 {% block javascripts %}
-    {{ parent() }}
     {{ include('MuzikSpiritBackBundle:Partial:_admin_javascript.html.twig') }}
-    {{ include('MuzikSpiritBackBundle:Partial:_tinymce_javascript.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}
+    {{ include('MuzikSpiritBackBundle:Partial:_tinymce_javascript.html.twig') }}
     {{ include('MuzikSpiritBackBundle:Partial:_modal_javascript.html.twig') }}
 {% endblock %}

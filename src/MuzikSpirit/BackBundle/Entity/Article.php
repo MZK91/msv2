@@ -7,22 +7,34 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Article
  *
- * @ORM\Table(name="article", indexes={@ORM\Index(name="type_article_id", columns={"type_article_id"})})
+ * @ORM\Table(
+ *      name="article",
+ *      indexes={
+ *          @ORM\Index(name="type_article_id", columns={"type_article_id"}),
+ *          @ORM\Index(name="article_id", columns={"article_id"}),
+ *          @ORM\Index(name="date", columns={"date"})
+ *      }
+ * )
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\ArticleRepository")
  */
 class Article
 {
 
     /**
-     * @ORM\Id
+     * @var \ArticleId
      * @ORM\Column(name="article_id", type="integer", nullable=false)
+     * @ORM\Id
      */
     private $articleId;
 
     /**
      * @var \TypeArticle
      * @ORM\Id
-     * @ORM\Column(name="type_article_id", type="integer", nullable=false)
+     *
+     * @ORM\ManyToOne(targetEntity="TypeArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_article_id", referencedColumnName="id")
+     * })
      */
     private $typeArticle;
 
@@ -79,7 +91,7 @@ class Article
      * @param \MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle
      * @return Article
      */
-    public function setTypeArticle($typeArticle)
+    public function setTypeArticle(\MuzikSpirit\BackBundle\Entity\TypeArticle $typeArticle)
     {
         $this->typeArticle = $typeArticle;
 

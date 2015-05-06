@@ -3,25 +3,24 @@
 namespace MuzikSpirit\BackBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use MuzikSpirit\BackBundle\Utilities\Search;
 
-class ClipRepository extends EntityRepository
+class VideoRepository extends EntityRepository
 {
 
     /**
-     * Création de la réquete pour récupérer tous les "clip" avec CreateQueryBuilder
+     * Création de la réquete pour récupérer tous les "Video" avec CreateQueryBuilder
      */
-    public function getListClipQuery(){
-        $query = $this->createQueryBuilder('clip')
-            ->orderBy('clip.id', 'DESC');
+    public function getListVideoQuery(){
+        $query = $this->createQueryBuilder('video')
+            ->orderBy('video.id', 'DESC');
 
         return $query;
     }
     /**
-     * Récupération la liste complète des articles "Clip"
+     * Récupération la liste complète des articles "Video"
      */
-    public function getResultClip(){
-        $query = $this->getListNewsQuery()->getQuery();
+    public function getResultVideo(){
+        $query = $this->getListVideoQuery()->getQuery();
 
         return $query->getResult();
     }
@@ -29,13 +28,30 @@ class ClipRepository extends EntityRepository
     /**
      * @param $find
      * @return \Doctrine\ORM\QueryBuilder
-     * Création de la réquète de recherche d'articles de type "Clip" avec le paramètre transmis en paramètre
+     * Création de la réquète de recherche d'articles de type "Video" avec le paramètre transmis en paramètre
      */
-    public function searchClipQuery($find)
+    public function searchVideoQuery($find)
     {
-        $query = $this->createQueryBuilder('clip')
-            ->where('clip.titre LIKE :find')
-            ->orderBy('clip.id', 'DESC')
+        $query = $this->createQueryBuilder('video')
+            ->where('video.titre LIKE :find')
+            ->orderBy('video.id', 'DESC')
+            ->setParameter('find', '%' . $find . '%');
+
+        return $query;
+    }
+
+    /**
+     * @param $find
+     * @return \Doctrine\ORM\QueryBuilder
+     * Création d'une requete de recherche qui retourne uniquement le titre et le lien de l'article
+     */
+
+    public function searchVideoLinkQuery($find)
+    {
+        $query = $this->createQueryBuilder('video')
+            ->select('video.titre,video.slug,video.id')
+            ->where('video.titre LIKE :find')
+            ->orderBy('video.id', 'DESC')
             ->setParameter('find', '%' . $find . '%');
 
         return $query;

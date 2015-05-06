@@ -3,7 +3,6 @@
 namespace MuzikSpirit\BackBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use MuzikSpirit\BackBundle\Utilities\Search;
 
 class ImageRepository extends EntityRepository
 {

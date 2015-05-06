@@ -3,7 +3,6 @@
 namespace MuzikSpirit\BackBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use MuzikSpirit\BackBundle\Utilities\Search;
 
 class NewsRepository extends EntityRepository
 {
@@ -34,6 +33,23 @@ class NewsRepository extends EntityRepository
     public function searchNewsQuery($find)
     {
         $query = $this->createQueryBuilder('news')
+            ->where('news.titre LIKE :find')
+            ->orderBy('news.id', 'DESC')
+            ->setParameter('find', '%' . $find . '%');
+
+        return $query;
+    }
+
+    /**
+     * @param $find
+     * @return \Doctrine\ORM\QueryBuilder
+     * Création d'une requete de recherche qui retourne uniquement le titre et le lien de l'article
+     */
+
+    public function searchNewsLinkQuery($find)
+    {
+        $query = $this->createQueryBuilder('news')
+            ->select('news.titre,news.slug,news.id')
             ->where('news.titre LIKE :find')
             ->orderBy('news.id', 'DESC')
             ->setParameter('find', '%' . $find . '%');

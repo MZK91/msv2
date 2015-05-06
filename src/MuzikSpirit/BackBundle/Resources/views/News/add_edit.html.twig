@@ -46,13 +46,10 @@
                 <div class="col-sm-7">
                     {{ form_widget(form.artiste, {'id': 'artiste'}) }}
                     {{ form_errors(form.artiste) }}
-                    <input id="son" name="son" value="" placeholder="son" />
-                    <input id="featuring" name="featuring" value="" placeholder="featuring" />
-                    <input id="media" name="media" value="" placeholder="media" />
                 </div>
                 <div class="col-sm-3">
                     <a role="button" id="miniature" class="btn btn-large btn-primary">Miniature</a>
-                    <a role="button" id="mm_artiste" class="btn btn-large btn-primary">Mm Artiste</a>
+                    <a role="button" id="mm_artiste" data-url="{{ url('muzikspirit_back_admin_sameartiste',{ type: 'news' }) }}" data-type="news" class="btn btn-large btn-primary">Mm Artiste</a>
                 </div>
             </div>
             <div class="form-group">

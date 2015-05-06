@@ -10,8 +10,9 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Lifestyle
  *
- * @ORM\Table(name="lifestyle", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="category_lifestyle_id", columns={"category_lifestyle_id"})})
- * @ORM\Entity
+ * @ORM\Table(name="lifestyle", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="category_lifestyle_id", columns={"category_lifestyle_id"})})
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\LifestyleRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class Lifestyle
 {
@@ -106,7 +107,7 @@ class Lifestyle
      *
      * @ORM\Column(name="last_visit", type="datetime", nullable=false)
      */
-    private $lastVisit = '0000-00-00 00:00:00';
+    private $lastVisit;
 
     /**
      * @var integer
@@ -154,16 +155,6 @@ class Lifestyle
     private $user;
 
     /**
-     * @var \Section
-     *
-     * @ORM\ManyToOne(targetEntity="Section")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
-     * })
-     */
-    private $section;
-
-    /**
      * @var \TypeArticle
      *
      * @ORM\ManyToOne(targetEntity="TypeArticle")
@@ -184,6 +175,9 @@ class Lifestyle
     private $categoryLifestyle;
 
 
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id
@@ -607,29 +601,6 @@ class Lifestyle
     public function getUser()
     {
         return $this->user;
-    }
-
-    /**
-     * Set section
-     *
-     * @param \MuzikSpirit\BackBundle\Entity\Section $section
-     * @return Lifestyle
-     */
-    public function setSection(\MuzikSpirit\BackBundle\Entity\Section $section = null)
-    {
-        $this->section = $section;
-
-        return $this;
-    }
-
-    /**
-     * Get section
-     *
-     * @return \MuzikSpirit\BackBundle\Entity\Section 
-     */
-    public function getSection()
-    {
-        return $this->section;
     }
 
     /**

@@ -11,7 +11,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Son
  *
  * @ORM\Table(name="son", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="son_ibfk_4", columns={"artiste_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\SonRepository")
+ * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
 class Son
 {
@@ -132,9 +133,9 @@ class Son
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_visit", type="datetime", nullable=false)
+     * @ORM\Column(name="last_visit", type="datetime", nullable=true)
      */
-    private $lastVisit = '0000-00-00 00:00:00';
+    private $lastVisit;
 
     /**
      * @var integer
@@ -211,7 +212,9 @@ class Son
      */
     private $artiste2;
 
-
+    public function __construct(){
+        $this->date = new \DateTime();
+    }
 
     /**
      * Get id
