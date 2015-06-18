@@ -1,0 +1,21 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
+muzikspirit_front_clip_list:
+    path:     /clips/list/{section}/{page}
+    defaults: { _controller: MuzikSpiritFrontBundle:Clip:list, section : all, page : 1 }
+
+muzikspirit_front_clip_view:
+    path:     /clip/{slug}/{id}
+    defaults: { _controller: MuzikSpiritFrontBundle:Clip:view, page : 1 }
+    requirements:
+      id: \d+
+      _method: GET

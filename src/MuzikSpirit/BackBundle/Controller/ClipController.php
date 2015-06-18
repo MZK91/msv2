@@ -3,6 +3,7 @@
 namespace MuzikSpirit\BackBundle\Controller;
 
 use MuzikSpirit\BackBundle\Entity\Clip;
+use MuzikSpirit\BackBundle\Entity\Lyrics;
 use MuzikSpirit\BackBundle\Form\ClipType;
 
 use MuzikSpirit\BackBundle\Utilities\Slug;
@@ -32,7 +33,7 @@ class ClipController extends Controller
 
         return $this->render('MuzikSpiritBackBundle:Clip:list.html.twig',
             array(
-                'titre'=>'News',
+                'titre'=>'Clips',
                 'page' => $page,
                 'pagination' => $paginator
             )
@@ -118,6 +119,23 @@ class ClipController extends Controller
             $data->setTypeArticle($typeArticle);
             $em->persist($data);
             $em->flush();
+
+            // Ajout d'un article Lyrics basé sur le clip tout juste publié
+            $lyrics = new Lyrics();
+            if($em->getRepository('MuzikSpiritBackBundle:Lyrics')->getLyricsTitleCount($clip->getTitre()) == 0) {
+                $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(7);
+                $lyrics->setTitre($clip->getTitre());
+                $lyrics->setArtiste($clip->getArtiste());
+                $lyrics->setSon($clip->getSon());
+                $lyrics->setFeaturing($clip->getFeaturing());
+                $lyrics->setSection($clip->getSection());
+                $lyrics->setSlug($clip->getSlug());
+                $lyrics->setImage($clip->getImage());
+                $lyrics->setTypeArticle($typeArticle);
+                $lyrics->setVide(1);
+                $em->persist($lyrics);
+                $em->flush();
+            }
 
             return $this->redirect($this->generateUrl('muzikspirit_back_clip_add'));
         }

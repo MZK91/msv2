@@ -39,6 +39,16 @@ class Article
     private $typeArticle;
 
     /**
+     * @var \Section
+     *
+     * @ORM\ManyToOne(targetEntity="Section")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     * })
+     */
+    private $section;
+
+    /**
      * @var string
      * @ORM\Column(name="titre", type="string", nullable=false)
      */
@@ -55,6 +65,12 @@ class Article
      * @ORM\Column(name="image", type="string", nullable=false)
      */
     private $image;
+
+    /**
+     * @var string
+     * @ORM\Column(name="vues", type="integer", nullable=false)
+     */
+    private $vues = '0';
 
     /**
      * @var \DateTime
@@ -107,6 +123,40 @@ class Article
     {
         return $this->typeArticle;
     }
+
+    /**
+     * @return \Section
+     */
+    public function getSection()
+    {
+        return $this->section;
+    }
+
+    /**
+     * @param \Section $section
+     */
+    public function setSection($section)
+    {
+        $this->section = $section;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVues()
+    {
+        return $this->vues;
+    }
+
+    /**
+     * @param string $vues
+     */
+    public function setVues($vues)
+    {
+        $this->vues = $vues;
+    }
+
+
 
     /**
      * Set titre

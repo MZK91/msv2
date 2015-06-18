@@ -2,6 +2,7 @@
 
 namespace MuzikSpirit\BackBundle\Controller;
 
+use MuzikSpirit\BackBundle\Entity\Lyrics;
 use MuzikSpirit\BackBundle\Entity\Son;
 use MuzikSpirit\BackBundle\Form\SonType;
 
@@ -118,6 +119,23 @@ class SonController extends Controller
             $em->persist($data);
             $em->flush();
 
+            // Ajout d'un article Lyrics basé sur le son tout juste publié
+            $lyrics = new Lyrics();
+            if($em->getRepository('MuzikSpiritBackBundle:Lyrics')->getLyricsTitleCount($son->getTitre()) == 0) {
+                $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find(7);
+                $lyrics->setTitre($son->getTitre());
+                $lyrics->setArtiste($son->getArtiste());
+                $lyrics->setSon($son->getSon());
+                $lyrics->setFeaturing($son->getFeaturing());
+                $lyrics->setSection($son->getSection());
+                $lyrics->setSlug($son->getSlug());
+                $lyrics->setImage($son->getImage());
+                $lyrics->setTypeArticle($typeArticle);
+                $lyrics->setVide(1);
+                $em->persist($lyrics);
+                $em->flush();
+            }
+
             return $this->redirect($this->generateUrl('muzikspirit_back_son_add'));
         }
 
@@ -159,8 +177,6 @@ class SonController extends Controller
             $article = $em->getRepository('MuzikSpiritBackBundle:Article')->getArticle($son->getId(),$son->getTypeArticle());
             $article->setTitre($son->getTitre());
             $article->setSlug($son->getSlug());
-
-
             $em->persist($article);
             $em->flush();
 

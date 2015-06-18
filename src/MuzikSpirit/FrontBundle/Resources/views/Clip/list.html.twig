@@ -1,0 +1,49 @@
+{% extends 'MuzikSpiritFrontBundle:Partial:content.html.twig' %}
+{% block content %}
+    {% set i = 1 %}
+    {% set day = 0 %}
+
+    {% for item in pagination.items %}
+        {% if loop.first %}
+            <h3 class="block-title"><span>Ajouté le :</span> {{ item.date|date('d/m/Y') }}</h3>
+        {% endif %}
+        {% if i == 1 %}
+        <div class="row">
+        {% endif %}
+        <div class="col-md-4">
+            <article class="news-block small-block">
+                <a href="{{ path('muzikspirit_front_clip_view',{'id':item.id,'slug':item.slug}) }}" class="overlay-link">
+                    <figure class="image-overlay" >
+                        <div class="article-img-list" style="background-image: url('{{ item.image | replace({"default.jpg":"mqdefault.jpg"}) }}');"></div>
+                    </figure>
+                </a>
+                <a href="#" class="category">
+                    {{ item.section.titre }}
+                </a>
+                <header class="news-details">
+                    <h3 class="news-title">
+                        <a href="{{ path('muzikspirit_front_clip_view',{'id':item.id,'slug':item.slug}) }}">
+                            {{ item.titre }}
+                        </a>
+                    </h3>
+                </header>
+            </article><!-- News block -->
+        </div>
+        {% set i = i + 1 %}
+        {% if i == 4 or day != item.date|date('d') %}
+            </div><!-- End Row --><br/><br/>
+            {% set i = 1 %}
+            {% if day != item.date|date('d') %}
+                <h3 class="block-title"><span>Ajouté le :</span> {{ item.date|date('d/m/Y') }}</h3>
+                {% set day = item.date|date('d') %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+        {% if i < 4 %}
+        </div><!-- End Row -->
+        {% endif %}
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

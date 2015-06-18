@@ -57,4 +57,20 @@ class SonRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getSonLimit($limit){
+        $query = $this->createQueryBuilder('son')
+            ->orderBy('son.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery();
+        $son = $query->getResult();
+
+        return $son;
+    }
+
 }

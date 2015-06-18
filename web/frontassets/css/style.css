@@ -66,8 +66,40 @@ Designed by: DigitalTheme.co
 /*---------------------------------------
    2.1 General Styles         
 -----------------------------------------*/
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../fonts/tungsten/TungstenNarrow-Medium.eot');
+    src: url('../fonts/tungsten/TungstenNarrow-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/tungsten/TungstenNarrow-Medium.woff') format('woff'),
+    url('../fonts/tungsten/TungstenNarrow-Medium.ttf') format('truetype'),
+    url('../fonts/tungsten/TungstenNarrow-Medium.svg') format('svg');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('../fonts/BebasNeue/BebasNeue.eot');
+    src: url('../fonts/BebasNeue/BebasNeue.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/BebasNeue/BebasNeue.woff') format('woff'),
+    url('../fonts/BebasNeue/BebasNeue.ttf') format('truetype'),
+    url('../fonts/BebasNeue/BebasNeue.svg') format('svg');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima';
+    src: url('../fonts/proxima/proximanova-reg-webfont.eot');
+    src: url('../fonts/proxima/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/proxima/proximanova-reg-webfont.woff') format('woff'),
+    url('../fonts/proxima/proximanova-reg-webfont.ttf') format('truetype'),
+    url('../fonts/proxima/proximanova-reg-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body{
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "proxima", Arial, sans-serif;
   font-size: 15px;
   min-width: 270px;
   line-height: 1.42857143;
@@ -147,8 +179,7 @@ a:focus, a:hover {
 }
 textarea { resize:vertical; }
 h1, h2, h3, h4, h5, h6{
-  font-family: "Noto Serif", serif;
-  font-weight: bold;
+  font-family: "BebasNeue", serif;
   margin:20px 0px;
   line-height: 1.2;
 }
@@ -162,7 +193,7 @@ blockquote,
 .modern-quote,
 .blockquote{
   position: relative;
-  font-family: "Noto Serif", serif;
+  font-family: "BebasNeue", serif;
   font-size: 16px;
   font-weight: bold;
   color: #b2b2b2;
@@ -175,7 +206,7 @@ blockquote cite{
   font-weight: normal;
   display: block;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-size: 14px;
 }
 blockquote cite:before {
@@ -331,6 +362,9 @@ body.background-image4{ background-image: url('../img/bg4.jpg'); }
   color:#fff;
   font-size: 11px !important;
   line-height: 13px;
+}
+.header-right .social-icons {
+    padding-right: 20px;
 }
 .header-top .social-icons a:hover{
   color: #fff;
@@ -582,9 +616,11 @@ body.background-image4{ background-image: url('../img/bg4.jpg'); }
   background: none;
 }
 .navbar-nav>li>a{
-  font-size: 18px;
+  font-family: "BebasNeue", sans-serif;
+  font-size: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
   line-height: 20px;
-  font-weight: bold;
   -webkit-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
@@ -1022,7 +1058,7 @@ body.background-image4{ background-image: url('../img/bg4.jpg'); }
   height: auto;
 }
 .dropdown-menu .mega-menu-news .mega-menu-detail h4{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -1182,7 +1218,7 @@ a.navbar-toggle:active{
 }
 .main-content{
 	margin-top: 30px;
-  padding-top: 30px;
+  padding-top: 15px;
 	background: #fff;
 	min-height: 400px;
   margin-bottom: 0px;
@@ -1199,8 +1235,8 @@ a.navbar-toggle:active{
 .mag-content{
   margin-left: -15px;
   margin-right: -15px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .main-body{
   margin-top: 50px;
@@ -1325,10 +1361,10 @@ a.navbar-toggle:active{
   padding: 50px 50px 30px 30px;
 }
 .featured-header h2{
-  font-family: "Roboto", sans-serif;
+  font-family: "BebasNeue", sans-serif;
   color:#fff;
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: 400;
+  font-size: 30px;
   line-height: 27px;
   margin: 10px 0;
 }
@@ -1348,7 +1384,7 @@ a.navbar-toggle:active{
   margin:0px;
   padding: 6px 9px;
   background: #000;
-  background: rgba(0,0,0,.2);
+  background: rgba(0,0,0,.5);
 
   font-weight: bold;
   font-size: 11px;
@@ -1361,10 +1397,11 @@ a.navbar-toggle:active{
   -webkit-border-radius: 3px;
 }
 a.category{
-  text-decoration: none;
+    text-decoration: none;
+    color:#00acec;
 }
 a.category:hover{
-  color:#fff;
+    color:#fff;
   background: #fff;
   background: rgba(0,0,0,.5);
 }
@@ -1505,7 +1542,7 @@ a.category:hover{
   margin:0px;
 }
 .box-news h2{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   margin-bottom: 10px;
 }
 .box-news h2 a:hover{
@@ -1579,8 +1616,8 @@ a.category:hover{
 -----------------------------------------*/
 .block-title,
 .widget .nav-tabs>li>a{
-  font-family: "Roboto", sans-serif;
-  font-size: 17px;
+  font-family: "BebasNeue", sans-serif;
+  font-size: 27px;
   font-weight: 800;
   text-transform: uppercase;
   color: #222222;
@@ -1605,7 +1642,7 @@ a.category:hover{
 }
 .tag-title{
   color: #dadada;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 900;
   font-size: 27px;
   line-height: 32px;
@@ -1639,7 +1676,7 @@ a.category:hover{
 }
 .widget-content li h3,
 .small-article h3{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -1685,7 +1722,7 @@ a.category:hover{
   position: relative;
   margin-top:-40px;
   padding:10px 20px 0px;
-  background: #fff;
+    background: rgba(255,255,255,.9);
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -1694,9 +1731,9 @@ a.category:hover{
   z-index: 10;
 }
 .news-title{
-  font-family: "Noto Serif", serif;
-  font-size: 36px;
-  font-weight: bold;
+  font-family: "BebasNeue", serif;
+  font-size: 38px;
+  font-weight: normal;
   line-height: 38px;
   margin-top:0px;
   margin-bottom: 10px;
@@ -1719,7 +1756,7 @@ a.category:hover{
   padding-top: 15px;
 }
 .news-title a{
-  color:#222222;
+  color:#333;
 }
 .widget-content li h3 a:hover,
 .news-title a:hover,
@@ -1767,7 +1804,8 @@ a.category:hover{
           border-radius: 50%;
 }
 .simple-post h3{
-  font-size: 23px;
+  font-size: 25px;
+    letter-spacing: 1px;
   line-height: 27px;
   margin:0px 0px 10px;
 }
@@ -1856,7 +1894,7 @@ a.category:hover{
   padding-right: 8px; 
   padding-left: 3px; 
   margin: -2px 0 0;
-  font-family: "Noto Serif"; 
+  font-family: "BebasNeue";
 }
 .drop-caps-square{
   background: #ff6600;
@@ -1987,7 +2025,6 @@ a img.aligncenter {
 }
 .post-title{
   margin-top: 0;
-  padding-top: 5px;
   color:#000;
   font-size: 42px;
   margin-bottom: 10px;
@@ -2010,7 +2047,7 @@ a img.aligncenter {
 /* === Post Review Style === */
 .post-review-label{
   width:100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -2039,7 +2076,7 @@ a img.aligncenter {
   font-size: 13px;
 }
 .post-review-sum-point h4{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-size: 40px;
   font-weight: 900;
   text-transform: uppercase;
@@ -2284,7 +2321,7 @@ a img.aligncenter {
   margin: 0 0 5px 0;
   font-size: 29px;
   line-height: 33px;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 900;
 }
 .author-box .author-info h3 a{
@@ -2341,7 +2378,7 @@ a img.aligncenter {
   font-weight: 900;
   text-transform: uppercase;
   text-shadow: 0px 1px 0px #000;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
 }
 .page-wrapper .parallax-image img{
   opacity: .45;
@@ -2355,7 +2392,7 @@ a img.aligncenter {
   margin: 0 auto;
 }
 .page-subtitle{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 900;
   font-size: 38px;
   line-height: 46px;
@@ -2593,7 +2630,7 @@ a img.aligncenter {
   color:#222222;
   border-left: 2px solid #ff6600;
   border-bottom: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 800;
   font-size: 13px;
   line-height: 13px;
@@ -2736,7 +2773,7 @@ a img.aligncenter {
   border-bottom-color: #ff6600;
 }
 .comment-title{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-size: 17px;
   line-height: 21px;
   text-transform: uppercase;
@@ -2808,7 +2845,7 @@ a img.aligncenter {
   width:140px;
 }
 .author-widget .author-title{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 800;
   font-size: 29px;
   margin: 0;
@@ -2921,7 +2958,7 @@ a img.aligncenter {
 }
 .widget-post h3{
   margin: 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
@@ -3000,7 +3037,7 @@ a img.aligncenter {
   margin: 0px 10px 10px 0px;
 }
 .tags-widget li.trending{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-weight: 800;
   font-size: 17px;
   line-height: 30px;
@@ -3164,7 +3201,7 @@ a img.aligncenter {
   color: #d7d7d7;
 }
 .footer-main h3{
-  font-family: "Roboto", sans-serif;
+  font-family: "proxima", sans-serif;
   font-size: 15px;
   line-height: 19px;
   text-transform: uppercase;
@@ -3470,7 +3507,7 @@ a img.aligncenter {
   .box-news h2,
   .fixed-left-sidebar .widget-content li h3,
   .fixed-left-sidebar .widget-content li h3 a{
-    font-family: "Noto Serif", serif;
+    font-family: "BebasNeue", serif;
     font-weight: bold;
     font-size: 30px;
     line-height: 34px;
@@ -3635,7 +3672,7 @@ a img.aligncenter {
   .fixed-left-sidebar .widget-content li h3,
   .fixed-left-sidebar .widget-content li h3 a
   {
-    font-family: "Noto Serif", serif;
+    font-family: "BebasNeue", serif;
     font-size: 20px;
     line-height: 24px;
     font-weight: bold;
@@ -4080,12 +4117,16 @@ body.dark-skin,
 }
 
 /* Color4 style #00acec */
-.body-color4 .header,
+
 .body-color4 .sb-icon-search,
 .body-color4 .progress-bar,
 .body-color4 .drop-caps-square
 {
   background: #00acec;  
+}
+.body-color4 .header{
+    background-color: rgba(27, 27, 27, 0.90 );
+    border-bottom: 1px solid #00acec;
 }
 .body-color4 .logo,
 .body-color4 .navbar-nav>li>a,
@@ -4306,7 +4347,7 @@ body.dark-skin,
 .body-color6 .parallax-wrapper .simple-share a,
 .body-color6 .post-content > p:first-child:first-letter, 
 .body-color6 .drop-caps,
-.body-color6 .box-news .simple-share a,
+.body-color6 .box-news .smag-contentimple-share a,
 .body-color6 .box-news .simple-share a:hover,
 .body-color6 .author-box .author-info h3 a:hover,
 .body-color6 .author-contact a:hover,
@@ -4329,4 +4370,10 @@ body.dark-skin,
 .body-color6 .navbar-toggle span, 
 .body-color6 .navbar-toggle .icon-bar{
   background-color: #fff;
+}
+
+
+.article-img-list{
+    height: 190px; background-size: 350px; overflow: hidden; background-repeat: no-repeat;
+    background-position: center center;
 }

@@ -1,6 +1,6 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_artiste_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
     {% import "MuzikSpiritBackBundle:Partial:_remove.html.twig" as remove %}
     {% import "MuzikSpiritBackBundle:Partial:_share.html.twig" as share %}

@@ -1,0 +1,225 @@
+{% extends 'MuzikSpiritFrontBundle:Partial:content.html.twig' %}
+{% block title %}{{ clip.titre }} Clip{% endblock %}
+{% block content %}
+    <div class="row blog-content" data-stickyparent>
+        <div class="col-md-8" data-stickycolumn>
+            <article class="post-wrapper clearfix">
+                <header class="post-header">
+
+                    <h1 class="post-title">
+                        {{ clip.titre }}
+                    </h1><!-- .post-title -->
+
+                    <p class="simple-share">
+                        <span>by <a href="page_author.html"><b>{{ clip.user }}</b></a></span>
+                        <span><span class="article-date"><i class="fa fa-clock-o"></i> {{ clip.date | ago }}</span></span>
+                        <span><i class="fa fa-eye"></i> {{ clip.vues }} vues</span>
+                        <a class="comments-count" href="#comments">-</a>
+                    </p>
+
+                    <figure class="image-overlay">
+                        {{ clip.media | BBCode | raw }}
+                    </figure>
+                </header><!-- .post-header -->
+
+                <div class="post-content clearfix">
+
+                </div><!-- .post-content -->
+
+                <footer class="post-meta">
+
+
+                    <div class="share-wrapper clearfix">
+                        <div class="total-shares">
+                            <em id="countUp" data-count="267">267</em>
+                            <div class="caption">Shares</div>
+                        </div>
+
+                        <div class="share-buttons">
+                            <a class="social-share facebook" href="#">
+                                <i class="fa fa-facebook"></i>
+                                <span class="alt-text">Share</span>
+                            </a>
+                            <a class="social-share twitter" href="#">
+                                <i class="fa fa-twitter"></i>
+                                <span class="alt-text">Tweet</span>
+                            </a>
+                            <a class="social-share google-plus" href="#">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a class="social-share linked_in" href="#">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a class="social-share pinterest" href="#">
+                                <i class="fa fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            {{ clip.texte }}
+                        </p>
+                    </div>
+                    <div class="tags-wrapper">
+                        <ul class="tags-widget clearfix">
+                            <li class="trending">TAGS:</li>
+                            <li><a href="#">{{ clip.artiste }}</a></li>
+                        </ul>
+                    </div><!-- .tags-wrapper -->
+
+                    <div class="author-box clearfix">
+                        <div class="author-avatar">
+                            <a href="page_author.html">
+                                <img alt="" src="http://placehold.it/110x110" class="avatar" height="110" width="110">
+                            </a>
+                        </div>
+                        <div class="author-info">
+                            <h3><a href="page_author.html">{{ clip.user }}</a></h3>
+                            <p class="author-bio">
+                                He is here. All right. Well, take care of yourself, Han. I guess that's what you're best at, ain't it? What?! Don't act so surprised, Your Highness. You weren't on any mercy mission this time.
+                            </p>
+                            <div class="author-contact">
+                                <a href="#"><i class="fa fa-envelope fa-lg" title="Email"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-globe fa-lg" title="Website"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter fa-lg" title="Twitter"></i></a>
+                                <a href="#" rel="publisher" target="_blank"><i title="Google+" class="fa fa-google-plus fa-lg"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-facebook fa-lg" title="Facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </article><!-- .post-wrapper -->
+
+            <div class="related-posts clearfix">
+                <h3 class="block-title"><span>Related Posts</span></h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <article class="news-block small-block">
+                            <a href="#" class="overlay-link">
+                                <figure class="image-overlay">
+                                    <img src="http://placehold.it/350x230" alt="">
+                                </figure>
+                            </a>
+                            <a href="#" class="category">
+                                Fashion
+                            </a>
+                            <header class="news-details">
+                                <h3 class="news-title">
+                                    <a href="#">
+                                        5 Spring Outfits For Under $200
+                                    </a>
+                                </h3>
+                                <p class="simple-share">
+                                    by <a href="#"><b>John Doe</b></a> -
+                                    <span class="article-date"><i class="fa fa-clock-o"></i> 4 hours ago</span>
+                                </p>
+                            </header>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6">
+                        <article class="news-block small-block">
+                            <a href="#" class="overlay-link">
+                                <figure class="image-overlay">
+                                    <img src="http://placehold.it/350x230" alt="">
+                                </figure>
+                            </a>
+                            <a href="#" class="category">
+                                Travel
+                            </a>
+                            <header class="news-details">
+                                <h3 class="news-title">
+                                    <a href="#">
+                                        6 Tips Before Traveling Internationally
+                                    </a>
+                                </h3>
+                                <p class="simple-share">
+                                    by <a href="#"><b>John Doe</b></a> -
+                                    <span class="article-date"><i class="fa fa-clock-o"></i> 46 minutes ago</span>
+                                </p>
+                            </header>
+                        </article>
+                    </div>
+                </div><!-- .row -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <article class="news-block small-block">
+                            <a href="#" class="overlay-link">
+                                <figure class="image-overlay">
+                                    <span class="play-button"><i class="fa fa-play"></i></span>
+                                    <img src="http://placehold.it/350x230" alt="">
+                                </figure>
+                            </a>
+                            <a href="#" class="category">
+                                Food
+                            </a>
+                            <header class="news-details">
+                                <h3 class="news-title">
+                                    <a href="#">
+                                        How to Make Perfect Homemade Pizza
+                                    </a>
+                                </h3>
+                                <p class="simple-share">
+                                    by <a href="#"><b>John Doe</b></a> -
+                                    <span class="article-date"><i class="fa fa-clock-o"></i> 12 hours ago</span>
+                                </p>
+                            </header>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6">
+                        <article class="news-block small-block">
+                            <a href="#" class="overlay-link">
+                                <figure class="image-overlay">
+                                    <img src="http://placehold.it/350x230" alt="">
+                                </figure>
+                            </a>
+                            <a href="#" class="category">
+                                Advice
+                            </a>
+                            <header class="news-details">
+                                <h3 class="news-title">
+                                    <a href="#">
+                                        10 Tips for Taking Great Outdoor Photos
+                                    </a>
+                                </h3>
+                                <p class="simple-share">
+                                    by <a href="#"><b>John Doe</b></a> -
+                                    <span class="article-date"><i class="fa fa-clock-o"></i> 13 hours ago</span>
+                                </p>
+                            </header>
+                        </article>
+                    </div>
+                </div><!-- .row -->
+
+            </div><!-- .related-post -->
+            <!-- Mid ad -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="ad728-wrapper mid-wrapper">
+                        <a href="#">
+                            <img src="http://placehold.it/728x90" alt=""/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Mid ad -->
+            <div>
+                COMMENTS
+            </div>
+        </div><!-- End Left big column -->
+
+        <div class="col-md-4" data-stickycolumn>
+            <aside class="sidebar clearfix">
+
+                <div class="widget adwidget">
+                    <a href="#">
+                        <img src="http://placehold.it/300x250" alt=""/>
+                    </a>
+                </div>
+            </aside>
+        </div><!-- End last column -->
+    </div><!-- .blog-content -->
+{% endblock %}

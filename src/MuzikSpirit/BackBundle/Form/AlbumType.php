@@ -58,6 +58,20 @@ class AlbumType extends AbstractType
                     'class' => 'form-control',
                 )
             ))
+            ->add('mixtape', null, array(
+                'required'  => false,
+                'label' => 'Mixtape',
+                'attr' => array(
+                    'class' => 'checkbox',
+                )
+            ))
+            ->add('lien', null , array(
+                'label' => 'Lien de téléchargement',
+                'required'  => false,
+                'attr' => array(
+                    'class' => 'form-control',
+                )
+            ))
             ->add('image', null, array(
                 'label' => 'Miniature',
                 'required'  => true,

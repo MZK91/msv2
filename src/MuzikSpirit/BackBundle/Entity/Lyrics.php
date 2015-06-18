@@ -70,7 +70,7 @@ class Lyrics
     /**
      * @var string
      *
-     * @ORM\Column(name="texte", type="text", nullable=false)
+     * @ORM\Column(name="texte", type="text", nullable=true)
      */
     private $texte;
 

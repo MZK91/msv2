@@ -57,4 +57,19 @@ class LifestyleRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * Création de la requête pour récupérer tous articles en fonction de la section
+     *
+     * @param $section
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function getListLifestyleBySectionQuery($section)
+    {
+        $query = $this->createQueryBuilder('lifestyle')
+            ->where('lifestyle.section = :section')
+            ->orderBy('lifestyle.id', 'DESC')
+            ->setParameter('section', $section);
+        return $query;
+    }
+
 }

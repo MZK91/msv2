@@ -13,19 +13,30 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+
 class AdminController extends Controller
 {
     public function YoutubeAction($id){
         // set video data feed URL
-        $feedURL = 'http://gdata.youtube.com/feeds/api/videos/' . $id;
 
-        // read feed into SimpleXML object
-        $entry = simplexml_load_file($feedURL);
+        "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=ew2Xh4gPots&fields=items/snippet/title,items/snippet/description&key=AIzaSyCdILi8yhSniTdGSyzHRHXdZjm6BKhb47w";
 
+        $content = file_get_contents("http://www.youtube.com/oembed?url=http://www.youtube.com/watch?v=".$id."&format=json");
+        $json_output = json_decode($content, true);
+
+        /*
+         $xml = file_get_contents("http://www.youtube.com/oembed?format=xml&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D".$id);
+
+        //$video = new \SimpleXMLElement($xml);
+        //exit(dump($video));
+        /*$crawler = new Crawler($link);
+        $crawler->get_page();
+        $h1 = $crawler->get_h1();
+        */
         // parse video entry
-        $video = Youtube::parseVideoEntry($entry);
+
         $image = 'http://i3.ytimg.com/vi/'.$id.'/default.jpg';
-        $title = $video->title;
+        $title = htmlentities($json_output['title']);
 
         $data = <<<EOF
 <videos>
@@ -45,7 +56,7 @@ EOF;
         $feedURL = 'http://www.dailymotion.com/atom/video/'.$id;
         $xml = simplexml_load_file($feedURL);
 
-        $title = preg_replace('/Dailymotion - /','',$xml->title);
+        $title = htmlentities (preg_replace('/Dailymotion - /','',$xml->title));
 
         $image = "http://www.dailymotion.com/thumbnail/video/".$id;
 

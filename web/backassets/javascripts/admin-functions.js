@@ -476,6 +476,7 @@ function crawl(){
 $(document).ready(function(){
     $( "#titre" ).blur(function() {
         autoAdjustTitre();
+        display_img();
     });
     $( "#genius" ).click(function() {
         search_rapgenius();

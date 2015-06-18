@@ -45,6 +45,21 @@ class TypeImage
      */
     private $resize;
 
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="height_thumb", type="integer", nullable=false)
+     */
+    private $heightThumb = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="width_thumb", type="integer", nullable=false)
+     */
+    private $widthThumb = '0';
+
     /**
      * @var boolean
      *
@@ -235,6 +250,38 @@ class TypeImage
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHeightThumb()
+    {
+        return $this->heightThumb;
+    }
+
+    /**
+     * @param int $heightThumb
+     */
+    public function setHeightThumb($heightThumb)
+    {
+        $this->heightThumb = $heightThumb;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWidthThumb()
+    {
+        return $this->widthThumb;
+    }
+
+    /**
+     * @param int $widthThumb
+     */
+    public function setWidthThumb($widthThumb)
+    {
+        $this->widthThumb = $widthThumb;
     }
 
     /**

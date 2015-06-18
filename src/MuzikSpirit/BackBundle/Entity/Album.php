@@ -10,7 +10,15 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Album
  *
- * @ORM\Table(name="album", indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="section_id", columns={"section_id"}), @ORM\Index(name="type_article_id", columns={"type_article_id"}), @ORM\Index(name="artiste_id", columns={"artiste_id"})})
+ * @ORM\Table(name="album",
+ *      indexes={
+ *          @ORM\Index(name="user_id", columns={"user_id"}),
+ *          @ORM\Index(name="section_id", columns={"section_id"}),
+ *          @ORM\Index(name="type_article_id", columns={"type_article_id"}),
+ *          @ORM\Index(name="artiste_id", columns={"artiste_id"}),
+ *          @ORM\Index(name="mixtape", columns={"mixtape"})
+ *      }
+ * )
  * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\AlbumRepository")
  * @UniqueEntity(fields="titre", message="Le Titre doit être unique")
  */
@@ -63,7 +71,7 @@ class Album
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_sortie", type="datetime", nullable=false)
+     * @ORM\Column(name="date_sortie", type="datetime", nullable=true)
      */
     private $dateSortie;
 
@@ -89,11 +97,18 @@ class Album
     private $image;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="lien", type="string", length=255, nullable=true)
+     */
+    private $lien;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="mixtape", type="boolean", nullable=false)
      */
-    private $mixtape = '0';
+    private $mixtape = false;
 
     /**
      * @var \DateTime
@@ -119,7 +134,7 @@ class Album
     /**
      * @var string
      *
-     * @ORM\Column(name="last_ip", type="string", length=255, nullable=false)
+     * @ORM\Column(name="last_ip", type="string", length=255, nullable=true)
      */
     private $lastIp;
 
@@ -447,6 +462,22 @@ class Album
     public function getMixtape()
     {
         return $this->mixtape;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLien()
+    {
+        return $this->lien;
+    }
+
+    /**
+     * @param string $lien
+     */
+    public function setLien($lien)
+    {
+        $this->lien = $lien;
     }
 
     /**

@@ -57,4 +57,20 @@ class VideoRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getVideoLimit($limit){
+        $query = $this->createQueryBuilder('video')
+            ->orderBy('video.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery();
+        $video = $query->getResult();
+
+        return $video;
+    }
+
 }

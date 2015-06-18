@@ -47,7 +47,7 @@ class ArticleListener {
         $article = new Article();
         if($this->checkInstance($entity)){
             $nbr = $em->getRepository('MuzikSpiritBackBundle:Article')->getCountArticle();
-            if($nbr > 100){
+            if($nbr > 200){
                 $oldArticle = $em->getRepository('MuzikSpiritBackBundle:Article')->getOldestArticle();
                 if($oldArticle != null){
                     $em->remove($oldArticle);
@@ -56,6 +56,8 @@ class ArticleListener {
             }
             $article->setArticleId($entity->getId());
             $typeArticle = $em->getRepository('MuzikSpiritBackBundle:TypeArticle')->find($entity->getTypeArticle());
+            $section = $em->getRepository('MuzikSpiritBackBundle:Section')->find($entity->getSection());
+            $article->setSection($section);
             $article->setTypeArticle($typeArticle);
             $article->setTitre($entity->getTitre());
             $article->setImage($entity->getImage());

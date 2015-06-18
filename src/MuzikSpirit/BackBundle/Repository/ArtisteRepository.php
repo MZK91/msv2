@@ -57,4 +57,35 @@ class ArtisteRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * Création de la requête pour récupérer tous articles en fonction de la section
+     *
+     * @param $section
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function getListArtisteBySectionQuery($section)
+    {
+        $query = $this->createQueryBuilder('artiste')
+            ->where('artiste.section = :section')
+            ->orderBy('artiste.id', 'DESC')
+            ->setParameter('section', $section);
+        return $query;
+    }
+
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getArtisteLimit($limit){
+        $query = $this->createQueryBuilder('artist')
+            ->orderBy('artist.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery();
+        $artist = $query->getResult();
+
+        return $artist;
+    }
+
 }

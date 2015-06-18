@@ -8,9 +8,21 @@
     <link rel="stylesheet" href="{{ asset('frontassets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontassets/css/style.css') }}">
 {% endblock %}
-{% block classname %}{% endblock %}
+{% block classname %}body-color4 no-background boxed light fixed-header{% endblock %}
 {% block body %}
+<div id="main" class="header-style1">
 
+    {{ include('MuzikSpiritFrontBundle:Partial:_header.html.twig') }}
+
+    <div class="container main-wrapper">
+        {{ include('MuzikSpiritFrontBundle:Partial:_banner.html.twig') }}
+        <!-- Begin Main Wrapper -->
+        <div class="main-content mag-content clearfix">
+            {% block content %}{% endblock %}
+        </div><!-- .main-content -->
+    </div><!-- .main-wrapper -->
+    {{ include('MuzikSpiritFrontBundle:Partial:_footer.html.twig') }}
+    {{ include('MuzikSpiritFrontBundle:Partial:_mobile_nav.html.twig') }}
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('frontassets/js/modernizr.min.js') }}"></script>

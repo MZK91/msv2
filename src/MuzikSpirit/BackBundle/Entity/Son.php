@@ -42,14 +42,14 @@ class Son
     /**
      * @var string
      *
-     * @ORM\Column(name="artiste", type="string", length=255, nullable=false)
+     * @ORM\Column(name="artiste", type="string", length=255, nullable=true)
      */
     private $artiste;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="featuring", type="string", length=255, nullable=false)
+     * @ORM\Column(name="featuring", type="string", length=255, nullable=true)
      */
     private $featuring;
 

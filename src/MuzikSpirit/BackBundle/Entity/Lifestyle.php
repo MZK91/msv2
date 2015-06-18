@@ -98,14 +98,14 @@ class Lifestyle
     /**
      * @var string
      *
-     * @ORM\Column(name="last_ip", type="string", length=255, nullable=false)
+     * @ORM\Column(name="last_ip", type="string", length=255, nullable=true)
      */
     private $lastIp;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="last_visit", type="datetime", nullable=false)
+     * @ORM\Column(name="last_visit", type="datetime", nullable=true)
      */
     private $lastVisit;
 

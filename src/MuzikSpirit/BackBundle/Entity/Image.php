@@ -114,8 +114,13 @@ class Image
             if (null === $this->file) {
                 return;
             }
-            $this->fileName = $this->fileSlug.'-'.$this->id.'.'.$this->file->guessExtension();
-            $this->file->move($this->getUploadRootDir(), $this->fileSlug.'-'.$this->id.'.'.$this->file->guessExtension());
+            if($this->file->guessExtension() == 'jpeg'){
+                $extension = 'jpg';
+            }else{
+                $extension = $this->file->guessExtension();
+            }
+            $this->fileName = $this->fileSlug.'-'.$this->id.'.'.$extension;
+            $this->file->move($this->getUploadRootDir(), $this->fileName);
 
         }
     }

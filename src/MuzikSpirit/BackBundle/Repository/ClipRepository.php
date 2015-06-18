@@ -57,4 +57,35 @@ class ClipRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * Création de la requête pour récupérer tous articles en fonction de la section
+     *
+     * @param $section
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function getListClipBySectionQuery($section)
+    {
+        $query = $this->createQueryBuilder('clip')
+            ->where('clip.section = :section')
+            ->orderBy('clip.id', 'DESC')
+            ->setParameter('section', $section);
+        return $query;
+    }
+
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getClipLimit($limit){
+        $query = $this->createQueryBuilder('clip')
+            ->orderBy('clip.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery();
+        $clip = $query->getResult();
+
+        return $clip;
+    }
+
 }

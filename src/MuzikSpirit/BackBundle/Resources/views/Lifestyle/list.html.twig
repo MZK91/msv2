@@ -1,6 +1,6 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_lifestyle_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
     {% import "MuzikSpiritBackBundle:Partial:_remove.html.twig" as remove %}
     {% import "MuzikSpiritBackBundle:Partial:_share.html.twig" as share %}
@@ -23,7 +23,6 @@
                         <th>edit</th>
                         <th>supp</th>
                         <th>img</th>
-                        <th>sect</th>
                         <th>titre</th>
                         <th>cat</th>
                         <th>social</th>
@@ -49,7 +48,6 @@
                                 {% set url  = "http://" ~ global_website_url ~ "/"~ item.typeArticle.url ~"/" ~ item.slug ~ "/" ~ item.id %}
 
                                 <td align="center"><img src="{{ image }}" width="50" height="30" /></td>
-                                <td><img src="{{ asset('backassets/images/sections/' ~ item.section.id ~ '.png') }}"/></td>
                                 <td><a href="{{ url }}">{{ item.titre }}</a></td>
                                 <td>{{ item.categoryLifestyle.titre }}</td>
                                 <td>

@@ -9,7 +9,7 @@
     {% block stylesheets %}{% endblock %}
     {% block headmeta %}{% endblock %}
 </head>
-<body>
+<body class="{% block classname %}{% endblock %}">
 
 {% block body %}{% endblock %}
 <!-- Get jQuery from Google CDN -->

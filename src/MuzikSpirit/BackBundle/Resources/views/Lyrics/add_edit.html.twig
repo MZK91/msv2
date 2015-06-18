@@ -1,6 +1,6 @@
 {% extends'MuzikSpiritBackBundle:Partial:content.html.twig' %}
 {% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
-{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_news_searchforward') , 'find' : find | default('') }) }}{% endblock %}
+{% block menu_navigation %}{{ include('MuzikSpiritBackBundle:Partial:top_navigation.html.twig', { 'action': path('muzikspirit_back_lyrics_searchforward') , 'find' : find | default('') }) }}{% endblock %}
 {% block contentwrap %}
     <div class="panel">
         <div class="panel-heading">

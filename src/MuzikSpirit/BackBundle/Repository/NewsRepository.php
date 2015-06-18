@@ -57,4 +57,19 @@ class NewsRepository extends EntityRepository
         return $query;
     }
 
+    /**
+     * @return mixed
+     * @throws \Doctrine\ORM\NoResultException
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * On récupére un nombre d'article en fonction de la limite définie en paramètre
+     */
+    public function getNewsLimit($limit){
+        $query = $this->createQueryBuilder('news')
+            ->orderBy('news.id', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery();
+        $news = $query->getResult();
+
+        return $news;
+    }
 }
