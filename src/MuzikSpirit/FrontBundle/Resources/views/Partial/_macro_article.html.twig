@@ -1,0 +1,96 @@
+{# Information de l'article sous le titre H1 #}
+
+{% macro info(user, userLink, date, views) %}
+    <p class="simple-share">
+        <span>par <a href="page_author.html"><b>{{ user }}</b></a></span>
+        <span><span class="article-date"><i class="fa fa-clock-o"></i> {{ date }}</span></span>
+        <span><i class="fa fa-eye"></i> {{ views }} vues</span>
+        <a class="comments-count comments-link" href="#comments">-
+        </a>
+    </p>
+{% endmacro %}
+
+{# Module de présentation de l'auteur de l'article #}
+
+{% macro author(avatar, user, userLink, bio, email, website, twitter, facebook, gplus) %}
+    <div class="author-box clearfix">
+        <div class="author-avatar">
+            <a href="page_author.html">
+                <img alt="{{ user|url_encode }}" src="{{ avatar }}" class="avatar" height="110" width="110">
+            </a>
+        </div>
+        <div class="author-info">
+            <h3><a href="{{ userLink }}">{{ user }}</a></h3>
+            <p class="author-bio">
+                {{ bio }}
+            </p>
+            <div class="author-contact">
+                <a href="{{ email }}"><i class="fa fa-envelope fa-lg" title="Email"></i></a>
+                <a href="{{ website }}" target="_blank"><i class="fa fa-globe fa-lg" title="Website"></i></a>
+                <a href="{{ twitter }}" target="_blank"><i class="fa fa-twitter fa-lg" title="Twitter"></i></a>
+                <a href="{{facebook }}" target="_blank"><i class="fa fa-facebook fa-lg" title="Facebook"></i></a>
+                <a href="{{ gplus }}" rel="publisher" target="_blank"><i title="Google+" class="fa fa-google-plus fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Générateur de tags #}
+
+{% macro tagGenerator(tags) %}
+    {% set tagsTab = tags|split('#') %}
+
+    <div class="tags-wrapper">
+        <ul class="tags-widget clearfix">
+            <li class="trending">TAGS:</li>
+            {% for tag in tagsTab %}
+                <li><a href="{{ tag }}">{{ tag }}</a></li>
+            {% endfor %}
+        </ul>
+    </div><!-- .tags-wrapper -->
+{% endmacro %}
+
+{# Module de partage #}
+
+{% macro share(lien, image, description, shareCount) %}
+    <div class="share-wrapper clearfix">
+        <div class="total-shares">
+            <em id="countUp" data-count="{{ shareCount|default('0') }}">{{ shareCount|default('0') }}</em>
+            <div class="caption">Shares</div>
+        </div>
+
+        <div class="share-buttons">
+            <a class="social-share facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ lien }}" target="_blank">
+                <i class="fa fa-facebook"></i>
+                <span class="alt-text">Share</span>
+            </a>
+            <a class="social-share twitter" href="https://twitter.com/home?status={{ lien }}">
+                <i class="fa fa-twitter"></i>
+                <span class="alt-text">Tweet</span>
+            </a>
+            <a class="social-share google-plus" href="https://plus.google.com/share?url={{ lien }}">
+                <i class="fa fa-google-plus"></i>
+            </a>
+            <a class="social-share pinterest" href="https://pinterest.com/pin/create/button/?url={{ lien }}&media={{ image }}&description={{ description }}">
+                <i class="fa fa-pinterest"></i>
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+
+{# Information de l'article sous le titre H1 #}
+
+{% macro ad(size,adult) %}
+    {%  if adult != 1 %}
+        {% if size == '728' %}
+            {% include 'MuzikSpiritFrontBundle:Partial:_ad728.html.twig' %}
+        {% endif %}
+        {% if size =='300' %}
+            {% include 'MuzikSpiritFrontBundle:Partial:_ad300.html.twig' %}
+        {% endif %}
+        {% if size =='336' %}
+            {% include 'MuzikSpiritFrontBundle:Partial:_ad336.html.twig' %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+

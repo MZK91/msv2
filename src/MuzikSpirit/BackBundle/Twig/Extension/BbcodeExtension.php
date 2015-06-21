@@ -22,6 +22,6 @@ class BbcodeExtension extends \Twig_Extension
 
     public function getName()
     {
-        return 'myfilter_extension';
+        return 'BBCode_filter_extension';
     }
 }

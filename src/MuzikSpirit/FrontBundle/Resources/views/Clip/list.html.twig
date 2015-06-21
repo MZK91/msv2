@@ -14,7 +14,7 @@
             <article class="news-block small-block">
                 <a href="{{ path('muzikspirit_front_clip_view',{'id':item.id,'slug':item.slug}) }}" class="overlay-link">
                     <figure class="image-overlay" >
-                        <div class="article-img-list" style="background-image: url('{{ item.image | replace({"default.jpg":"mqdefault.jpg"}) }}');"></div>
+                        <div class="article-img-list" style="background-image: url('{{ item.image | HDImage }}');"></div>
                     </figure>
                 </a>
                 <a href="#" class="category">

@@ -69,6 +69,18 @@ class User implements AdvancedUserInterface, \Serializable
     private $image;
 
     /**
+     * @var string
+     * @ORM\Column(name="bio", type="text", nullable=true)
+     */
+    private $bio;
+
+    /**
+     * @var string
+     * @ORM\Column(name="website", type="string",length=255, nullable=true)
+     */
+    private $website;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="type", type="integer", nullable=true)
@@ -936,6 +948,38 @@ class User implements AdvancedUserInterface, \Serializable
     public function getFacebookId()
     {
         return $this->facebookId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBio()
+    {
+        return $this->bio;
+    }
+
+    /**
+     * @param string $bio
+     */
+    public function setBio($bio)
+    {
+        $this->bio = $bio;
+    }
+
+    /**
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * @param string $website
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
     }
 
     /**

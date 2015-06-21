@@ -1,0 +1,62 @@
+{% extends 'MuzikSpiritFrontBundle:Partial:content.html.twig' %}
+{% block title %}{{ news.titre }} news{% endblock %}
+{% block content %}
+    {% import "MuzikSpiritFrontBundle:Partial:_macro_article.html.twig" as article %}
+    <div class="row blog-content" data-stickyparent>
+        <div class="col-md-8" data-stickycolumn>
+            <article class="post-wrapper clearfix">
+                <header class="post-header">
+                    <h1 class="post-title">
+                        {{ news.titre }}
+                    </h1><!-- .post-title -->
+                    {{ article.info(news.user, news.user.id, news.date|ago, news.vues) }}
+                    <figure class="image-overlay">
+                        {{ news.media | BBCode | raw }}
+                    </figure>
+                </header><!-- .post-header -->
+
+                <div class="post-content clearfix">
+                    <div>
+                        <p>
+                            {{ news.texte }}
+                        </p>
+                    </div>
+                </div><!-- .post-content -->
+
+                <footer class="post-meta">
+                    {{ article.share('http://www.'~ app.request.host ~ path('muzikspirit_front_news_view',{'id':news.id,'slug':news.slug}),news.image,'desc','1' ) }}
+                    {{ article.tagGenerator('gplus#faceBook#test#twitter#lily') }}
+                    {{ article.author(news.user.image, news.user,news.user.id, news.user.bio, news.user.email, news.user.website, 'twitter', 'facebook', 'gplus') }}
+                </footer>
+
+            </article><!-- .post-wrapper -->
+            {{ article.ad('728',0) }}
+            <div>
+                {% include 'MuzikSpiritFrontBundle:Partial:_disqus.html.twig' %}
+            </div>
+        </div><!-- End Left big column -->
+
+        <div class="col-md-4" data-stickycolumn>
+            <aside class="sidebar clearfix">
+                <div class="widget adwidget">
+                    {{ article.ad('336',0) }}
+                </div>
+            </aside>
+        </div><!-- End last column -->
+    </div><!-- .blog-content -->
+{% endblock %}
+{% block javascript %}
+    parent();
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'muzikspirit';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+{% endblock %}

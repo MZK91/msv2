@@ -15,7 +15,12 @@
     {{ include('MuzikSpiritFrontBundle:Partial:_header.html.twig') }}
 
     <div class="container main-wrapper">
-        {{ include('MuzikSpiritFrontBundle:Partial:_banner.html.twig') }}
+        <!-- End Main Banner -->
+        <div class="mag-content clearfix">
+            {% block topbanner %}{{ include('MuzikSpiritFrontBundle:Partial:_ad728.html.twig') }}{% endblock %}
+        </div>
+        <!-- End Main Banner -->
+
         <!-- Begin Main Wrapper -->
         <div class="main-content mag-content clearfix">
             {% block content %}{% endblock %}

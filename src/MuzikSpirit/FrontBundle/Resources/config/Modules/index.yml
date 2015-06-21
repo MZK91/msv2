@@ -1,0 +1,24 @@
+
+muzikspirit_front_index_view:
+  path:     /
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'all'}
+
+muzikspirit_front_index_view_rap_francais:
+  path:     /rap-francais
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'rap-francais'}
+
+muzikspirit_front_index_view_rap_us:
+  path:     /rap-us
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'rap-us'}
+
+muzikspirit_front_index_view_rnb:
+  path:     /rnb
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'rnb'}
+
+muzikspirit_front_index_view_reggae:
+  path:     /reaggae
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'reggae'}
+
+muzikspirit_front_index_view_lifestyle:
+  path:     /reaggae
+  defaults: { _controller: MuzikSpiritFrontBundle:Index:view, section: 'lifestyle'}
