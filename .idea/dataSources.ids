@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - mzk@localhost" uuid="2f49a355-2906-4636-a61f-e54b0288184e">
+    <database-info product="MySQL" version="5.6.21" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <schema name="" catalog="mzk"/>
+    <table name="album" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="album" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tracklist" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="date_sortie" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mixtape" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lien" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_39986E4321D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_39986E43A76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="album_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="album_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="mixtape" unique="false" columns="mixtape"/>
+    </table>
+    <table name="article" schema="" catalog="mzk" type="TABLE">
+      <column name="article_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="article_id,type_article_id"/>
+      <foreign-key name="FK_23A0E666F9750B9" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_23A0E66D823E37A" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="article_id" unique="false" columns="article_id"/>
+      <index name="date" unique="false" columns="date"/>
+      <index name="IDX_23A0E666F9750B9" unique="false" columns="type_article_id"/>
+      <index name="IDX_23A0E66D823E37A" unique="false" columns="section_id"/>
+    </table>
+    <table name="artiste" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="poster" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_9C07354FA76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="artiste_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="artiste_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_39986E4321D25844" table="album" schema="" catalog="mzk" columns="artiste_id"/>
+      <exported-key name="FK_AD20146721D25844" table="clip" schema="" catalog="mzk" columns="artiste_id"/>
+      <exported-key name="FK_3BDA6C6621D25844" table="lyrics" schema="" catalog="mzk" columns="artiste_id"/>
+      <exported-key name="FK_1DD3995021D25844" table="news" schema="" catalog="mzk" columns="artiste_id"/>
+      <exported-key name="FK_E199342C21D25844" table="son" schema="" catalog="mzk" columns="artiste_id"/>
+      <exported-key name="FK_7CC7DA2C21D25844" table="video" schema="" catalog="mzk" columns="artiste_id"/>
+    </table>
+    <table name="carousel" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="article_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lien" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="clip" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="album_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="featuring" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="son" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="media" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_AD20146721D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_AD201467A76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="clip_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="clip_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="clip_ibfk_4" unique="false" columns="artiste_id"/>
+    </table>
+    <table name="groups" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
+      <column name="role" sqlType="VARCHAR" precision="300" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_8D93D649F373DCF" table="user" schema="" catalog="mzk" columns="groups_id"/>
+      <index name="UNIQ_F06D397057698A6A" unique="true" columns="role"/>
+    </table>
+    <table name="image" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type_image_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="image_ibfk_1" columns="type_image_id" ref-table="type_image" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="lifestyle" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="category_lifestyle_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="media" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_D63A75CFA76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="lifestyle_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="lifestyle_ibfk_4" columns="category_lifestyle_id" ref-table="type_article_lifestyle" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="lyrics" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="album_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="son" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="featuring" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="media" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="vide" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_3BDA6C6621D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_3BDA6C66A76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="lyrics_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="lyrics_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="lyrics_ibfk_4" unique="false" columns="artiste_id"/>
+    </table>
+    <table name="news" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="thumb_news" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="nbr_coms" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="adult" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_1DD3995021D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_1DD39950A76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="news_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="news_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="news_ibfk_4" unique="false" columns="artiste_id"/>
+    </table>
+    <table name="section" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="VARCHAR" precision="125" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="album_ibfk_2" table="album" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="FK_23A0E66D823E37A" table="article" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="artiste_ibfk_2" table="artiste" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="clip_ibfk_2" table="clip" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="lyrics_ibfk_2" table="lyrics" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="news_ibfk_2" table="news" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="son_ibfk_2" table="son" schema="" catalog="mzk" columns="section_id"/>
+      <exported-key name="video_ibfk_2" table="video" schema="" catalog="mzk" columns="section_id"/>
+    </table>
+    <table name="son" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="album_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="featuring" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="son" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="media" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_E199342C21D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_E199342CA76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="son_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="son_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="son_ibfk_4" unique="false" columns="artiste_id"/>
+    </table>
+    <table name="type_article" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="VARCHAR" precision="120" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="album_ibfk_3" table="album" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="FK_23A0E666F9750B9" table="article" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="artiste_ibfk_3" table="artiste" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="clip_ibfk_3" table="clip" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="lifestyle_ibfk_3" table="lifestyle" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="lyrics_ibfk_3" table="lyrics" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="news_ibfk_3" table="news" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="son_ibfk_3" table="son" schema="" catalog="mzk" columns="type_article_id"/>
+      <exported-key name="video_ibfk_3" table="video" schema="" catalog="mzk" columns="type_article_id"/>
+    </table>
+    <table name="type_article_lifestyle" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titre" sqlType="VARCHAR" precision="125" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="VARCHAR" precision="125" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="lifestyle_ibfk_4" table="lifestyle" schema="" catalog="mzk" columns="category_lifestyle_id"/>
+      <index name="url" unique="false" columns="url"/>
+    </table>
+    <table name="type_image" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="crop" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="thumb" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="width" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="height" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="resize" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="height_thumb" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="width_thumb" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="image_ibfk_1" table="image" schema="" catalog="mzk" columns="type_image_id"/>
+    </table>
+    <table name="user" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="username_canonical" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email_canonical" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="enabled" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="salt" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="locked" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="expired" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="confirmation_token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="password_requested_at" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="credentials_expired" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="credentials_expire_at" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fid" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="slug" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="accountNonLocked" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="accountNonExpired" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="date_created" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="date_auth" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="groups_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="token_key" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="bio" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="website" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_8D93D649F373DCF" columns="groups_id" ref-table="groups" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_39986E43A76ED395" table="album" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_9C07354FA76ED395" table="artiste" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_AD201467A76ED395" table="clip" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_D63A75CFA76ED395" table="lifestyle" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_3BDA6C66A76ED395" table="lyrics" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_1DD39950A76ED395" table="news" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_E199342CA76ED395" table="son" schema="" catalog="mzk" columns="user_id"/>
+      <exported-key name="FK_7CC7DA2CA76ED395" table="video" schema="" catalog="mzk" columns="user_id"/>
+      <index name="UNIQ_8D93D64992FC23A8" unique="true" columns="username_canonical"/>
+      <index name="UNIQ_8D93D649A0D96FBF" unique="true" columns="email_canonical"/>
+      <index name="facebook_id" unique="false" columns="facebook_id"/>
+      <index name="token_key" unique="false" columns="token_key"/>
+      <index name="username" unique="false" columns="username"/>
+    </table>
+    <table name="video" schema="" catalog="mzk" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="section_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_article_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="artiste_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="titre" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="artiste" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="media" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="texte" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="vues" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="vues_dif" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="facebook" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="twitter" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="likes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dislikes" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="score" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="ip" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="slug" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_7CC7DA2C21D25844" columns="artiste_id" ref-table="artiste" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_7CC7DA2CA76ED395" columns="user_id" ref-table="user" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="video_ibfk_2" columns="section_id" ref-table="section" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="video_ibfk_3" columns="type_article_id" ref-table="type_article" ref-schema="" ref-catalog="mzk" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="video_ibfk_4" unique="false" columns="artiste_id"/>
+    </table>
+  </data-source>
+</component>

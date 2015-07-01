@@ -33,6 +33,10 @@ muzikspirit_front_index:
     resource: "@MuzikSpiritFrontBundle/Resources/config/modules/index.yml"
     prefix:   /
 
+muzikspirit_front_ajax:
+    resource: "@MuzikSpiritFrontBundle/Resources/config/modules/ajax.yml"
+    prefix:   /ajax
+
 muzikspirit_front_statics:
     resource: "@MuzikSpiritFrontBundle/Resources/config/statics.yml"
     prefix:   /

@@ -24,7 +24,7 @@
                 </div><!-- .post-content -->
 
                 <footer class="post-meta">
-                    {{ article.share('http://www.'~ app.request.host ~ path('muzikspirit_front_clip_view',{'id':clip.id,'slug':clip.slug}),clip.image,'desc','1' ) }}
+                    {{ article.share('http://www.'~ app.request.host ~ path('muzikspirit_front_clip_view',{'id':clip.id,'slug':clip.slug}),clip.image,'desc','1000' ) }}
                     {{ article.tagGenerator('gplus#faceBook#test#twitter#lily') }}
                     {{ article.author(clip.user.image, clip.user,clip.user.id, clip.user.bio, clip.user.email, clip.user.website, 'twitter', 'facebook', 'gplus') }}
                 </footer>
@@ -45,8 +45,9 @@
         </div><!-- End last column -->
     </div><!-- .blog-content -->
 {% endblock %}
-{% block javascript %}
-parent();
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript" src="{{ asset('frontassets/js/articles.js') }}"></script>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
         var disqus_shortname = 'muzikspirit';

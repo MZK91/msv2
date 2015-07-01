@@ -121,6 +121,20 @@ class News
     private $twitter = '0';
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="google", type="integer", nullable=false)
+     */
+    private $google = '0';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="pinterest", type="integer", nullable=false)
+     */
+    private $pinterest = '0';
+
+    /**
      * @var string
      *
      * @ORM\Column(name="last_ip", type="string", length=255, nullable=true)
@@ -497,6 +511,38 @@ class News
     public function getTwitter()
     {
         return $this->twitter;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGoogle()
+    {
+        return $this->google;
+    }
+
+    /**
+     * @param int $google
+     */
+    public function setGoogle($google)
+    {
+        $this->google = $google;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPinterest()
+    {
+        return $this->pinterest;
+    }
+
+    /**
+     * @param int $pinterest
+     */
+    public function setPinterest($pinterest)
+    {
+        $this->pinterest = $pinterest;
     }
 
     /**

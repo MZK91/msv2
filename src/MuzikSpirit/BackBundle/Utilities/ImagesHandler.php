@@ -2,11 +2,24 @@
 
 namespace MuzikSpirit\BackBundle\Utilities;
 
+/**
+ * Class ImagesHandler
+ * @package MuzikSpirit\BackBundle\Utilities
+ */
 class ImagesHandler
 {
+    /**
+     * option des images
+     * @var array
+     */
     protected $options = array();
 
-    function __construct($new_options=null) {
+    /**
+     * Constructeur
+     * @param null $newOptions
+     */
+    public function __construct($newOptions = null)
+    {
 
         $options = array(
             'current_dir' => __DIR__.'/../../../../web/',
@@ -30,102 +43,128 @@ class ImagesHandler
             'jpeg_quality' => 100,
             'png_quality' => 9,
         );
-        if ($new_options) {
-            $this->options = array_replace_recursive($options,$new_options);
-        }else{
+        if ($newOptions) {
+            $this->options = array_replace_recursive($options, $newOptions);
+        } else {
             $this->options = $options;
         }
 
     }
 
-    public function create_scaled_image($path,$file_name) {
-        $file_path = $this->options['current_dir'].$this->options['tmp_folder'].$file_name;
-        $new_file_path = $this->options['current_dir'].$path.$file_name;
-        list($img_width, $img_height) = @getimagesize($file_path);
-        if (!$img_width || !$img_height) {
+    /**
+     * Reduction de taille d'images
+     *
+     * @param string $path     chemin
+     * @param string $fileName nom du fichier
+     * @return bool
+     */
+    public function createScaledImage($path, $fileName, $thumb = 0)
+    {
+        if ($thumb == 0) {
+            $filePath = $this->options['current_dir'].$this->options['tmp_folder'].$fileName;
+            $newFilePath = $this->options['current_dir'].$path.$fileName;
+        } else {
+            $filePath = $this->options['current_dir'].$path.$fileName;
+            $newFilePath = $this->options['current_dir'].$path.'thumbs/'.$fileName;
+        }
+
+        list($imgWidth, $imgHeight) = @getimagesize($filePath);
+        if (!$imgWidth || !$imgHeight) {
             return false;
         }
         $scale = min(
-            $this->options['max_width'] / $img_width,
-            $this->options['max_height'] / $img_height
+            $this->options['max_width'] / $imgWidth,
+            $this->options['max_height'] / $imgHeight
         );
 
         if ($scale >= 1) {
-            if ($file_path !== $new_file_path) {
-                if(copy($file_path, $new_file_path)){
-                    return unlink ($file_path);
+            if ($filePath !== $newFilePath) {
+                if (copy($filePath, $newFilePath)) {
+                    
+                    return unlink($filePath);
                 }
             }
+            
             return true;
         }
-        $new_width = $img_width * $scale;
-        $new_height = $img_height * $scale;
+        $newWidth = $imgWidth * $scale;
+        $newHeight = $imgHeight * $scale;
 
-        $new_img = @imagecreatetruecolor($new_width, $new_height);
-        switch (strtolower(substr(strrchr($file_name, '.'), 1))) {
+        $newImg = @imagecreatetruecolor($newWidth, $newHeight);
+        switch (strtolower(substr(strrchr($fileName, '.'), 1))) {
             case 'jpg':
             case 'jpeg':
-                $src_img = @imagecreatefromjpeg($file_path);
-                $write_image = 'imagejpeg';
-                $image_quality = isset($this->options['jpeg_quality']) ?
+                $srcImg = @imagecreatefromjpeg($filePath);
+                $writeImage = 'imagejpeg';
+                $imageQuality = isset($this->options['jpeg_quality']) ?
                     $this->options['jpeg_quality'] : 75;
                 break;
             case 'gif':
-                @imagecolortransparent($new_img, @imagecolorallocate($new_img, 0, 0, 0));
-                $src_img = @imagecreatefromgif($file_path);
-                $write_image = 'imagegif';
-                $image_quality = null;
+                @imagecolortransparent($newImg, @imagecolorallocate($newImg, 0, 0, 0));
+                $srcImg = @imagecreatefromgif($filePath);
+                $writeImage = 'imagegif';
+                $imageQuality = null;
                 break;
             case 'png':
-                @imagecolortransparent($new_img, @imagecolorallocate($new_img, 0, 0, 0));
-                @imagealphablending($new_img, false);
-                @imagesavealpha($new_img, true);
-                $src_img = @imagecreatefrompng($file_path);
-                $write_image = 'imagepng';
-                $image_quality = isset($this->options['png_quality']) ?
+                @imagecolortransparent($newImg, @imagecolorallocate($newImg, 0, 0, 0));
+                @imagealphablending($newImg, false);
+                @imagesavealpha($newImg, true);
+                $srcImg = @imagecreatefrompng($filePath);
+                $writeImage = 'imagepng';
+                $imageQuality = isset($this->options['png_quality']) ?
                     $this->options['png_quality'] : 9;
                 break;
             default:
-                $src_img = null;
+                $srcImg = null;
         }
-        $success = $src_img && @imagecopyresampled(
-                $new_img,
-                $src_img,
-                0, 0, 0, 0,
-                $new_width,
-                $new_height,
-                $img_width,
-                $img_height
-            ) && $write_image($new_img, $new_file_path, $image_quality);
-        @imagedestroy($src_img);
-        @imagedestroy($new_img);
+        $success = $srcImg && @imagecopyresampled(
+            $newImg,
+            $srcImg,
+            0,
+            0,
+            0,
+            0,
+            $newWidth,
+            $newHeight,
+            $imgWidth,
+            $imgHeight
+            ) && $writeImage($newImg, $newFilePath, $imageQuality);
+        @imagedestroy($srcImg);
+        @imagedestroy($newImg);
 
         return $success;
     }
 
-    public function imageConverter($path,$file_name,$type) {
-        $file_path = $this->options['current_dir'].$this->options['tmp_folder'].$file_name;
-        $extension = strtolower(substr(strrchr($file_name, '.'), 1));
-        $outputFile = preg_replace('/'.$extension.'$/i',trim(strtolower($type)),$file_name);
-        $new_file_path = $this->options['current_dir'].$path.$outputFile;
+    /**
+     * Convertiseur de type d'image
+     * @param string $path     Chemin de l'image
+     * @param string $fileName Nom de l'image
+     * @param int    $type     Type de l'image
+     * @return mixed
+     */
+    public function imageConverter($path,$fileName,$type) {
+        $filePath = $this->options['current_dir'].$this->options['tmp_folder'].$fileName;
+        $extension = strtolower(substr(strrchr($fileName, '.'), 1));
+        $outputFile = preg_replace('/'.$extension.'$/i',trim(strtolower($type)),$fileName);
+        $newFilePath = $this->options['current_dir'].$path.$outputFile;
 
-        switch (exif_imagetype ($file_path)) {
+        switch (exif_imagetype ($filePath)) {
             case 2:
                 //echo 'JPEG';
-                $input = imagecreatefromjpeg($file_path);
+                $input = imagecreatefromjpeg($filePath);
                 break;
             case 1:
                 //echo 'GIF';
-                $input = imagecreatefromgif($file_path);
+                $input = imagecreatefromgif($filePath);
                 break;
             case 3:
                 //echo 'PNG';
-                $input = imagecreatefrompng($file_path);
+                $input = imagecreatefrompng($filePath);
                 break;
             default:
                 $input = null;
         }
-        list($width, $height) = getimagesize($file_path);
+        list($width, $height) = getimagesize($filePath);
 
         $output = imagecreatetruecolor($width, $height);
         $white = imagecolorallocate($output,  255, 255, 255);
@@ -135,13 +174,13 @@ class ImagesHandler
         switch ($type) {
             case 'jpg':
             case 'jpeg':
-                imagejpeg ($output,$new_file_path, $this->options['jpeg_quality']);
+                imagejpeg ($output,$newFilePath, $this->options['jpeg_quality']);
                 break;
             case 'gif':
-                imagegif ($output,$new_file_path);
+                imagegif ($output,$newFilePath);
                 break;
             case 'png':
-                imagepng ($output,$new_file_path,$this->options['png_quality']);
+                imagepng ($output,$newFilePath,$this->options['png_quality']);
                 break;
             default:
                 $output = null;
@@ -149,64 +188,64 @@ class ImagesHandler
 
         // Free up memory (imagedestroy does not delete files):
         imagedestroy($output);
-        unlink($file_path);
+        unlink($filePath);
 
         return $outputFile;
     }
 
-    public function imageCrop($file,$x,$y,$w,$h,$new_width,$new_height){
-        $file_path = $this->options['current_dir'].$this->options['tmp_folder'].$file;
-        $new_file_path = $this->options['current_dir'].$this->options['tmp_folder'].'crop-'.$file;
-        $new_img = imagecreatetruecolor($new_width, $new_height);
+    public function imageCrop($file,$x,$y,$w,$h,$newWidth ,$newHeight){
+        $filePath = $this->options['current_dir'].$this->options['tmp_folder'].$file;
+        $newFilePath = $this->options['current_dir'].$this->options['tmp_folder'].'crop-'.$file;
+        $newImg = imagecreatetruecolor($newWidth , $newHeight);
 
-        switch (exif_imagetype ($file_path)) {
+        switch (exif_imagetype ($filePath)) {
             case 2:
                 //echo 'JPEG';
-                $src_img = imagecreatefromjpeg($file_path);
-                $write_image = 'imagejpeg';
-                $image_quality = isset($this->options['jpeg_quality']) ?
+                $srcImg = imagecreatefromjpeg($filePath);
+                $writeImage = 'imagejpeg';
+                $imageQuality = isset($this->options['jpeg_quality']) ?
                     $this->options['jpeg_quality'] : 75;
                 break;
             case 1:
                 //echo 'GIF';
-                imagecolortransparent($new_img, imagecolorallocate($new_img, 0, 0, 0));
-                $src_img = @imagecreatefromgif($file_path);
-                $write_image = 'imagegif';
-                $image_quality = null;
+                imagecolortransparent($newImg, imagecolorallocate($newImg, 0, 0, 0));
+                $srcImg = @imagecreatefromgif($filePath);
+                $writeImage = 'imagegif';
+                $imageQuality = null;
                 break;
             case 3:
                 //echo 'PNG';
-                imagecolortransparent($new_img, imagecolorallocate($new_img, 0, 0, 0));
-                imagealphablending($new_img, false);
-                imagesavealpha($new_img, true);
-                $src_img = @imagecreatefrompng($file_path);
-                $write_image = 'imagepng';
-                $image_quality = isset($this->options['png_quality']) ?
+                imagecolortransparent($newImg, imagecolorallocate($newImg, 0, 0, 0));
+                imagealphablending($newImg, false);
+                imagesavealpha($newImg, true);
+                $srcImg = @imagecreatefrompng($filePath);
+                $writeImage = 'imagepng';
+                $imageQuality = isset($this->options['png_quality']) ?
                     $this->options['png_quality'] : 9;
                 break;
             default:
-                $src_img = null;
+                $srcImg = null;
         }
-        $success = $src_img && @imagecopyresampled(
-                $new_img,
-                $src_img,
+        $success = $srcImg && @imagecopyresampled(
+                $newImg,
+                $srcImg,
                 0, 0, $x, $y,
-                $new_width,
-                $new_height,
+                $newWidth ,
+                $newHeight,
                 $w,
                 $h
-            ) && $write_image($new_img, $new_file_path, $image_quality);
+            ) && $writeImage($newImg, $newFilePath, $imageQuality);
 
-        unlink($file_path);
-        rename ($new_file_path, $file_path);
-        @imagedestroy($file_path);
-        @imagedestroy($src_img);
+        unlink($filePath);
+        rename ($newFilePath, $filePath);
+        @imagedestroy($filePath);
+        @imagedestroy($srcImg);
     }
 
-    public function imageInfo($file_path){
+    public function imageInfo($filePath){
 
-        $tabInfo['extension'] = strtolower(substr(strrchr(basename($file_path), '.'), 1));
-        $tabInfo['fileName'] = basename($file_path, '.'.$tabInfo['extension']);
+        $tabInfo['extension'] = strtolower(substr(strrchr(basename($filePath), '.'), 1));
+        $tabInfo['fileName'] = basename($filePath, '.'.$tabInfo['extension']);
 
         return $tabInfo;
     }

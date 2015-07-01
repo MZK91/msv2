@@ -22,9 +22,9 @@ class ImageController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        if($type == 0) {
+        if ($type == 0) {
             $query = $em->getRepository('MuzikSpiritBackBundle:Image')->getListImageQuery();
-        }else{
+        } else {
             $query = $em->getRepository('MuzikSpiritBackBundle:Image')->getListImageByTypeQuery($type);
         }
         $paginator  = $this->get('knp_paginator');
@@ -34,14 +34,15 @@ class ImageController extends Controller
             $limit
         );
 
-        if($request->query->get('action')){
+        if ($request->query->get('action')) {
             $action = $request->query->get('action');
-        }else{
+        } else {
             $action = '';
         }
 
-        if($iframe === 0) {
-            return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
+        if ($iframe === 0) {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:list.html.twig',
                 array(
                     'pagination' => $paginator,
                     'page' => $page,
@@ -49,8 +50,9 @@ class ImageController extends Controller
                     'titre' => 'Images',
                 )
             );
-        }else{
-            return $this->render('MuzikSpiritBackBundle:Image:iframe_list.html.twig',
+        } else {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:iframe_list.html.twig',
                 array(
                     'pagination' => $paginator,
                     'page' => $page,
@@ -68,36 +70,47 @@ class ImageController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function searchForwardAction(Request $request){
+    public function searchForwardAction(Request $request)
+    {
 
-        if($request->isMethod('POST') === TRUE){
+        if ($request->isMethod('POST') === true) {
             $find = $request->request->get('find', "booba");
             $iframe = $request->request->get('iframe');
             $type = $request->request->get('type');
         }
 
-        return new RedirectResponse($this->generateUrl('muzikspirit_back_image_search',
-            array(
-                'find' => $find,
-                'iframe'=> $iframe,
-                'type' => $type,
-                'page' => 1,
+        return new RedirectResponse(
+            $this->generateUrl(
+                'muzikspirit_back_image_search',
+                array(
+                    'find' => $find,
+                    'iframe'=> $iframe,
+                    'type' => $type,
+                    'page' => 1,
+                )
             )
-        )
         );
 
     }
 
+    /**
+     * Fonction de recherche
+     * @param string $find      terme de recherche
+     * @param int $page         page en cours
+     * @param int $type         type d'image
+     * @param int $iframe       fenetre dans une iframe ou pas
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function searchAction($find, $page, $type = 0, $iframe = 0)
     {
         $limit = $this->container->getParameter('max_articles');
 
         $em = $this->getDoctrine()->getManager();
 
-        if ($type == 0){
+        if ($type == 0) {
             $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageQuery($find);
-        }else{
-            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageByTypeQuery($find,$type);
+        } else {
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageByTypeQuery($find, $type);
         }
 
         $paginator  = $this->get('knp_paginator');
@@ -108,8 +121,9 @@ class ImageController extends Controller
         );
 
 
-        if($iframe === 0) {
-            return $this->render('MuzikSpiritBackBundle:Image:list.html.twig',
+        if ($iframe === 0) {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:list.html.twig',
                 array(
                     'titre' => "Résultat de la recherche " . $find . " dans les News.",
                     'page' => $page,
@@ -120,10 +134,11 @@ class ImageController extends Controller
 
                 )
             );
-        }else{
-            return $this->render('MuzikSpiritBackBundle:Image:iframe_list.html.twig',
+        } else {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:iframe_list.html.twig',
                 array(
-                    'titre' => "Résultat de la recherche " . $find . " dans les News.",
+                    'titre' => "Résultat de la recherche ".$find." dans les News.",
                     'page' => $page,
                     'type' => $type,
                     'iframe' => $iframe,
@@ -135,63 +150,88 @@ class ImageController extends Controller
         }
     }
 
-
-    public function addAction(Request $request,$iframe = 0)
+    /**
+     * Ajout d'image
+     * @param Request $request
+     * @param int     $iframe
+     * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function addAction(Request $request, $iframe = 0)
     {
         $image = new Image();
-        $form   = $this->createForm(new ImageType(),$image);
+        $form   = $this->createForm(new ImageType(), $image);
         $em = $this->getDoctrine()->getManager();
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $TypeImage = $image->getTypeImage();
-            $crop = $TypeImage->getCrop();
-            $resize = $TypeImage->getResize();
-            $path = $TypeImage->getPath();
-            $width = $TypeImage->getWidth();
-            $height = $TypeImage->getHeight();
+            $typeImage = $image->getTypeImage();
+            $crop = $typeImage->getCrop();
+            $resize = $typeImage->getResize();
+            $path = $typeImage->getPath();
+            $width = $typeImage->getWidth();
+            $height = $typeImage->getHeight();
+            $thumb = $typeImage->getThumb();
+            $heightThumb = $typeImage->getHeightThumb();
+            $widthThumb = $typeImage->getWidthThumb();
+
+
+
 
             $image->setFileSlug(Slug::slug($image->getTitre('titre'))); // On génére un nom de fichier propre en fonction du titre
             $em->persist($image);
             $em->flush();
             $image->setImage($image->getFileName());
 
-            if($resize == 1){
+            if ($resize == 1) {
                 // On crée un objet IH avec les nouvelles propriétés
                 $imageHandler = new ImagesHandler(array('max_width' => $width, 'max_height' => $height));
-                if($imageHandler->create_scaled_image($path,$image->getFileName())){
+                if ($imageHandler->createScaledImage($path, $image->getFileName())) {
                     $em->persist($image);
                     $em->flush();
-                    if($iframe == 0){
+                    if ($thumb == 1) {
+                        $imageHandlerThumb = new ImagesHandler(['max_width' => $widthThumb, 'max_height' => $heightThumb]);
+                        $imageHandlerThumb->createScaledImage($path, $image->getFileName(), 1);
+                    }
+                    if ($iframe == 0) {
                         return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
-                    }else{
+                    } else {
                         return $this->redirect($this->generateUrl('muzikspirit_back_image_list', array( 'iframe'=> 1)));
                     }
                 }
             }
-            if($crop == 1){
+            if ($crop == 1) {
                 $em->persist($image);
                 $em->flush();
-                return  $this->redirect($this->generateUrl('muzikspirit_back_image_crop',
+
+                return  $this->redirect(
+                    $this->generateUrl(
+                        'muzikspirit_back_image_crop',
                         array(
                             'id' => $image->getId(),
                             'iframe' => $iframe,
                         )
                     )
                 );
-            }else{
+            } else {
                 // On bouge l'image uploadée vers son dossier de destination
                 rename($image->getRootDir().$image->getFileName(), $image->getRootDir().$path.$image->getFileName());
                 $em->persist($image);
                 $em->flush();
+                if ($thumb == 1) {
+                    $imageHandlerThumb = new ImagesHandler(['max_width' => $widthThumb, 'max_height' => $heightThumb]);
+                    $imageHandlerThumb->createScaledImage($path, $image->getFileName(), 1);
+                }
             }
         }
 
-        return $this->render('MuzikSpiritBackBundle:Image:add_edit.html.twig', array(
-            'form'  => $form->createView(),
-            'id'    => 0,
-            'titre' => "Ajout d'image(s)"
-        ));
+        return $this->render(
+            'MuzikSpiritBackBundle:Image:add_edit.html.twig',
+            array(
+                'form'  => $form->createView(),
+                'id'    => 0,
+                'titre' => "Ajout d'image(s)",
+            )
+        );
     }
 
 
@@ -204,32 +244,32 @@ class ImageController extends Controller
         $imagePath = $image->getRootDir().$image->getUploadDir().'/'.$image->getImage();
 
         list($width, $height) = getimagesize($imagePath);
-        $orig_w = $width;
-        $orig_h = $height;
+        $origW = $width;
+        $origH = $height;
 
         $form = $this->createFormBuilder()
-            ->add('x',          'hidden')
-            ->add('y',          'hidden')
-            ->add('w',          'hidden')
-            ->add('h',          'hidden')
-            ->add('width',      'hidden', array( 'data' => $typeImage->getWidth()    ) )
-            ->add('height',     'hidden', array( 'data' => $typeImage->getHeight()   ) )
-            ->add('id',         'hidden', array( 'data' => $image->getId()           ) )
-            ->add('path',       'hidden', array( 'data' => $typeImage->getPath()     ) )
-            ->add('filename',   'hidden', array( 'data' => $image->getImage()        ) )
-            ->add('envoyer',    'submit')
+            ->add('h','hidden')
+            ->add('x', 'hidden')
+            ->add('y', 'hidden')
+            ->add('w', 'hidden')
+            ->add('width', 'hidden', ['data' => $typeImage->getWidth()])
+            ->add('height','hidden', ['data' => $typeImage->getHeight()])
+            ->add('id', 'hidden', ['data' => $image->getId()])
+            ->add('path', 'hidden', array( 'data' => $typeImage->getPath()     ) )
+            ->add('filename', 'hidden', array( 'data' => $image->getImage()        ) )
+            ->add('envoyer', 'submit')
             ->getForm();
 
         $form->handleRequest($request);
 
-        if($form->isValid()){
+        if ($form->isValid()) {
             //$request->request->get('iframe');
             $data = $form->getData();
 
             $imageHandler = new ImagesHandler();
 
-            $imageHandler->imageCrop($image->getImage(),$data['x'],$data['y'],$data['w'],$data['h'],$data['width'],$data['height']);
-            $imageHandler->moveToDir('images/tmp/'.$image->getImage(),$typeImage->getPath().$image->getImage());
+            $imageHandler->imageCrop($image->getImage(), $data['x'], $data['y'], $data['w'], $data['h'], $data['width'], $data['height']);
+            $imageHandler->moveToDir('images/tmp/'.$image->getImage(), $typeImage->getPath().$image->getImage());
 
             return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
 
@@ -240,12 +280,17 @@ class ImageController extends Controller
             'image'     =>  $image->getImage(),
             'width'     =>  $typeImage->getWidth(),
             'height'    =>  $typeImage->getHeight(),
-            'orig_w'    =>  $orig_w,
-            'orig_h'    =>  $orig_h,
+            'orig_w'    =>  $origW,
+            'orig_h'    =>  $origH,
         ));
     }
 
-    public function editAction(Images $image, $iframe = NULL )
+    /**
+     * @param Images $image
+     * @param null   $iframe
+     * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function editAction(Images $image, $iframe = null)
     {
         $em = $this->getDoctrine()->getManager();
         /*
@@ -256,14 +301,13 @@ class ImageController extends Controller
 
         $form->remove('idTypeImage');
         $request = $this->getRequest();
-        if($request->isMethod('POST')){
-
+        if ($request->isMethod('POST')) {
             $form->bind($request);
-            if($form->isValid()){
+            if ($form->isValid()) {
                 $data = $form->getData();
                 $em->persist($data);
                 $em->flush();
-                if($image->file != NULL){
+                if ($image->file != NULL) {
 
                     $ih = $this->container->get('ingetis_images.ImagesHandler');
 
@@ -281,15 +325,15 @@ class ImageController extends Controller
                     //Poser la question Lundi à Julien
 
                     // On récupére les informations sur le type de l'image pour déterminer les actions à suivre.
-                    $TypeImage = $em->getRepository('IngetisImagesBundle:TypeImage')->find($image->getIdTypeImage());
-                    $crop = $TypeImage->getCrop();
-                    $resize = $TypeImage->getResize();
-                    $path = $TypeImage->getPath();
+                    $typeImage = $em->getRepository('IngetisImagesBundle:TypeImage')->find($image->getIdTypeImage());
+                    $crop = $typeImage->getCrop();
+                    $resize = $typeImage->getResize();
+                    $path = $typeImage->getPath();
 
                     // On test voir si l'image doit être redimensionné
                     if($resize == 1){
                         $ih = $this->container->get('ingetis_images.ImagesHandler');
-                        if($ih->create_scaled_image($path,basename($image->getPath()))){
+                        if($ih->createScaledImage($path,basename($image->getPath()))){
                             return $this->redirect($this->generateUrl('ingetis_admin_images'));
                         }
                     }
@@ -322,8 +366,8 @@ class ImageController extends Controller
     public function removeAction(Image $Image, $type, $iframe = 0)
     {
         $em = $this->getDoctrine()->getManager();
-        $TypeImage = $Image->getTypeImage();
-        $path = $TypeImage->getPath();
+        $typeImage = $Image->getTypeImage();
+        $path = $typeImage->getPath();
         $em->remove($Image);
         $em->flush();
 

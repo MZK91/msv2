@@ -58,12 +58,14 @@
             <em id="countUp" data-count="{{ shareCount|default('0') }}">{{ shareCount|default('0') }}</em>
             <div class="caption">Shares</div>
         </div>
-
+        <span id="share-counter" data-counter="{{ path('muzikspirit_front_ajax_share_count') }}"></span>
+        <span id="share-url" data-url="{{ lien }}"></span>
         <div class="share-buttons">
             <a class="social-share facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ lien }}" target="_blank">
                 <i class="fa fa-facebook"></i>
                 <span class="alt-text">Share</span>
             </a>
+            <span id="#twitter-count"></span>
             <a class="social-share twitter" href="https://twitter.com/home?status={{ lien }}">
                 <i class="fa fa-twitter"></i>
                 <span class="alt-text">Tweet</span>
