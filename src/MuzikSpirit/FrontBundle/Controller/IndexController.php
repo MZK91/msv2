@@ -17,6 +17,7 @@ class IndexController extends Controller
         $son = $em->getRepository('MuzikSpiritBackBundle:Son')->getSonLimit(5);
         $lyrics = $em->getRepository('MuzikSpiritBackBundle:Lyrics')->getLyricsLimit(5);
         $album = $em->getRepository('MuzikSpiritBackBundle:Album')->getAlbumLimit(5);
+        $carousel = $em->getRepository('MuzikSpiritBackBundle:Carousel')->getCarouselLimit(9);
 
         return $this->render('MuzikSpiritFrontBundle:Index:index.html.twig',
             array(
@@ -27,6 +28,7 @@ class IndexController extends Controller
                 'clip' => $clip,
                 'lyrics' => $lyrics,
                 'album' => $album,
+                'carousel' => $carousel,
             )
         );
     }

@@ -7,5 +7,6 @@ $(document).ready(function(){
     });
     $( ".cp_image" ).click(function() {
         parent.document.getElementById("image").value = $(this).attr('data-value');
+        parent.document.getElementById("id_image").value = $(this).attr('data-id');
     });
 });

@@ -81,19 +81,23 @@ class AlbumType extends AbstractType
                 )
             ))
 
-            ->add('section', null, array(
+            ->add('section', null, [
                 'label' => 'Section',
                 'required'  => true,
                 'expanded'  => true,
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'Affecter une section',
-                ),
-            ))
-            ->add('envoyer', 'submit', array(
-                'attr' => array(
-                    'class' => 'btn btn-lg btn btn-danger'
-                )
-            ))
+                ],
+            ])
+            ->add(
+                'envoyer',
+                'submit',
+                [
+                    'attr' => [
+                        'class' => 'btn btn-lg btn btn-danger',
+                    ],
+                ]
+            )
         ;
     }
     

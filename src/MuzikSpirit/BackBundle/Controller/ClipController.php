@@ -12,14 +12,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
+/**
+ * Class ClipController
+ * @package MuzikSpirit\BackBundle\Controller
+ */
 class ClipController extends Controller
 {
     /**
-     * @param $page
+     * @param int $page
      * @return \Symfony\Component\HttpFoundation\Response
      * Listing des clips
      */
-    public function listAction($page){
+    public function listAction($page)
+    {
         $limit = $this->container->getParameter('max_articles');
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipQuery()->getQuery();
@@ -31,12 +36,13 @@ class ClipController extends Controller
             $limit
         );
 
-        return $this->render('MuzikSpiritBackBundle:Clip:list.html.twig',
-            array(
+        return $this->render(
+            'MuzikSpiritBackBundle:Clip:list.html.twig',
+            [
                 'titre'=>'Clips',
                 'page' => $page,
-                'pagination' => $paginator
-            )
+                'pagination' => $paginator,
+            ]
         );
     }
 
@@ -45,15 +51,18 @@ class ClipController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function searchForwardAction(Request $request){
-        if($request->isMethod('POST') === TRUE)
+    public function searchForwardAction(Request $request)
+    {
+        if ($request->isMethod('POST') === true) {
             $find = $request->request->get('find');
+        }
 
-        return new RedirectResponse($this->generateUrl('muzikspirit_back_clip_search',
-            array(
+        return new RedirectResponse(
+            $this->generateUrl('muzikspirit_back_clip_search',
+            [
                 'find' => $find,
                 'page' => 1,
-            )
+            ]
         )
         );
     }

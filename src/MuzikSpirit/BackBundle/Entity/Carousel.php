@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * Carousel
  *
  * @ORM\Table(name="carousel")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\CarouselRepository")
  */
 class Carousel
 {
@@ -25,25 +25,24 @@ class Carousel
     private $id;
 
     /**
-     * @var integer
+     * @var \Section
      *
-     * @ORM\Column(name="section_id", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Section")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     * })
      */
-    private $sectionId;
+    private $section;
 
     /**
-     * @var integer
+     * @var \TypeArticle
      *
-     * @ORM\Column(name="type_article_id", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="TypeArticle")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_article_id", referencedColumnName="id")
+     * })
      */
-    private $typeArticleId;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="article_id", type="integer", nullable=false)
-     */
-    private $articleId;
+    private $typeArticle;
 
     /**
      * @var string
@@ -53,9 +52,12 @@ class Carousel
     private $titre;
 
     /**
-     * @var string
+     * @var \Image
      *
-     * @ORM\Column(name="image", type="string", length=255, nullable=false)
+     * @ORM\ManyToOne(targetEntity="Image")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+     * })
      */
     private $image;
 
@@ -86,26 +88,49 @@ class Carousel
     }
 
     /**
-     * Set sectionId
+     * Set section
      *
-     * @param integer $sectionId
-     * @return Carousel
+     * @param \MuzikSpirit\BackBundle\Entity\Section $section
+     * @return News
      */
-    public function setSectionId($sectionId)
+    public function setSection(\MuzikSpirit\BackBundle\Entity\Section $section = null)
     {
-        $this->sectionId = $sectionId;
+        $this->section = $section;
 
         return $this;
     }
 
     /**
-     * Get sectionId
+     * Get section
      *
-     * @return integer 
+     * @return \MuzikSpirit\BackBundle\Entity\Section
      */
-    public function getSectionId()
+    public function getSection()
     {
-        return $this->sectionId;
+        return $this->section;
+    }
+
+    /**
+     * Set section
+     *
+     * @param \MuzikSpirit\BackBundle\Entity\Image $image
+     * @return News
+     */
+    public function setImage(\MuzikSpirit\BackBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get section
+     *
+     * @return \MuzikSpirit\BackBundle\Entity\Image
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**
@@ -114,9 +139,9 @@ class Carousel
      * @param integer $typeArticleId
      * @return Carousel
      */
-    public function setTypeArticleId($typeArticleId)
+    public function setTypeArticle($typeArticle)
     {
-        $this->typeArticleId = $typeArticleId;
+        $this->typeArticle = $typeArticle;
 
         return $this;
     }
@@ -126,32 +151,9 @@ class Carousel
      *
      * @return integer 
      */
-    public function getTypeArticleId()
+    public function getTypeArticle()
     {
-        return $this->typeArticleId;
-    }
-
-    /**
-     * Set articleId
-     *
-     * @param integer $articleId
-     * @return Carousel
-     */
-    public function setArticleId($articleId)
-    {
-        $this->articleId = $articleId;
-
-        return $this;
-    }
-
-    /**
-     * Get articleId
-     *
-     * @return integer 
-     */
-    public function getArticleId()
-    {
-        return $this->articleId;
+        return $this->typeArticle;
     }
 
     /**
@@ -175,29 +177,6 @@ class Carousel
     public function getTitre()
     {
         return $this->titre;
-    }
-
-    /**
-     * Set image
-     *
-     * @param string $image
-     * @return Carousel
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string 
-     */
-    public function getImage()
-    {
-        return $this->image;
     }
 
     /**

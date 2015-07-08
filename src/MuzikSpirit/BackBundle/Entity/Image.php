@@ -294,8 +294,6 @@ class Image
         $this->fileExtension = $fileExtension;
     }
 
-
-
     /**
      * @return mixed
      */
@@ -310,6 +308,14 @@ class Image
     public function setFilenameForRemove($filenameForRemove)
     {
         $this->filenameForRemove = $filenameForRemove;
+    }
+
+    /**
+     * Retourne le titre
+     * @return string
+     */
+    public function __toString(){
+        return $this->titre;
     }
 
 }

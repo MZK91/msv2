@@ -10,6 +10,9 @@
                     <input type="hidden" name="iframe" value="{{ iframe | default('0') }}">
                     <input type="hidden" name="type" value="{{ type | default('0') }}">
                 </form>
+                <a href="{{ path('muzikspirit_back_image_add', {'iframe': 1, 'type': type | default('0')}) }}" class="btn btn-danger pull-right btn-labeled">
+                    <span class="btn-label icon fa fa-plus"></span>Ajouter
+                </a>
             </div>
         </div>
 
@@ -48,8 +51,8 @@
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="center"><a role="button" id="img_{{ item.id }}" class="cp_{{ action | default('') }}  btn btn-large btn-primary" data-value="{{ image }}" data-title="{{ item.titre | url_encode }}"><i class="fa fa-copy"></i></a></td>
-                                <td><a href="{{ image }}" target="_blank"><img src="{{ image }}" height="30" width="50" /></a></td>
+                                <td align="center"><a role="button" id="img_{{ item.id }}" class="cp_{{ action | default('') }}  btn btn-large btn-primary" data-id="{{ item.id }}" data-value="{{ image }}" data-title="{{ item.titre | url_encode }}"><i class="fa fa-copy"></i></a></td>
+                                <td><a href="{{ image }}" target="_blank"><img src="{{ asset(item.typeImage.path ~ item.image) }}" height="30" width="50" /></a></td>
                                 <td>{{ item.titre }}</td>
                                 <td>{{ item.typeImage.type }}</td>
                                 <td>{{ item.date | date('d/m/y') }}</td>

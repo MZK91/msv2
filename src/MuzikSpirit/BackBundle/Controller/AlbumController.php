@@ -112,14 +112,16 @@ class AlbumController extends Controller
 
 
         // Création du formulaire
-        $form = $this->createForm(new AlbumType(), $album,
-            array(
-                'attr' => array(
+        $form = $this->createForm(
+            new AlbumType(),
+            $album,
+            [
+                'attr' => [
                     'method' => 'post',
                     'action' => $this->generateUrl('muzikspirit_back_album_add')
                     // Action du formulaire pointe vers cette même action de controlleur
-                )
-            )
+                ],
+            ]
         );
 
         $form->handleRequest($request);
@@ -141,7 +143,9 @@ class AlbumController extends Controller
             return $this->redirect($this->generateUrl('muzikspirit_back_album_add'));
         }
 
-        return $this->render('MuzikSpiritBackBundle:Album:add_edit.html.twig',array(
+        return $this->render(
+            'MuzikSpiritBackBundle:Album:add_edit.html.twig',
+            array(
                 'form'      =>  $form->createView(),
                 'action'    =>  "Add",
                 'titre'     =>  "Ajout de Album",

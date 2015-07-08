@@ -52,7 +52,8 @@ EOF;
 
         return $response;
     }
-    public function DailymotionAction($id){
+    public function DailymotionAction($id)
+    {
         $feedURL = 'http://www.dailymotion.com/atom/video/'.$id;
         $xml = simplexml_load_file($feedURL);
 
@@ -75,7 +76,8 @@ EOF;
         return $response;
     }
 
-    public function VimeoAction($id){
+    public function VimeoAction($id)
+    {
         $feedURL = 'http://vimeo.com/api/v2/video/'.$id.'.xml';
         $xml = simplexml_load_file($feedURL);
         $title =  $xml->video->title;
@@ -96,7 +98,8 @@ EOF;
         return $response;
     }
 
-    public function PreviewAction(Request $request){
+    public function PreviewAction(Request $request)
+    {
         if ($request->getMethod() == 'POST') {
             $media = $request->request->get('media');
         }
@@ -108,7 +111,8 @@ EOF;
         );
     }
 
-    public function SameArtisteAction(Request $request, $type){
+    public function SameArtisteAction(Request $request, $type)
+    {
         $em = $this->getDoctrine()->getManager();
         // 1 news 2 video 3 clip 4 son 5 album 6 artiste 7 lyrics 8 lifestyle
         if ($request->getMethod() == 'POST') {
@@ -116,19 +120,19 @@ EOF;
 
             if ($type == 'news') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:News')->searchNewsLinkQuery($artiste);
-            }elseif($type == 'video'){
+            } elseif ($type == 'video') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Video')->searchVideoLinkQuery($artiste);
-            }elseif($type == 'clip'){
+            } elseif ($type == 'clip') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->searchClipLinkQuery($artiste);
-            }elseif($type == 'son'){
+            } elseif ($type == 'son') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Son')->searchSonLinkQuery($artiste);
-            }elseif($type == 'album'){
+            } elseif ($type == 'album') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Album')->searchAlbumLinkQuery($artiste);
-            }elseif($type == 'artiste'){
+            } elseif ($type == 'artiste') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Artiste')->searchArtisteLinkQuery($artiste);
-            }elseif($type == 'lyrics'){
+            } elseif ($type == 'lyrics') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Lyrics')->searchLyricsLinkQuery($artiste);
-            }elseif($type == 'lifestyle'){
+            } elseif ($type == 'lifestyle') {
                 $query = $em->getRepository('MuzikSpiritBackBundle:Lifestyle')->searchLifestyleLinkQuery($artiste);
             }
 
@@ -150,12 +154,13 @@ EOF;
 
     }
 
-    public function GetImageAction(Request $request,$type){
+    public function GetImageAction(Request $request, $type)
+    {
         $em = $this->getDoctrine()->getManager();
 
         if ($request->getMethod() == 'POST') {
             $find = $request->request->get('find');
-            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageByTypeQuery($find,$type);
+            $query = $em->getRepository('MuzikSpiritBackBundle:Image')->searchImageByTypeQuery($find, $type);
             $data = $query->setMaxResults(1)->getQuery()->getResult();
 
             $encoders = array(new XmlEncoder(), new JsonEncoder());
@@ -174,7 +179,8 @@ EOF;
 
     }
 
-    public function CrawlAction(Request $request){
+    public function CrawlAction(Request $request)
+    {
         if ($request->getMethod() == 'POST') {
             $link = $request->request->get('link');
 

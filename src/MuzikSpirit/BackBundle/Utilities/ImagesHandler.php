@@ -80,7 +80,6 @@ class ImagesHandler
         if ($scale >= 1) {
             if ($filePath !== $newFilePath) {
                 if (copy($filePath, $newFilePath)) {
-                    
                     return unlink($filePath);
                 }
             }

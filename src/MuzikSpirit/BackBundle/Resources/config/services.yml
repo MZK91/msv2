@@ -35,8 +35,12 @@ services:
     class: MuzikSpirit\BackBundle\Security\Authorization\Voter\OwnerVoter
     tags:
       - { name: security.voter }
-
+  # Service de BBcode
   muzikspirit_back.twig.bbcode:
     class: MuzikSpirit\BackBundle\Twig\Extension\BbcodeExtension
     tags:
       - { name: twig.extension }
+
+  # Service de Gestion d'image pour suppression
+  muzikspirit_back.image:
+          class: MuzikSpirit\BackBundle\Controller\ImageController

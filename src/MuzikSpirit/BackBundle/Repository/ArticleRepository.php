@@ -72,7 +72,8 @@ class ArticleRepository extends EntityRepository
      * @return mixed
      * On récupére un article en fonctrion de son id et de son type
      */
-    public function getArticle($articleId,$TypeArticle){
+    public function getArticle($articleId, $TypeArticle)
+    {
         $em = $this->getEntityManager();
         $query = $this->createQueryBuilder('article')
         ->where('article.typeArticle = :TypeArticle')

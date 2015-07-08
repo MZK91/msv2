@@ -27,15 +27,15 @@
                         <th>vues</th>
                         <th>date</th>
                         <th>last visit</th>
-
+                        <th>Carousel</th>
                     </tr>
                     </thead>
                     <tbody>
-                        {% for news1 in pagination.items %}
+                        {% for item in pagination.items %}
                             <tr>
-                                <td>{{ news1.id }}</td>
+                                <td>{{ item.id }}</td>
                                 <td align="center">
-                                    <a role="button" href="{{ path('muzikspirit_back_news_edit',{'id':news1.id}) }}" class="btn btn-large btn-primary">
+                                    <a role="button" href="{{ path('muzikspirit_back_news_edit',{'id':item.id}) }}" class="btn btn-large btn-primary">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </td>
@@ -44,33 +44,34 @@
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-times"></i></button>
                                         <ul class="dropdown-menu">
                                             <li></li>
-                                            <li><a href="{{ path('muzikspirit_back_news_remove',{'id':news1.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
+                                            <li><a href="{{ path('muzikspirit_back_news_remove',{'id':item.id}) }}" onClick="return confirmLink(this)"><i class="fa fa-exclamation"></i>&nbsp;&nbsp;Confirmer la suppression</a></li>
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="center"><img src="{{ news1.image }}" width="50" height="30" /></td>
-                                <td><img src="{{ asset('backassets/images/sections/' ~ news1.section.id ~ '.png') }}"/></td>
-                                <td><a href="http://muzikspirit.com/news/{{ news1.slug }}/{{ news1.id }}">{{ news1.titre }}</a></td>
+                                <td align="center"><img src="{{ item.image }}" width="50" height="30" /></td>
+                                <td><img src="{{ asset('backassets/images/sections/' ~ item.section.id ~ '.png') }}"/></td>
+                                <td><a href="http://muzikspirit.com/news/{{ item.slug }}/{{ item.id }}">{{ item.titre }}</a></td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Share&nbsp;<i class="fa fa-caret-down"></i></button>
                                         <ul class="dropdown-menu">
-                                            {% set url  = "http://" ~ global_website_url ~ "/news/" ~ news1.slug ~ "/" ~ news1.id %}
-                                            {% set artiste = news1.artiste %}
-                                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url | url_encode }}&t={{ news1.titre | url_encode }}" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
-                                            <li><a href="https://twitter.com/intent/tweet?original_referer={{ url | url_encode }}&text={{ news1.titre | url_encode }} {{ '[' ~ news1.typeArticle.titre ~ ']' | url_encode }} &url={{ url | url_encode }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
+                                            {% set url  = "http://" ~ global_website_url ~ "/news/" ~ item.slug ~ "/" ~ item.id %}
+                                            {% set artiste = item.artiste %}
+                                            <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url | url_encode }}&t={{ item.titre | url_encode }}" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Facebook</a></li>
+                                            <li><a href="https://twitter.com/intent/tweet?original_referer={{ url | url_encode }}&text={{ item.titre | url_encode }} {{ '[' ~ item.typeArticle.titre ~ ']' | url_encode }} &url={{ url | url_encode }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter</a></li>
                                             <li><a href="https://twitter.com/search/users?q={{ artiste | replace({' ': "+", "'": "+"}) }}" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Twitter Art.</a></li>
                                             <li><a href="https://plus.google.com/share?url={{ url | url_encode }}" target="_blank"><i class="fa fa-google-plus"></i>&nbsp;Google+</a></li>
-                                            <li><a href="http://www.pinterest.com/pin/create/button/?url={{ url | url_encode }}&media={{ news1.image }}&description={{ news1.titre | url_encode }}" data-pin-do="buttonPin" data-pin-config="above" target="_blank"><i class="fa fa-pinterest-square"></i>&nbsp;Pinterest</a></li>
+                                            <li><a href="http://www.pinterest.com/pin/create/button/?url={{ url | url_encode }}&media={{ item.image }}&description={{ item.titre | url_encode }}" data-pin-do="buttonPin" data-pin-config="above" target="_blank"><i class="fa fa-pinterest-square"></i>&nbsp;Pinterest</a></li>
 
 
 
                                         </ul>
                                     </div>
                                 </td>
-                                <td align="center">{{ news1.vues }}</td>
-                                <td align="center">{{ news1.date | date('d/m/y') }}</td>
-                                <td align="center">{{ news1.lastVisit | date('d/m/y') }}</td>
+                                <td align="center">{{ item.vues }}</td>
+                                <td align="center">{{ item.date | date('d/m/y') }}</td>
+                                <td align="center">{{ item.lastVisit | date('d/m/y') }}</td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_carousel_add') ~ '?' ~ { 'titre': item.titre, 'section' : item.section.id, 'type' : item.typeArticle.id, 'lien' : url } | url_encode }}"><i class="fa fa-picture-o"></i></a></td>
                             </tr>
                         {% else %}
                             <div class="alert alert-dark">Aucun Article</div>

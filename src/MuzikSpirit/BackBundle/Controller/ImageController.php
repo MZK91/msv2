@@ -156,10 +156,17 @@ class ImageController extends Controller
      * @param int     $iframe
      * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function addAction(Request $request, $iframe = 0)
+    public function addAction(Request $request, $iframe = 0, $type = 0)
     {
         $image = new Image();
         $form   = $this->createForm(new ImageType(), $image);
+        $em = $this->getDoctrine()->getManager();
+        if ($type != 0) {
+            $form->remove('typeImage');
+            $typeImage = $em->getRepository('MuzikSpiritBackBundle:TypeImage')->getTypeImage($type);
+            $image->setTypeImage($typeImage);
+        }
+
         $em = $this->getDoctrine()->getManager();
         $form->handleRequest($request);
 
@@ -203,15 +210,27 @@ class ImageController extends Controller
                 $em->persist($image);
                 $em->flush();
 
-                return  $this->redirect(
-                    $this->generateUrl(
-                        'muzikspirit_back_image_crop',
-                        array(
-                            'id' => $image->getId(),
-                            'iframe' => $iframe,
+                if ($iframe == 0) {
+                    return $this->redirect(
+                        $this->generateUrl(
+                            'muzikspirit_back_image_crop',
+                            array(
+                                'id' => $image->getId(),
+                                'iframe' => $iframe,
+                            )
                         )
-                    )
-                );
+                    );
+                } else {
+                    return $this->redirect(
+                        $this->generateUrl(
+                            'muzikspirit_back_image_crop',
+                            array(
+                                'id' => $image->getId(),
+                                'iframe' => 1,
+                            )
+                        )
+                    );
+                }
             } else {
                 // On bouge l'image uploadée vers son dossier de destination
                 rename($image->getRootDir().$image->getFileName(), $image->getRootDir().$path.$image->getFileName());
@@ -224,14 +243,27 @@ class ImageController extends Controller
             }
         }
 
-        return $this->render(
-            'MuzikSpiritBackBundle:Image:add_edit.html.twig',
-            array(
-                'form'  => $form->createView(),
-                'id'    => 0,
-                'titre' => "Ajout d'image(s)",
-            )
-        );
+        if ($iframe == 0) {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:add_edit.html.twig',
+                array(
+                    'form'  => $form->createView(),
+                    'id'    => 0,
+                    'type'    => $type,
+                    'titre' => "Ajout d'image(s)",
+                )
+            );
+        } else {
+            return $this->render(
+                'MuzikSpiritBackBundle:Image:iframe_add_edit.html.twig',
+                array(
+                    'form'  => $form->createView(),
+                    'id'    => 0,
+                    'type'    => $type,
+                    'titre' => "Ajout d'image(s)",
+                )
+            );
+        }
     }
 
 
@@ -240,6 +272,10 @@ class ImageController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $typeImage = $image->getTypeImage();
+        $path = $typeImage->getPath();
+        $thumb = $typeImage->getThumb();
+        $heightThumb = $typeImage->getHeightThumb();
+        $widthThumb = $typeImage->getWidthThumb();
 
         $imagePath = $image->getRootDir().$image->getUploadDir().'/'.$image->getImage();
 
@@ -270,19 +306,43 @@ class ImageController extends Controller
 
             $imageHandler->imageCrop($image->getImage(), $data['x'], $data['y'], $data['w'], $data['h'], $data['width'], $data['height']);
             $imageHandler->moveToDir('images/tmp/'.$image->getImage(), $typeImage->getPath().$image->getImage());
-
-            return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
-
+            if ($thumb == 1) {
+                $imageHandlerThumb = new ImagesHandler(['max_width' => $widthThumb, 'max_height' => $heightThumb]);
+                $imageHandlerThumb->createScaledImage($path, $image->getImage(), 1);
+            }
+            if ($iframe == 0) {
+                return $this->redirect($this->generateUrl('muzikspirit_back_image_list'));
+            } else {
+                return $this->redirect(
+                    $this->generateUrl(
+                        'muzikspirit_back_image_list',
+                        [
+                            'type' => $typeImage,
+                            'iframe' => 1,
+                        ]
+                    )
+                );
+            }
         }
-
-        return $this->render('MuzikSpiritBackBundle:Image:crop.html.twig', array(
-            'form'      =>  $form->createView(),
-            'image'     =>  $image->getImage(),
-            'width'     =>  $typeImage->getWidth(),
-            'height'    =>  $typeImage->getHeight(),
-            'orig_w'    =>  $origW,
-            'orig_h'    =>  $origH,
-        ));
+        if ($iframe == 0) {
+            return $this->render('MuzikSpiritBackBundle:Image:crop.html.twig', array(
+                'form' => $form->createView(),
+                'image' => $image->getImage(),
+                'width' => $typeImage->getWidth(),
+                'height' => $typeImage->getHeight(),
+                'orig_w' => $origW,
+                'orig_h' => $origH,
+            ));
+        } else {
+            return $this->render('MuzikSpiritBackBundle:Image:iframe_crop.html.twig', array(
+                'form' => $form->createView(),
+                'image' => $image->getImage(),
+                'width' => $typeImage->getWidth(),
+                'height' => $typeImage->getHeight(),
+                'orig_w' => $origW,
+                'orig_h' => $origH,
+            ));
+        }
     }
 
     /**
@@ -368,14 +428,22 @@ class ImageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $typeImage = $Image->getTypeImage();
         $path = $typeImage->getPath();
+        $thumb = $typeImage->getThumb();
         $em->remove($Image);
         $em->flush();
 
         $imageToRemove = $Image->getRootDir().$path.$Image->getImage();
+        $imageThumbToRemove = $Image->getRootDir().$path.'thumbs/'.$Image->getImage();
 
         if ($imageToRemove && file_exists ($imageToRemove) ) {
             unlink($imageToRemove);
+            if ($thumb == 1) {
+                unlink($imageThumbToRemove);
+            }
         }
         return $this->redirect($this->generateUrl('muzikspirit_back_image_list', array('iframe' => $iframe , 'type' => $type ))); // Redirection vers une nouvelle page
     }
 }
+
+
+

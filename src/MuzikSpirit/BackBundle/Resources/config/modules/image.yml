@@ -31,8 +31,8 @@ muzikspirit_back_image_remove:
         _method: GET
 
 muzikspirit_back_image_add:
-    path:     /add
-    defaults: { _controller: MuzikSpiritBackBundle:Image:add }
+    path:     /add/{iframe}/{type}
+    defaults: { _controller: MuzikSpiritBackBundle:Image:add, iframe: 0, type: 0 }
 
 muzikspirit_back_image_edit:
     path:     /edit/{id}

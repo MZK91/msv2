@@ -1,0 +1,21 @@
+{% extends'MuzikSpiritBackBundle:Partial:iframe.html.twig' %}
+{% block title %}{{ global_website }} | Admin | {{ titre | title }}{% endblock %}
+{% block body %}
+    <div class="panel">
+        <div class="panel-heading">
+            <span class="panel-title">{{ titre }}</span>
+        </div>
+
+        <div class="panel-body">
+            {{ form_start(form) }}
+            {{ form_row(form.titre) }}
+            {{ form_row(form.file) }}
+            {% if type == 0 %}
+                {{ form_row(form.typeImage) }}
+            {% endif %}
+            {{ form_widget(form.envoyer) }}
+            {{ form_widget(form._token) }}
+            {{ form_end(form,{'render_rest' : false}) }}
+        </div>
+    </div>
+{% endblock %}

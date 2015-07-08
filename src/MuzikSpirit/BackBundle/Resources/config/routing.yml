@@ -47,6 +47,10 @@ muzikspirit_back_news:
     resource: "@MuzikSpiritBackBundle/Resources/config/modules/news.yml"
     prefix:   /news
 
+muzikspirit_back_carousel:
+    resource: "@MuzikSpiritBackBundle/Resources/config/modules/carousel.yml"
+    prefix:   /carousel
+
 muzikspirit_back_dashboard:
     path:     /
-    defaults: { _controller: MuzikSpiritBackBundle:Main:index }
+    defaults: { _controller: MuzikSpiritBackBundle:Index:index }

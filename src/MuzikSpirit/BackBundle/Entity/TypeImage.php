@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * TypeImage
  *
  * @ORM\Table(name="type_image")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MuzikSpirit\BackBundle\Repository\TypeImageRepository")
  */
 class TypeImage
 {

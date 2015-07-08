@@ -13,108 +13,75 @@
                         <div class="flexslider">
                             <div class="featured-slider">
 
+                            {% set i = 1 %}
+                            {% set display = 1 %}
+                            {% for item in carousel %}
+                                {% if loop.length >= 3 and display == 1 %}
+                                {% if i == 1 %}
                                 <div class="slider-item">
                                     <div class="row">
                                         <div class="col-md-8 omega">
                                             <div class="featured-big">
-                                                <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/870x500" alt=""/>
+                                                <a href="{{ item.lien }}" class="featured-href">
+                                                    <img src="{{ asset(item.image.typeImage.path ~ item.image.image) }}" alt="{{ item.titre }}"/>
                                                     <div class="featured-header">
-                                                        <span class="category bgcolor2">Gadget</span>
-                                                        <h2>Smartwatch App Concepts You Need to See</h2>
+                                                        <span class="category bgcolor2">{{ item.typeArticle.titre }}</span>
+                                                        <h2>{{ item.titre }}</h2>
                                                         <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">4 hours ago</span>
+                                                            {{ item.description }}
                                                         </p>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
-
+                                {% endif %}
+                                {% if i == 2 %}
                                         <div class="col-md-4 alpha">
                                             <div class="featured-small featured-top">
                                                 <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/435x250" alt=""/>
+                                                    <img src="{{ asset(item.image.typeImage.path) ~ 'thumbs/' ~ item.image.image }}" alt=""/>
                                                     <div class="featured-header">
-                                                        <span class="category bgcolor5">PHOTO</span>
-                                                        <h2>An Interview with Photographer John Doe</h2>
+                                                        <span class="category bgcolor5">{{ item.typeArticle.titre }}</span>
+                                                        <h2>{{ item.titre }}</h2>
                                                         <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">4 hours ago</span>
+                                                            {{ item.description }}
                                                         </p>
                                                     </div>
                                                 </a>
                                             </div>
+                                {% endif %}
+                                {% if i == 3 %}
                                             <div class="featured-small">
                                                 <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/435x250" alt=""/>
+                                                    <img src="{{ asset(item.image.typeImage.path) ~ 'thumbs/' ~ item.image.image }}" alt=""/>
                                                     <div class="featured-header">
-                                                        <span class="category bgcolor4">Business</span>
-                                                        <h2>9 Business Leaders Share the Best and Worst Advice</h2>
+                                                        <span class="category bgcolor4">{{ item.typeArticle.titre }}</span>
+                                                        <h2>{{ item.titre }}</h2>
                                                         <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">4 hours ago</span>
+                                                            {{ item.description }}
                                                         </p>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
+                                {% endif %}
+                                {% if i == 3 %}
                                     </div><!-- .row -->
-                                </div><!-- .slider-item -->
-
-                                <div class="slider-item">
-                                    <div class="row">
-                                        <div class="col-md-8 omega">
-                                            <div class="featured-big">
-                                                <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/870x500" alt=""/>
-                                                    <div class="featured-header">
-                                                        <span class="category bgcolor2">Gadget</span>
-                                                        <h2>Audio Equalizer Apps Beyond the Smartphone Sound</h2>
-                                                        <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">25 minutes ago</span>
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 alpha">
-                                            <div class="featured-small featured-top">
-                                                <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/435x250" alt=""/>
-                                                    <div class="featured-header">
-                                                        <span class="category bgcolor3">Food</span>
-                                                        <h2>How to Make Japanese-style sushi?</h2>
-                                                        <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">4 hours ago</span>
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="featured-small">
-                                                <a href="#" class="featured-href">
-                                                    <img src="http://placehold.it/435x250" alt=""/>
-                                                    <div class="featured-header">
-                                                        <span class="category bgcolor5">Photo</span>
-                                                        <h2>The 20 most important Instagram pictures</h2>
-                                                        <p class="simple-share">
-                                                            by John Doe -
-                                                            <span class="article-date">4 hours ago</span>
-                                                        </p>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- .row -->
-                                </div><!-- .slider-item -->
-
+                                    </div><!-- .slider-item -->
+                                    {% if loop.revindex <= 3 %}
+                                        {% set display = 0 %}
+                                    {% endif %}
+                                    {% set i = 0 %}
+                                {% endif %}
+                                {% set i = i + 1 %}
+                            {% endif %}
+                            {% endfor %}
                             </div><!-- .featured-slider -->
                         </div><!-- .flexslider -->
                     </div>
                 </div><!-- .featured-wrapper -->
+
+
                 <div class="row main-body" data-stickyparent>
                     <div class="col-md-8">
                         <section class="admag-block">

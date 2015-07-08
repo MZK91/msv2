@@ -29,7 +29,7 @@
                         <th>vues</th>
                         <th>date</th>
                         <th>last visit</th>
-
+                        <th>Carousel</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -61,6 +61,7 @@
                                 <td align="center">{{ item.vues }}</td>
                                 <td align="center">{{ item.date | date('d/m/y') }}</td>
                                 <td align="center">{{ item.lastVisit | date('d/m/y') }}</td>
+                                <td align="center"><a href="{{ path('muzikspirit_back_carousel_add') ~ '?' ~ { 'titre': item.titre, 'section' : item.section.id, 'type' : item.typeArticle.id, 'lien' : url } | url_encode }}"><i class="fa fa-picture-o"></i></a></td>
                             </tr>
                         {% else %}
                             <div class="alert alert-dark">Aucun Article</div>
