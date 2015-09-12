@@ -68,6 +68,20 @@ class Artiste
     private $poster;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="facebook_page", type="string", length=255, nullable=true)
+     */
+    private $facebookPage;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter_account", type="string", length=255, nullable=true)
+     */
+    private $twitterAcccount;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime", nullable=false)
@@ -425,6 +439,38 @@ class Artiste
     public function setPinterest($pinterest)
     {
         $this->pinterest = $pinterest;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebookPage()
+    {
+        return $this->facebookPage;
+    }
+
+    /**
+     * @param string $facebookPage
+     */
+    public function setFacebookPage($facebookPage)
+    {
+        $this->facebookPage = $facebookPage;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitterAcccount()
+    {
+        return $this->twitterAcccount;
+    }
+
+    /**
+     * @param string $twitterAcccount
+     */
+    public function setTwitterAcccount($twitterAcccount)
+    {
+        $this->twitterAcccount = $twitterAcccount;
     }
 
     /**

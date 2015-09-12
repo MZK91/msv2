@@ -10,48 +10,10 @@ use MuzikSpirit\BackBundle\Entity\User;
 
 class SecurityController extends Controller
 {
+
     public function loginAction(Request $request)
     {
         $session = $request->getSession();
-        /*$username = $request->request->get('_username');
-
-        if($username != null) {
-            exit(dump($username));
-            $em = $this->getDoctrine()->getManager();
-
-            $dql = "SELECT user FROM MuzikSpiritBackBundle:User user WHERE user.username = :username OR user.email = :email";
-            $query = $em->createQuery($dql);
-            $query->setParameter(':username', $username);
-            $query->setParameter(':email', $username);
-
-            try {
-                $user = $query->getSingleResult();
-                $password = $user->getPassword();
-            } catch (\Doctrine\Orm\NoResultException $e) {
-                $user = $password = null;
-            }
-
-            if ($password == '' && $user != NULL) {
-
-                $user->setTokenKey(uniqid() . uniqid());
-                $em->persist($user);
-                $em->flush();
-
-                return $this->redirectToRoute('muzikspirit_front_statics_mailmdp', array('username' => $user->getUsername()));
-
-            }
-
-            if($password == '' && $user != NULL ){
-
-                $user->setTokenKey(uniqid().uniqid());
-                $em->persist($user);
-                $em->flush();
-
-                return $this->redirectToRoute('muzikspirit_front_statics_mailmdp', array('username'=>$user->getUsername()));
-
-            }
-
-        }*/
 
         // get the login error if there is one
         if ($request->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
@@ -77,13 +39,13 @@ class SecurityController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
-        if($this->getUser() == null && $tokenkey != 0) {
+        if ($this->getUser() == null && $tokenkey != 0) {
             $dql = "SELECT user FROM MuzikSpiritBackBundle:User user WHERE user.tokenKey = :tokenkey";
             $query = $em->createQuery($dql);
             $query->setParameter(':tokenkey', $tokenkey);
             $user = $query->getSingleResult();
-        }else{
-            if($this->getUser() == null){
+        } else {
+            if ($this->getUser() == null) {
                 return $this->redirect($this->generateUrl('muzikspirit_front_security_register'));
             }
             $user = $this->getUser();

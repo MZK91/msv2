@@ -1,0 +1,65 @@
+{% extends 'MuzikSpiritFrontBundle::layout.html.twig' %}
+{% block title %}{{ album.titre }}{% endblock %}
+{% block content %}
+    {% import "MuzikSpiritFrontBundle:Partial:_macro_article.html.twig" as article %}
+        <div class="row blog-content">
+            <div class="col-md-12 post-wrapper fullwidth-header">
+                <header class="post-header">
+                    <h1 class="post-title">
+                        {{ album.titre }}
+                    </h1><!-- .post-title -->
+
+                    {{ article.info(album.user, album.user.id, album.date|ago, album.vues) }}
+
+                    <figure class="image-overlay">
+                        <img src="{{ asset('images/albums/') ~ album.image }}" alt="" />
+                    </figure>
+                </header><!-- .post-header -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+                <article class="post-wrapper clearfix">
+
+                    <div class="post-content clearfix">
+                        <div>
+                            <h2>Date de Sortie : {{ album.dateSortie | date('d/m/y') }}</h2>
+                            <h2>Tracklist :</h2>
+                            <p>
+                                {{ album.tracklist | nl2br }}
+                            </p>
+                        </div>
+                    </div><!-- .post-content -->
+
+                    <footer class="post-meta">
+                        {{ article.share('http://www.'~ app.request.host ~ path('muzikspirit_front_album_view',{'id':album.id,'slug':album.slug}),album.image,'desc','1000' ) }}
+                    </footer>
+
+                </article><!-- .post-wrapper -->
+
+                <!-- Comment List -->
+                {{ article.ad('728',0) }}
+                <div>
+                    {% include 'MuzikSpiritFrontBundle:Partial:_disqus.html.twig' %}
+                </div>
+            </div>
+        </div><!-- .blog-content -->
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript" src="{{ asset('frontassets/js/articles.js') }}"></script>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'muzikspirit';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+{% endblock %}

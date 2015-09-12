@@ -4,13 +4,13 @@ namespace MuzikSpirit\FrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use MuzikSpirit\BackBundle\Entity\Clip;
+use MuzikSpirit\BackBundle\Entity\Artiste;
 
 /**
- * Class ClipController
+ * Class ArtisteController
  * @package MuzikSpirit\FrontBundle\Controller
  */
-class ClipController extends Controller
+class ArtisteController extends Controller
 {
 
     /**
@@ -27,9 +27,9 @@ class ClipController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         if ($sectionID == 0) {
-            $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipQuery()->getQuery();
+            $query = $em->getRepository('MuzikSpiritBackBundle:Artiste')->getListArtisteQuery()->getQuery();
         } else {
-            $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipBySectionQuery($sectionID)->getQuery();
+            $query = $em->getRepository('MuzikSpiritBackBundle:Artiste')->getListArtisteBySectionQuery($sectionID)->getQuery();
         }
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -39,7 +39,7 @@ class ClipController extends Controller
         );
 
         return $this->render(
-            'MuzikSpiritFrontBundle:Clip:list.html.twig',
+            'MuzikSpiritFrontBundle:Artiste:list.html.twig',
             [
                 'page' => $page,
                 'pagination' => $paginator,
@@ -50,12 +50,12 @@ class ClipController extends Controller
     /**
      * Affichage de l'article
      *
-     * @param Clip $clip
+     * @param Artiste $artiste
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function viewAction(Clip $clip)
+    public function viewAction(Artiste $artiste)
     {
-        return $this->render('MuzikSpiritFrontBundle:Clip:view.html.twig', ['clip' => $clip]);
+        return $this->render('MuzikSpiritFrontBundle:Artiste:view.html.twig', ['artiste' => $artiste]);
     }
 }

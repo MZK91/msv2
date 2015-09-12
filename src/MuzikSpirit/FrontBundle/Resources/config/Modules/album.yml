@@ -1,0 +1,21 @@
+# Régles config routage
+#
+# Nom de la route :
+# nom_de_l_app_bundle_classe_action
+#
+# Appel Controleur
+# NomduBundle:NomducControleur:Nom de L'action
+#
+# Ordre de configuration :
+# Route -> Controleur -> Vue
+
+muzikspirit_front_album_list:
+    path:     /albums/list/{section}/{page}
+    defaults: { _controller: MuzikSpiritFrontBundle:Album:list, section : all, page : 1 }
+
+muzikspirit_front_album_view:
+    path:     /album/{slug}/{id}
+    defaults: { _controller: MuzikSpiritFrontBundle:Album:view, page : 1 }
+    requirements:
+      id: \d+
+      _method: GET

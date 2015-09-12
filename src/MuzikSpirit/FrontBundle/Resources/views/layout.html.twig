@@ -11,9 +11,7 @@
 {% block classname %}body-color4 no-background boxed light fixed-header{% endblock %}
 {% block body %}
 <div id="main" class="header-style1">
-
     {{ include('MuzikSpiritFrontBundle:Partial:_header.html.twig') }}
-
     <div class="container main-wrapper">
         <!-- End Main Banner -->
         <div class="mag-content clearfix">
@@ -28,10 +26,10 @@
     </div><!-- .main-wrapper -->
     {{ include('MuzikSpiritFrontBundle:Partial:_footer.html.twig') }}
     {{ include('MuzikSpiritFrontBundle:Partial:_mobile_nav.html.twig') }}
+</div>
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('frontassets/js/modernizr.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="{{ asset('frontassets/js/plugins.js') }}"></script>
     <script src="{{ asset('frontassets/js/script.js') }}"></script>
 {% endblock %}

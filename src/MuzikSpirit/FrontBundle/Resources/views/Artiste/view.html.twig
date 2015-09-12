@@ -1,0 +1,94 @@
+{% extends 'MuzikSpiritFrontBundle::layout.html.twig' %}
+{% block body %}
+    <div id="main" class="header-style1">
+        {% import "MuzikSpiritFrontBundle:Partial:_macro_article.html.twig" as article %}
+        {{ include('MuzikSpiritFrontBundle:Partial:_header.html.twig') }}
+        <!-- Parallax Header -->
+        <div class="parallax-header">
+            <!-- Parallax image -->
+            <div class="parallax-image" id="parallax-image" data-stellar-ratio="0.5" data-image="http://placehold.it/1550x660"></div>
+
+            <!-- Post title and meta -->
+            <div class="parallax-wrapper">
+                <div class="container">
+                    <div class="mag-content parallax-box">
+                        <div class="row">
+                            <div class="col-md-12 parallax-box">
+                                <header class="post-header">
+                                    <h1 class="post-title">
+                                        {{ artiste.titre }}
+                                    </h1><!-- .post-title -->
+
+                                    {{ article.info(artiste.user, artiste.user.id, artiste.date|ago, artiste.vues) }}
+                                </header><!-- .post-header -->
+                            </div><!-- .col-md-12 -->
+                        </div><!-- .row -->
+                    </div>
+                </div><!-- .container -->
+
+            </div><!-- .parallax-wrapper -->
+        </div><!-- .parallax-header -->
+
+        <div class="container">
+
+            <div class="main-content mag-content clearfix">
+
+                <div class="row blog-content" data-stickyparent>
+                    <div class="col-md-8" data-stickycolumn>
+
+                        <article class="post-wrapper clearfix">
+
+                            <div class="post-content clearfix">
+                                {{ artiste.texte | raw }}
+                            </div><!-- .post-content -->
+
+                            <footer class="post-meta">
+                                {{ article.share('http://www.'~ app.request.host ~ path('muzikspirit_front_artiste_view',{'id':artiste.id,'slug':artiste.slug}),artiste.image,'desc','1000' ) }}
+                            </footer>
+
+                        </article><!-- .post-wrapper -->
+
+                        <!-- Mid ad -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="ad728-wrapper mid-wrapper">
+                                    <a href="#">
+                                        <img src="http://placehold.it/728x90" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Mid ad -->
+                        <!-- Comment List -->
+                    </div><!-- End Left big column -->
+
+                    <div class="col-md-4" data-stickycolumn>
+                        <aside class="sidebar clearfix">
+
+                            <div class="widget adwidget">
+                                <a href="#">
+                                    <img src="http://placehold.it/300x250" alt=""/>
+                                </a>
+                            </div>
+
+                            <div class="widget searchwidget">
+                                <form class="searchwidget-form">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+          </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </aside>
+                    </div><!-- End last column -->
+                </div><!-- .blog-content -->
+
+            </div><!-- .main-content -->
+
+        </div><!-- .main-wrapper -->
+        {{ include('MuzikSpiritFrontBundle:Partial:_footer.html.twig') }}
+        {{ include('MuzikSpiritFrontBundle:Partial:_mobile_nav.html.twig') }}
+    </div>
+{% endblock %}

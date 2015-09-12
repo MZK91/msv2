@@ -24,10 +24,10 @@ class NewsController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        if($sectionID == 0) {
-            $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipQuery()->getQuery();
-        }else{
-            $query = $em->getRepository('MuzikSpiritBackBundle:Clip')->getListClipBySectionQuery($sectionID)->getQuery();
+        if ($sectionID == 0) {
+            $query = $em->getRepository('MuzikSpiritBackBundle:News')->getListNewsQuery()->getQuery();
+        } else {
+            $query = $em->getRepository('MuzikSpiritBackBundle:News')->getListNewsBySectionQuery($sectionID)->getQuery();
         }
         $paginator  = $this->get('knp_paginator');
         $paginator = $paginator->paginate(
@@ -36,11 +36,12 @@ class NewsController extends Controller
             $limit
         );
 
-        return $this->render('MuzikSpiritFrontBundle:Clip:list.html.twig',
-            array(
+        return $this->render(
+            'MuzikSpiritFrontBundle:News:list.html.twig',
+            [
                 'page' => $page,
-                'pagination' => $paginator
-            )
+                'pagination' => $paginator,
+            ]
         );
     }
 
@@ -51,8 +52,8 @@ class NewsController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function viewAction(Clip $clip)
+    public function viewAction(News $news)
     {
-        return $this->render('MuzikSpiritFrontBundle:Clip:view.html.twig',['clip' => $clip]);
+        return $this->render('MuzikSpiritFrontBundle:News:view.html.twig', ['news' => $news]);
     }
 }
